@@ -15,4 +15,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                             { :mount_options => [ "dmode=777", "fmode=777" ],
                               :owner => "vagrant",
                               :group => "www-data" }
+
+    config.vm.provider :virtualbox do |v|
+        v.customize ["modifyvm", :id, "--memory", 1024]
+        v.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+        v.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+    end
+
 end
+
+
