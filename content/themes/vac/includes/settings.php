@@ -23,9 +23,18 @@
 
             add_action('init', array(__CLASS__, 'tiny_mce_full_width'));
 
+
+
             // remove wp emoji stuff
-            remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-            remove_action( 'wp_print_styles', 'print_emoji_styles' );
+            remove_action('wp_head', 'print_emoji_detection_script', 7);
+            remove_action('wp_print_styles', 'print_emoji_styles');
+
+            //remove cruft from head
+            remove_action('wp_head', 'wp_generator');
+            remove_action('wp_head', 'wlwmanifest_link');
+            remove_action('wp_head', 'rel_canonical');
+            remove_action('wp_head', 'wp_shortlink_wp_head');
+            remove_action('wp_head', 'rsd_link');
         }
 
         public static function post_image_defaults() {
@@ -40,18 +49,12 @@
             register_taxonomy('category', array());
         }
 
-        public static function add_about_page_to_menu() {
-            $about_page_id = self::get_about_page_id();
-            if (!$about_page_id) return;
-            add_menu_page('About', 'About', 'edit_pages', "post.php?post={$about_page_id}&action=edit", '', 'dashicons-media-text', 11);
-        }
-
         public static function remove_menus() {
-            if (self::is_admin_user()) return;
             remove_menu_page('edit.php');
             remove_menu_page('edit-comments.php');
             remove_menu_page('edit.php?post_type=page');
             remove_menu_page('upload.php');
+            if (self::is_admin_user()) return;
             remove_menu_page('profile.php');
             remove_menu_page('tools.php');
             remove_menu_page('index.php');
@@ -68,12 +71,6 @@
         public static function is_admin_user() {
             $user = wp_get_current_user();
             return in_array('administrator', $user->roles);
-        }
-
-        public static function get_about_page_id() {
-            $page = get_page_by_title('about');
-            if (!$page) return;
-            return $page->ID;
         }
 
         public static function tiny_mce_full_width() {
