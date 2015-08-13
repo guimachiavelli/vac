@@ -66,31 +66,29 @@ class VACComponent {
         return $component;
     }
 
-    private function assemble_fields($left, $id, $modules) {
-        if ($left['type'] == 'group') {
-            $fields = array(
-                'key' => 'field_vac_main_component_left_column',
-                'label' => '',
-                'name' => 'vac_main_component_left_column',
-                'type' => 'flexible_content',
-                'instructions' => '',
-                'button_label' => 'Add Block',
-                'layouts' => array()
+    private function assemble_fields($group, $id, $modules) {
+        $fields = array(
+            'key' => 'field_vac_main_component_left_column',
+            'label' => '',
+            'name' => 'vac_main_component_left_column',
+            'type' => 'flexible_content',
+            'instructions' => '',
+            'button_label' => 'Add Block',
+            'layouts' => array()
+        );
+
+        foreach ($group['fields'] as $index => $field) {
+            $layout = array(
+                'key' => "layout_{$id}_{$field}_{$index}",
+                'name' => "layout_{$field}",
+                'label' => ucfirst($field),
+                'sub_fields' => array($modules[$field])
             );
 
-            foreach ($left['fields'] as $index => $field) {
-                $layout = array(
-                    'key' => "layout_{$id}_{$field}_{$index}",
-                    'name' => "layout_{$field}",
-                    'label' => ucfirst($field),
-                    'sub_fields' => array($modules[$field])
-                );
-
-                $fields['layouts'][] = $layout;
-            }
-
-            return $fields;
+            $fields['layouts'][] = $layout;
         }
+
+        return $fields;
     }
 
     private function has_acf() {
@@ -274,4 +272,25 @@ class VACComponent {
                 ),
             )
         );
+
+    private $floating_image = array(
+        'key' => 'field_vac_floating_image',
+        'label' => 'Floating image',
+        'name' => 'floating_image',
+        'type' => 'image',
+        'return_format' => 'id',
+        'preview_size' => 'thumbnail',
+        'library' => 'uploadedTo',
+    );
+
+    private $side_gallery = array(
+        'key' => 'field_vac_block_side_gallery',
+        'label' => 'Side gallery',
+        'name' => 'side_gallery',
+        'type' => 'gallery',
+        'instructions' => 'Click on picture to add caption',
+        'preview_size' => 'thumbnail',
+        'library' => 'uploadedTo',
+    );
+
 }
