@@ -10,12 +10,15 @@
 */
 
 class VACExhibition {
+    public static $post_type = 'vac-exhibition';
+
     public static function activate() {
 
     }
 
     public static function init() {
         add_action('init', array(__CLASS__, 'register_post'));
+        add_action('init', array(__CLASS__, 'register_fields'));
     }
 
     public static function register_post() {
@@ -29,6 +32,33 @@ class VACExhibition {
 				'menu_icon' => 'dashicons-format-image'
             )
         );
+    }
+
+    public static function register_fields() {
+        $main_component = new VACComponent(array(
+            'id' => str_replace('-', '_', self::$post_type),
+            'post_type' => self::$post_type,
+            'position' => 'normal'
+        ), array(
+            'type' => 'group',
+            'fields' => array('slider', 'standfirst', 'text', 'accordion')
+        ), array(
+            'type' => 'single',
+            'fields' => array('aside')
+        ));
+
+        $main_component->register();
+
+        $sidebar_component = new VACComponent(array(
+            'id' => str_replace('-', '_', self::$post_type) . '_side',
+            'post_type' => self::$post_type,
+            'position' => 'side'
+        ), array(
+            'type' => 'single',
+            'fields' => array('featured')
+        ));
+
+        $sidebar_component->register();
     }
 }
 
