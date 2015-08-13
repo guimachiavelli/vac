@@ -29,7 +29,8 @@ class VACExhibition {
                 'public' => true,
                 'menu_position' => 5,
                 'supports' => array('title'),
-				'menu_icon' => 'dashicons-format-image'
+                'menu_icon' => 'dashicons-format-image',
+                'taxonomies' => array('vac-year', 'vac-city')
             )
         );
     }
@@ -44,9 +45,8 @@ class VACExhibition {
             'fields' => array('slider', 'standfirst', 'text', 'accordion')
         ), array(
             'type' => 'single',
-            'fields' => array('aside')
+            'fields' => array('aside', 'text')
         ));
-
         $main_component->register();
 
         $sidebar_component = new VACComponent(array(
