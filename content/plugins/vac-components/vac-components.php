@@ -20,8 +20,8 @@ class VACComponent {
         acf_add_local_field_group($this->fields);
     }
 
-    private function assemble($config, $left, $right) {
-        if (!isset($config['id']) || !$left) {
+    private function assemble($config, $columns) {
+        if (!isset($config['id']) || !$columns) {
             return false;
         }
 
@@ -38,22 +38,20 @@ class VACComponent {
             'fields' => array()
         );
 
-        $component['fields'] = $this->add_fields(
-            $component['fields'],
-            $left,
-            $config['id'],
-            'left'
-        );
+        foreach ($columns as $name => $column) {
+            if ($name == 'right' && count($columns) == 2) {
+                $component['fields'][] = $this->right_tab;
+            }
 
-        if ($right) {
-            array_unshift($component['fields'], $this->left_tab);
-            $component['fields'][] = $this->right_tab;
+            if ($name == 'left' && count($columns) == 2) {
+                $component['fields'][] = $this->left_tab;
+            }
 
-            $component['fields'] = $this->add_fields(
+             $component['fields'] = $this->add_fields(
                 $component['fields'],
-                $right,
+                $column,
                 $config['id'],
-                'right'
+                $name
             );
         }
 

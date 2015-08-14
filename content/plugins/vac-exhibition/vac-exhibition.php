@@ -41,11 +41,14 @@ class VACExhibition {
             'post_type' => self::$post_type,
             'position' => 'normal'
         ), array(
-            'type' => 'group',
-            'fields' => array('slider', 'standfirst', 'text', 'accordion')
-        ), array(
-            'type' => 'single',
-            'fields' => array('aside')
+            'left' => array(
+                'type' => 'group',
+                'fields' => array('slider', 'standfirst', 'text', 'accordion'),
+            ),
+            'right' => array(
+                'type' => 'single',
+                'fields' => array('aside'),
+            )
         ));
         $main_component->register();
 
@@ -54,8 +57,10 @@ class VACExhibition {
             'post_type' => self::$post_type,
             'position' => 'side'
         ), array(
-            'type' => 'single',
-            'fields' => array('featured')
+            'side' => array(
+                'type' => 'single',
+                'fields' => array('featured')
+            )
         ));
 
         $sidebar_component->register();
