@@ -13,17 +13,10 @@
             //remove categories and tags
             add_action('init', array(__CLASS__, 'remove_taxonomies'));
 
-            //add pages to admin menu
-            add_action('admin_menu', array(__CLASS__, 'add_about_page_to_menu'));
-
             //remove menu cruft
             add_action('admin_menu', array(__CLASS__, 'remove_menus'));
-
             add_action('admin_head', array(__CLASS__, 'remove_collapse'));
-
             add_action('init', array(__CLASS__, 'tiny_mce_full_width'));
-
-
 
             // remove wp emoji stuff
             remove_action('wp_head', 'print_emoji_detection_script', 7);
