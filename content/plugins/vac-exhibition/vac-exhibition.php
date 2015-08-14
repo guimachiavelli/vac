@@ -45,7 +45,7 @@ class VACExhibition {
             'fields' => array('slider', 'standfirst', 'text', 'accordion')
         ), array(
             'type' => 'single',
-            'fields' => array('aside', 'text')
+            'fields' => array('aside')
         ));
         $main_component->register();
 
