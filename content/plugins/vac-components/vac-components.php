@@ -25,8 +25,6 @@ class VACComponent {
             return false;
         }
 
-        $modules = get_class_vars(__CLASS__);
-
         $component = array (
             'key' => "group_{$config['id']}_component",
             'location' => array(array(array(
@@ -40,37 +38,52 @@ class VACComponent {
             'fields' => array()
         );
 
-        if ($right) {
-            $component['fields'][] = $this->left_tab;
-        }
-
-        if ($left['type'] == 'group') {
-            $component['fields'][] = $this->assemble_fields($left, $config['id'],$modules);
-        } else {
-            foreach ($left['fields'] as $field) {
-                $component['fields'][] = $modules[$field];
-            }
-        }
+        $component['fields'] = $this->add_fields(
+            $component['fields'],
+            $left,
+            $config['id'],
+            'left'
+        );
 
         if ($right) {
+            array_unshift($component['fields'], $this->left_tab);
             $component['fields'][] = $this->right_tab;
-            if ($right['type'] == 'group') {
-                $component['fields'][] = $this->assemble_fields($right, $config['id'], $modules);
-            } else {
-                foreach ($right['fields'] as $field) {
-                    $component['fields'][] = $modules[$field];
-                }
-            }
+
+            $component['fields'] = $this->add_fields(
+                $component['fields'],
+                $right,
+                $config['id'],
+                'right'
+            );
         }
 
         return $component;
     }
 
-    private function assemble_fields($group, $id, $modules) {
+    private function add_fields($component_fields, $fields, $id, $column) {
+        if ($fields['type'] == 'group') {
+            $fields = $this->assemble_fields($fields, $id, $column);
+            $component_fields[] = $fields;
+            return $component_fields;
+        }
+
+        $modules = get_class_vars(__CLASS__);
+        foreach ($fields['fields'] as $field) {
+            $component_field = $modules[$field];
+            $component_field['name'] = "{$component_field['name']}_{$column}";
+            $component_fields[] = $component_field;
+        }
+        return $component_fields;
+    }
+
+    private function assemble_fields($group, $id, $column) {
+        $modules = get_class_vars(__CLASS__);
+
+
         $fields = array(
-            'key' => 'field_vac_main_component_left_column',
+            'key' => "field_group_{$id}_{$column}",
             'label' => '',
-            'name' => 'vac_main_component_left_column',
+            'name' => "field_group_{$id}_{$column}",
             'type' => 'flexible_content',
             'instructions' => '',
             'button_label' => 'Add Block',
