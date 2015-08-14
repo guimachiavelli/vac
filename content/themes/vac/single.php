@@ -11,7 +11,9 @@
             <?php
                 $fields = get_fields($post->ID);
                 $fields = VACTemplate::parsed_ACF($fields);
+                //var_dump($fields);
             ?>
+
             <div class="column column--left">
                 <?php VACTemplate::ACF_loop($fields['left']); ?>
             </div>

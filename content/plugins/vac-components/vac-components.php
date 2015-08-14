@@ -135,7 +135,7 @@ class VACComponent {
     private $slider = array(
         'key' => 'field_vac_block_image_slider',
         'label' => 'Images',
-        'name' => 'image_slider',
+        'name' => 'vac_block_image_slider',
         'type' => 'gallery',
         'instructions' => 'Click on picture to add caption',
         'preview_size' => 'thumbnail',
@@ -145,7 +145,7 @@ class VACComponent {
     private $standfirst = array(
         'key' => 'field_vac_block_standfirst',
         'label' => '',
-        'name' => 'standfirst',
+        'name' => 'vac_block_standfirst',
         'type' => 'wysiwyg',
         'toolbar' => 'basic',
         'tabs' => 'visual',
@@ -155,7 +155,7 @@ class VACComponent {
     private $text = array(
         'key' => 'field_vac_block_text',
         'label' => '',
-        'name' => 'text',
+        'name' => 'vac_block_text',
         'type' => 'wysiwyg',
         'toolbar' => 'full',
         'tabs' => 'visual',
@@ -165,7 +165,7 @@ class VACComponent {
     private $accordion = array(
         'key' => 'field_55cb73dbe1d47',
         'label' => '',
-        'name' => 'accordion',
+        'name' => 'vac_block_accordion',
         'type' => 'repeater',
         'instructions' => '',
         'layout' => 'block',
