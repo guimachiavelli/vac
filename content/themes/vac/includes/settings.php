@@ -12,6 +12,7 @@
 
             //remove categories and tags
             add_action('init', array(__CLASS__, 'remove_taxonomies'));
+            add_action('admin_init', array(__CLASS__, 'remove_default_fields'));
 
             //remove menu cruft
             add_action('admin_menu', array(__CLASS__, 'remove_menus'));
@@ -55,6 +56,12 @@
             remove_menu_page('plugins.php');
             remove_menu_page('users.php');
             remove_menu_page('options-general.php');
+        }
+
+        public static function remove_default_fields() {
+            remove_post_type_support('page', 'editor');
+            remove_post_type_support('page', 'thumbnail');
+            remove_post_type_support('page', 'page-attributes');
         }
 
         public static function remove_collapse() {

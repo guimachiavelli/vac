@@ -25,13 +25,10 @@ class VACComponent {
             return false;
         }
 
+
         $component = array (
             'key' => "group_{$config['id']}_component",
-            'location' => array(array(array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => $config['post_type']
-            ))),
+            'location' => $this->location($config['location']),
             'position' => $config['position'],
             'title' => $config['id'],
             'style' => 'seamless',
@@ -69,9 +66,18 @@ class VACComponent {
         foreach ($fields['fields'] as $field) {
             $component_field = $modules[$field];
             $component_field['name'] = "{$component_field['name']}_{$column}";
+            $component_field['key'] = "{$component_field['key']}_{$id}";
             $component_fields[] = $component_field;
         }
         return $component_fields;
+    }
+
+    private function location($location) {
+        return array(array(array(
+            'param' => $location[0],
+            'operator' => '==',
+            'value' => $location[1]
+        )));
     }
 
     private function assemble_fields($group, $id, $column) {
