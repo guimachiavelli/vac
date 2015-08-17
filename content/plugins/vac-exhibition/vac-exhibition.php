@@ -11,6 +11,7 @@
 
 class VACExhibition {
     public static $post_type = 'vac-exhibition';
+    public static $post_name = 'exhibitions';
     public static $archive_page = 'exhibitions';
     public static $archive_page_title = 'Exhibitions Page';
     public static $archive_template = 'exhibition_archive.php';
@@ -111,30 +112,19 @@ class VACExhibition {
             )
         ));
         $main_component->register();
-
-        $sidebar_component = new VACComponent(array(
-            'id' => str_replace('-', '_', self::$post_type) . '_side',
-            'location' => array('post_type', self::$post_type),
-            'position' => 'side'
-        ), array(
-            'side' => array(
-                'type' => 'single',
-                'fields' => array('featured')
-            )
-        ));
-
-        $sidebar_component->register();
     }
 
     public static function register_archive_fields() {
         $main_component = new VACComponent(array(
             'id' => str_replace('-', '_', self::$post_type) . '_archive',
             'location' => array('page_template', self::$archive_template),
-            'position' => 'normal'
+            'position' => 'normal',
+            'post_type' => self::$post_type,
+            'name' => self::$post_name
         ), array(
-            'left' => array(
+            'single' => array(
                 'type' => 'single',
-                'fields' => array('text'),
+                'fields' => array('text', 'featured_title', 'featured_posts'),
         )));
         $main_component->register();
     }

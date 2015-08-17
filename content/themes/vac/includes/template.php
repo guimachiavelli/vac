@@ -34,11 +34,41 @@ class VACTemplate {
         }
     }
 
+    public static function ACF_featured_content($post_id) {
+        $fields = get_fields($post_id);
+        $fields = self::parsed_ACF($fields);
+        $fields = array_values($fields);
+        $fields = $fields[0];
+
+        $content = array();
+
+        foreach ($fields as $field) {
+            foreach ($field as $subfields) {
+                foreach ($subfields as $name => $subfield) {
+                    if ($name == 'vac_block_image_slider') {
+                        $image = $subfield[0];
+                        $content['image'] = array(
+                            'id' => $image['id'],
+                            'caption' => $image['caption'],
+                            'alt' => $image['alt']
+                        );
+                    }
+
+                    if ($name == 'vac_block_standfirst') {
+                        $content['standfirst'] = $subfield;
+                    }
+                }
+            }
+        }
+
+        return $content;
+    }
+
     public static function ACF_content($wp_query) {
         return $wp_query->query_vars[self::$content_key];
     }
 
-    private static function clear_query_vars() {
+    public static function clear_query_vars() {
         set_query_var(self::$content_key, null);
     }
 

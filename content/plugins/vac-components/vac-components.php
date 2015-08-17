@@ -25,7 +25,6 @@ class VACComponent {
             return false;
         }
 
-
         $component = array (
             'key' => "group_{$config['id']}_component",
             'location' => $this->location($config['location']),
@@ -47,7 +46,7 @@ class VACComponent {
              $component['fields'] = $this->add_fields(
                 $component['fields'],
                 $column,
-                $config['id'],
+                $config,
                 $name
             );
         }
@@ -55,7 +54,9 @@ class VACComponent {
         return $component;
     }
 
-    private function add_fields($component_fields, $fields, $id, $column) {
+    private function add_fields($component_fields, $fields, $config, $column) {
+        $id = $config['id'];
+
         if ($fields['type'] == 'group') {
             $fields = $this->assemble_fields($fields, $id, $column);
             $component_fields[] = $fields;
@@ -67,6 +68,17 @@ class VACComponent {
             $component_field = $modules[$field];
             $component_field['name'] = "{$component_field['name']}_{$column}";
             $component_field['key'] = "{$component_field['key']}_{$id}";
+            if (isset($component_field['post_type'])) {
+                $component_field['post_type'] = array(
+                    $config['post_type']
+                );
+            }
+
+            if (isset($config['name'])) {
+                $component_field['label'] = str_replace('posts', $config['name'], $component_field['label']);
+
+            }
+
             $component_fields[] = $component_field;
         }
         return $component_fields;
@@ -308,6 +320,25 @@ class VACComponent {
         'instructions' => 'Click on picture to add caption',
         'preview_size' => 'thumbnail',
         'library' => 'uploadedTo',
+    );
+
+    private $featured_title = array (
+        'key' => 'field_55d1cc70d7bb3',
+        'label' => 'Featured posts title',
+        'name' => 'vac_featured_post_title',
+        'type' => 'text',
+    );
+
+    private $featured_posts = array(
+        'key' => 'field_55d1cdea309a2',
+        'label' => 'Featured posts',
+        'name' => 'vac_featured_posts',
+        'type' => 'post_object',
+        'post_type' => array(),
+        'allow_null' => 0,
+        'multiple' => 1,
+        'return_format' => 'id',
+        'ui' => 1,
     );
 
 }

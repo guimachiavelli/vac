@@ -1,29 +1,25 @@
 <?php get_header(); ?>
 
+    <?php while (have_posts()): the_post(); ?>
+
+        <h2><?php the_time('d.m.Y'); ?></h2>
+        <h1><?php the_title(); ?></h1>
+
         <?php
-            while (have_posts()):
-                the_post();
+            $fields = get_fields($post->ID);
+            $fields = VACTemplate::parsed_ACF($fields);
         ?>
 
-            <h2><?php the_time('d.m.Y'); ?></h2>
-            <h1><?php the_title(); ?></h1>
+        <div class="column column--left">
+            <?php VACTemplate::ACF_loop($fields['left']); ?>
+        </div>
 
-            <?php
-                $fields = get_fields($post->ID);
-                $fields = VACTemplate::parsed_ACF($fields);
-                //var_dump($fields);
-            ?>
-
-            <div class="column column--left">
-                <?php VACTemplate::ACF_loop($fields['left']); ?>
-            </div>
-
-            <div class="column column--right">
-                <?php VACTemplate::ACF_loop($fields['right']); ?>
-            </div>
+        <div class="column column--right">
+            <?php VACTemplate::ACF_loop($fields['right']); ?>
+        </div>
 
 
-        <?php endwhile; ?>
+    <?php endwhile; ?>
 
 
 <?php get_footer(); ?>
