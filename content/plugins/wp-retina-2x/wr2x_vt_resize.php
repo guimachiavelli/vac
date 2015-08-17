@@ -20,8 +20,8 @@ if ( !function_exists('wr2x_vt_resize') ) {
 		$image = wp_get_image_editor( $file_path );
 
 		if ( is_wp_error( $image ) ) {
-			wr2x_log( "Resize failure: " . $result->get_error_message() );
-			error_log( "Resize failure: " . $result->get_error_message() );
+			wr2x_log( "Resize failure: " . $image->get_error_message() );
+			error_log( "Resize failure: " . $image->get_error_message() );
 			return null;
 		}
 

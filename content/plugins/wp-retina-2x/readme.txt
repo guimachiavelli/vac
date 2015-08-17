@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: retina, images, image, admin, attachment, media, files, iphone, ipad, plugin, picture, pictures
 License: GPLv2 or later
 Requires at least: 3.5
-Tested up to: 4.2.0
-Stable tag: 3.3.2
+Tested up to: 4.2.4
+Stable tag: 3.4.6
 
 Make your website look beautiful and crisp on Retina / High DPI displays.
 
@@ -26,6 +26,40 @@ Languages: English, French.
 3. Check if it works! - if it doesn't, read the FAQ, the tutorial, and check the forums.
 
 == Changelog ==
+
+= 3.4.6 =
+* Fix: Search string not null but empty induces error.
+* Change: User Agent used for Pro authentification.
+* Info: If you use Lightroom & WP, please have a look at http://apps.meow.fr/wplr-sync/ :)
+
+= 3.4.4 =
+* Fix: Issues with class containing trailing spaces. Fixed in in SimpleHTMLDOM.
+* Fix: Used to show weird numbers when using 9999 as width or height.
+* Add: Filter and default filter to avoid certain IMG SRC to be checked/parsed by the plugin while rendering.
+
+= 3.4.2 =
+* Fix: Full-Size Retina wasn't removed when the original file was deleted from WP.
+
+= 3.4.0 =
+* Fix: Images set up with a 0x0 size must be skipped.
+
+= 3.3.8 =
+* Fix: There was an issue if the class starts with a space (broken HTML), plugin automatically fix it on the fly.
+* Fix: Full-Size image had the wrong path in the Details screen.
+* Fix: Option Auto Generate was wrongly show unchecked even though it is active by default.
+* Update: Moved the filters to allow developers to use files hosted on another server.
+* Update: Translation strings. If you want to translate the plugin in your language, please contact me :)
+
+= 3.3.6 =
+* Fix: There was an issue with local path for a few installs.
+* Add: Introduced $wr2x_extra_debug for extra developer debug (might be handy).
+
+= 3.3.5 =
+Fix: Very minor issue (one of the debug line had a bug).
+
+= 3.3.4 =
+* Fix: Issues with retina images outside the uploads directory.
+* Info: Please write a review for the plugin if you are happy with it. I am trying my best to make this plugin to work with every kind of WP install and system :)
 
 = 3.3.2 =
 * Fix: Use WP uploads folder for temporary files to avoid issues depending on hosting services.
@@ -88,7 +122,7 @@ Languages: English, French.
 * Change: Enhanced logs (in debug mode), much easier to read.
 * Change: Dashboard enhanced, more clear, possibility of having many image sizes on the screen.
 * Fix: Better handing of non-image media and image detection.
-* Fix: Rounding issues always been present, they are now fixed with an 2px error margin. 
+* Fix: Rounding issues always been present, they are now fixed with an 2px error margin.
 * Fix: Warnings and issues in case of broken metadata and images.
 * Add: (PRO) New pop-up screen with detailed information.
 * Add: (PRO) Added Retina for Full-Size with upload feature. Please note that Full-Size Retina also works with the normal version but you will have to manually resize and upload them.
@@ -296,9 +330,13 @@ Quick and easy installation:
 
 == Frequently Asked Questions ==
 
-The FAQ can be found at http://apps.meow.fr/wp-retina-2x/faq/.
+Users, you will find the FAQ here: http://apps.meow.fr/wp-retina-2x/faq/.
 
-Developer, WP Retina 2x has a little API. Here are a few filters and actions you might want to use.
+Developers, WP Retina 2x has a little API. Here are a few filters and actions you might want to use.
+
+= Functions =
+* wr2x_get_retina_from_url( $url ): return the URL of the retina image (empty string if not found)
+* wr2x_get_retina( $syspath ): return the system path of the retina image (null if not found)
 
 = Actions =
 * wr2x_retina_file_added: called when a new retina file is created, 1st argument is $attachment_id (of the media) and second is the $retina_filepath
@@ -308,6 +346,7 @@ Developer, WP Retina 2x has a little API. Here are a few filters and actions you
 * wr2x_img_url: you can check and potentially override the $wr2x_img_url (normal/original image from the src) that will be used in the srcset for 1x
 * wr2x_img_retina_url: you can check and potentially override the $wr2x_img_retina_url (retina image) that will be used in the srcset for 2x
 * wr2x_img_src: you can check and potentially override the $wr2x_img_src that will be used in the img's src (only used in Pro version)
+* wr2x_validate_src: the img src is passed; return it if it is valid, return null if it should be skipped
 
 == Upgrade Notice ==
 
