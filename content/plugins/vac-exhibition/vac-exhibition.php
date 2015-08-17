@@ -14,6 +14,7 @@ class VACExhibition {
     public static $archive_page = 'exhibitions';
     public static $archive_page_title = 'Exhibitions Page';
     public static $archive_template = 'exhibition_archive.php';
+    public static $menu_link = 'edit.php?post_type=vac-exhibition';
 
     public static function activate() {
         self::add_archive_page();
@@ -49,6 +50,35 @@ class VACExhibition {
         add_action('init', array(__CLASS__, 'register_post'));
         add_action('init', array(__CLASS__, 'register_post_fields'));
         add_action('init', array(__CLASS__, 'register_archive_fields'));
+        add_action('admin_menu', array(__CLASS__, 'add_archive_menu'));
+        add_filter('custom_menu_order', array(__CLASS__, 'exhibition_menu_order'));
+    }
+
+    public static function add_archive_menu() {
+        add_submenu_page(
+            self::$menu_link,
+            'Exhibitions page',
+            'Exhibitions page',
+            'edit_pages',
+            'post.php?post=100&action=edit'
+        );
+    }
+
+    public static function exhibition_menu_order($menu) {
+        global $submenu;
+
+        $new_menu = array();
+        $old_menu = $submenu[self::$menu_link];
+
+        $new_menu[5] = $old_menu[5];
+        $new_menu[6] = $old_menu[17];
+        $new_menu[10] = $old_menu[10];
+        $new_menu[15] = $old_menu[15];
+        $new_menu[16] = $old_menu[16];
+
+        $submenu[self::$menu_link] = $new_menu;
+
+        return false;
     }
 
     public static function register_post() {
