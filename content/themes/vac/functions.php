@@ -9,4 +9,5 @@
 	//require_once TEMPLATE_DIR . '/includes/media-uploader.php';
 	//require_once TEMPLATE_DIR . '/includes/register-project.php';
     require_once TEMPLATE_DIR . '/includes/template.php';
+    require_once TEMPLATE_DIR . '/includes/navigation.php';
 
