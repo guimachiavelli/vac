@@ -30,6 +30,7 @@ class VACExhibition {
 		if ($page_exists) return;
 		$page = array(
 			'post_title'		=> self::$archive_page_title,
+            'post_name'         => self::$post_name,
 			'post_content'		=> '',
 			'post_status'		=> 'publish',
 			'post_author'		=> 1,
@@ -56,12 +57,13 @@ class VACExhibition {
     }
 
     public static function add_archive_menu() {
+ 		$page = get_page_by_title(self::$archive_page_title);
         add_submenu_page(
             self::$menu_link,
             'Exhibitions page',
             'Exhibitions page',
             'edit_pages',
-            'post.php?post=100&action=edit'
+            "post.php?post={$page->ID}&action=edit"
         );
     }
 
@@ -91,7 +93,10 @@ class VACExhibition {
                 'menu_position' => 5,
                 'supports' => array('title'),
                 'menu_icon' => 'dashicons-format-image',
-                'taxonomies' => array('vac-year', 'vac-city')
+                'taxonomies' => array('vac-year', 'vac-city'),
+                'rewrite' => array(
+                    'slug' => 'exhibition'
+                )
             )
         );
     }

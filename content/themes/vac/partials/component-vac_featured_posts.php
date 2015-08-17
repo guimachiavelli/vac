@@ -9,6 +9,7 @@
         $image = $featured_content['image'];
     ?>
     <li>
+    <a href="<?php echo get_the_permalink($post); ?>">
         <h3><?php echo get_the_title($post); ?></h3>
         <div><?php echo $featured_content['standfirst']; ?></div>
         <figure>
@@ -16,6 +17,7 @@
                  alt="<?php $image['alt'] ?>">
             <figcaption><?php echo $image['caption']; ?></figcaption>
         </figure>
+    </a>
     </li>
     <?php endforeach; ?>
 </ol>

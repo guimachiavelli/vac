@@ -24,10 +24,11 @@
             <?php
                 $content = VACTemplate::ACF_featured_content($exhibition->ID);
                 $content['title'] = $exhibition->post_title;
+                $content['permalink'] = get_the_permalink($exhibition->ID);
+                set_query_var(VACTemplate::$content_key, $content);
+                get_template_part('partials/component', 'vac_featured_post');
+                VACTemplate::clear_query_vars($wp_query);
             ?>
-                <?php set_query_var(VACTemplate::$content_key, $content); ?>
-                <?php get_template_part('partials/component', 'vac_featured_post'); ?>
-                <?php VACTemplate::clear_query_vars($wp_query); ?>
         <?php endforeach; ?>
 
         </ol>
