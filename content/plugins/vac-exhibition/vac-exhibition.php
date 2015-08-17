@@ -12,38 +12,37 @@
 class VACExhibition {
     public static $post_type = 'vac-exhibition';
     public static $post_name = 'exhibitions';
+    public static $post_name_russian = 'vystavka';
     public static $archive_page = 'exhibitions';
     public static $archive_page_title = 'Exhibitions Page';
+    public static $archive_page_title_russian = 'Vystavka';
     public static $archive_template = 'exhibition_archive.php';
     public static $menu_link = 'edit.php?post_type=vac-exhibition';
 
     public static function activate() {
-        self::add_archive_page();
+        $english = VACHelpers::add_page(
+            self::$archive_page_title,
+            self::$post_name,
+            self::$archive_template,
+            'en'
+        );
+
+        $russian = VACHelpers::add_page(
+            self::$archive_page_title_russian,
+            self::$post_name_russian,
+            self::$archive_template,
+            'ru'
+        );
+
+        VACHelpers::link_translations(array(
+            'en' => $english,
+            'ru' => $russian
+        ));
     }
 
     public static function deactivate() {
-        self::remove_archive_page();
-    }
-
-    private static function add_archive_page() {
-		$page_exists = get_page_by_title(self::$archive_page);
-		if ($page_exists) return;
-		$page = array(
-			'post_title'		=> self::$archive_page_title,
-            'post_name'         => self::$post_name,
-			'post_content'		=> '',
-			'post_status'		=> 'publish',
-			'post_author'		=> 1,
-            'post_type'			=> 'page',
-            'page_template'     => self::$archive_template
-		);
-		wp_insert_post($page);
-    }
-
-    private static function remove_archive_page() {
- 		$page = get_page_by_title(self::$archive_page_title);
-		if (!$page) return;
-        wp_delete_post($page->ID, true);
+        VACHelpers::delete_page(self::$archive_page_title);
+        VACHelpers::delete_page(self::$archive_page_title_russian);
     }
 
     public static function init() {
@@ -58,6 +57,10 @@ class VACExhibition {
 
     public static function add_archive_menu() {
  		$page = get_page_by_title(self::$archive_page_title);
+        if (!$page) {
+            return;
+        }
+
         add_submenu_page(
             self::$menu_link,
             'Exhibitions page',
@@ -73,6 +76,10 @@ class VACExhibition {
         $new_menu = array();
         $old_menu = $submenu[self::$menu_link];
 
+        if (!isset($old_menu[17])) {
+            return;
+        }
+
         $new_menu[5] = $old_menu[5];
         $new_menu[6] = $old_menu[17];
         $new_menu[10] = $old_menu[10];
@@ -80,8 +87,6 @@ class VACExhibition {
         $new_menu[16] = $old_menu[16];
 
         $submenu[self::$menu_link] = $new_menu;
-
-        return false;
     }
 
     public static function register_post() {

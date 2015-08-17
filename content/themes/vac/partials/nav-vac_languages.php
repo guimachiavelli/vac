@@ -1,6 +1,5 @@
 <?php $languages = VACNav::language(); ?>
 
-
 <ul>
 <?php foreach ($languages as $language): ?>
     <?php if ($language['current_lang'] == true) { continue; } ?>
