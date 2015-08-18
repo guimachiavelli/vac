@@ -42,7 +42,6 @@ class VACPublication extends VACSection {
         $new_menu = array();
         $old_menu = $submenu[static::$menu_link];
 
-
         if (!isset($old_menu[18])) {
             return;
         }

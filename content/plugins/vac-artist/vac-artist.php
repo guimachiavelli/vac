@@ -34,6 +34,9 @@ class VACArtist extends VACSection {
         add_action('init', array(static::$class, 'register_post_fields'));
     }
 
+    public static function activate() {}
+
+    public static function deactivate() {}
 }
 
 VACArtist::init();
