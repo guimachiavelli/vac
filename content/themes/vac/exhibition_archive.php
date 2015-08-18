@@ -6,33 +6,12 @@
         <?php
             $fields = get_fields($post->ID);
             $fields = VACTemplate::parsed_ACF($fields);
+            set_query_var(VACTemplate::$post_type_key, VACExhibition::$post_type);
         ?>
 
         <div>
             <?php VACTemplate::ACF_loop($fields['single']); ?>
         </div>
-
-        <ol>
-            <?php
-                $exhibitions = get_posts(array(
-                    'posts_per_page' => 100,
-                    'post_type' => VACExhibition::$post_type
-                ));
-            ?>
-
-        <?php foreach ($exhibitions as $exhibition): ?>
-            <?php
-                $content = VACTemplate::ACF_featured_content($exhibition->ID);
-                $content['title'] = $exhibition->post_title;
-                $content['permalink'] = get_the_permalink($exhibition->ID);
-                set_query_var(VACTemplate::$content_key, $content);
-                get_template_part('partials/component', 'vac_featured_post');
-                VACTemplate::clear_query_vars($wp_query);
-            ?>
-        <?php endforeach; ?>
-
-        </ol>
-
 
     <?php endwhile; ?>
 

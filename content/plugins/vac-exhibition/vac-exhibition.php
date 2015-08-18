@@ -63,8 +63,8 @@ class VACExhibition {
 
         add_submenu_page(
             self::$menu_link,
-            'Exhibitions page',
-            'Exhibitions page',
+            'Exhibitions archive',
+            'Exhibitions archive',
             'edit_pages',
             "post.php?post={$page->ID}&action=edit"
         );
@@ -134,7 +134,7 @@ class VACExhibition {
         ), array(
             'single' => array(
                 'type' => 'single',
-                'fields' => array('text', 'featured_title', 'featured_posts'),
+                'fields' => array('text', 'featured_title', 'featured_posts', 'archive'),
         )));
         $main_component->register();
     }

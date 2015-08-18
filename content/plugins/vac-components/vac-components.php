@@ -68,6 +68,7 @@ class VACComponent {
             $component_field = $modules[$field];
             $component_field['name'] = "{$component_field['name']}_{$column}";
             $component_field['key'] = "{$component_field['key']}_{$id}";
+
             if (isset($component_field['post_type'])) {
                 $component_field['post_type'] = array(
                     $config['post_type']
@@ -76,7 +77,10 @@ class VACComponent {
 
             if (isset($config['name'])) {
                 $component_field['label'] = str_replace('posts', $config['name'], $component_field['label']);
+            }
 
+            if (isset($config['name']) && isset($component_field['instructions'])) {
+                $component_field['instructions'] = str_replace('posts', $config['name'], $component_field['instructions']);
             }
 
             $component_fields[] = $component_field;
@@ -334,11 +338,20 @@ class VACComponent {
         'label' => 'Featured posts',
         'name' => 'vac_featured_posts',
         'type' => 'post_object',
+        'instructions' => 'Start typing to select posts',
         'post_type' => array(),
         'allow_null' => 0,
         'multiple' => 1,
         'return_format' => 'id',
         'ui' => 1,
+    );
+
+    private $archive = array(
+        'key' => 'field_vac_archive_title',
+        'label' => 'Archive title',
+        'name' => 'vac_block_archive',
+        'type' => 'text',
+        'instructions' => 'This block will print out a list of all posts.'
     );
 
 }

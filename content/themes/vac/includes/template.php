@@ -2,6 +2,7 @@
 
 class VACTemplate {
     public static $content_key = 'vac_content';
+    public static $post_type_key = 'vac_post_type';
 
     public static function parsed_ACF($fields) {
         $parsed = array(
@@ -66,6 +67,10 @@ class VACTemplate {
 
     public static function ACF_content($wp_query) {
         return $wp_query->query_vars[self::$content_key];
+    }
+
+    public static function post_type_from_wp_query($wp_query) {
+        return $wp_query->query_vars[self::$post_type_key];
     }
 
     public static function clear_query_vars() {
