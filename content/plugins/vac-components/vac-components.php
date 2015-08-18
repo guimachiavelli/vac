@@ -99,7 +99,6 @@ class VACComponent {
     private function assemble_fields($group, $id, $column) {
         $modules = get_class_vars(__CLASS__);
 
-
         $fields = array(
             'key' => "field_group_{$id}_{$column}",
             'label' => '',
@@ -117,6 +116,11 @@ class VACComponent {
                 'label' => ucfirst($field),
                 'sub_fields' => array($modules[$field])
             );
+
+            $subfield = $modules[$field];
+
+                $subfield['key'] .= "_{$id}";
+                $layout['sub_fields'] = array($subfield);
 
             $fields['layouts'][] = $layout;
         }
