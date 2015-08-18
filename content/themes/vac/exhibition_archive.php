@@ -10,7 +10,7 @@
         ?>
 
         <div>
-            <?php VACTemplate::ACF_loop($fields['single']); ?>
+            <?php VACTemplate::ACF_loop($fields, 'single'); ?>
         </div>
 
     <?php endwhile; ?>

@@ -19,7 +19,10 @@ class VACTemplate {
         return $parsed;
     }
 
-    public static function ACF_loop($content) {
+    public static function ACF_loop($content, $key = null) {
+        if (!is_array($content)) return;
+        if ($key && !isset($content[$key])) return;
+
         foreach ($content as $name => $field) {
             if (VACHelpers::has_template('partials/component', $name)):
                 set_query_var(self::$content_key, $field);

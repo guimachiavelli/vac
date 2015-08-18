@@ -3,27 +3,34 @@
 /*
     Plugin Name:  VAC Publication
     Plugin URI:   http://vac.com
-    Description:  VAC content type plugin
+    Description:  VAC content type plugin. Depends on VACComponent.
     Version:      0.0.0
     Author:       Gui Machiavelli
     Author URI:   http://guimachiavelli.com
 */
 
-class VACPublication {
-    public static function init() {
-        add_action('init', array(__CLASS__, 'register_post'));
-    }
-
-    public static function register_post() {
-        register_post_type(
-            'publication',
-            array(
-                'label' => 'Publications',
-                'public' => true,
-                'menu_position' => 5,
-                'supports' => array('title'),
-				'menu_icon' => 'dashicons-book-alt'
-            )
-        );
-    }
+if (!class_exists('VACSection')) {
+    $section_class = __FILE__;
+    $section_class = dirname($section_class);
+    $section_class = dirname($section_class);
+    $section_class .= '/vac-section/vac-section.php';
+    require_once($section_class);
 }
+
+class VACPublication extends VACSection {
+    public static $post_type = 'vac-publication';
+    public static $post_label = 'Publications';
+    public static $post_slug = 'publication';
+    public static $post_name = 'publications';
+    public static $post_name_russian = 'publikatsiy';
+    public static $archive_page = 'publications';
+    public static $archive_page_title = 'Publications archive';
+    public static $archive_page_title_russian = 'архив публикаций';
+    public static $archive_template = 'publication_archive.php';
+    public static $menu_link = 'edit.php?post_type=vac-publication';
+    public static $dashicon = 'dashicons-book-alt';
+    public static $file = __FILE__;
+    public static $class = __CLASS__;
+}
+
+VACPublication::init();
