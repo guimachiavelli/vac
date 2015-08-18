@@ -31,6 +31,7 @@ class VACExhibition extends VACSection {
     public static $dashicon = 'dashicons-format-image';
     public static $file = __FILE__;
     public static $class = __CLASS__;
+    public static $taxonomies = array('vac-year', 'vac-city');
 }
 
 VACExhibition::init();

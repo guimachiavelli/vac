@@ -31,6 +31,31 @@ class VACPublication extends VACSection {
     public static $dashicon = 'dashicons-book-alt';
     public static $file = __FILE__;
     public static $class = __CLASS__;
+    public static $taxonomies = array('vac-year',
+                                      'vac-city',
+                                      'vac-publication_type');
+
+
+    public static function menu_order() {
+        global $submenu;
+
+        $new_menu = array();
+        $old_menu = $submenu[static::$menu_link];
+
+
+        if (!isset($old_menu[18])) {
+            return;
+        }
+
+        $new_menu[5] = $old_menu[5];
+        $new_menu[6] = $old_menu[18];
+        $new_menu[10] = $old_menu[10];
+        $new_menu[15] = $old_menu[15];
+        $new_menu[16] = $old_menu[16];
+        $new_menu[17] = $old_menu[17];
+
+        $submenu[static::$menu_link] = $new_menu;
+    }
 }
 
 VACPublication::init();

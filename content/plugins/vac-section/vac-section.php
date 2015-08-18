@@ -23,6 +23,7 @@ class VACSection {
     private static $dashicon;
     public static $file;
     public static $class;
+    public static $taxonomies = array('vac-year', 'vac-city');
 
     public static function init() {
         register_activation_hook(static::$file, array(static::$class, 'activate'));
@@ -69,7 +70,7 @@ class VACSection {
                 'menu_position' => 5,
                 'supports' => array('title'),
                 'menu_icon' => static::$dashicon,
-                'taxonomies' => array('vac-year', 'vac-city'),
+                'taxonomies' => static::$taxonomies,
                 'rewrite' => array(
                     'slug' => static::$post_slug
                 )
@@ -79,7 +80,7 @@ class VACSection {
 
 
     public static function add_archive_menu() {
- 		$page = get_page_by_title(static::$archive_page_title);
+        $page = get_page_by_title(static::$archive_page_title);
         if (!$page) {
             return;
         }
