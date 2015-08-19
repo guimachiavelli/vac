@@ -20,6 +20,7 @@ class VACFrontPage {
         register_activation_hook(__FILE__, array(__CLASS__, 'activate'));
         register_deactivation_hook(__FILE__, array(__CLASS__, 'deactivate'));
         add_action('admin_init', array(__CLASS__, 'add_to_menu'));
+        add_action('admin_init', array(__CLASS__, 'set_front_page'));
         add_action('init', array(__CLASS__, 'register_fields'));
     }
 
@@ -42,6 +43,20 @@ class VACFrontPage {
             'en' => $english,
             'ru' => $russian
         ));
+    }
+
+    public static function set_front_page() {
+        $type_front = get_option('show_on_front');
+        $current_front = get_option('page_on_front');
+        $page = get_page_by_title(self::$title);
+
+        if ($type_front != 'page') {
+            update_option('show_on_front', 'page');
+        }
+
+        if ($current_front != $page->ID) {
+            update_option('page_on_front', $page->ID);
+        }
     }
 
     public static function deactivate() {
