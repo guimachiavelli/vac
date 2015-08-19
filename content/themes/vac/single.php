@@ -18,8 +18,6 @@
             <?php VACTemplate::ACF_loop($fields['right']); ?>
         </div>
 
-
     <?php endwhile; ?>
-
 
 <?php get_footer(); ?>

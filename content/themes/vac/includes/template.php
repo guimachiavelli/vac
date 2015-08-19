@@ -28,6 +28,11 @@ class VACTemplate {
                 set_query_var(self::$content_key, $field);
                 get_template_part('partials/component', $name);
                 self::clear_query_vars();
+            elseif ($name == 'acf_fc_layout' && VACHelpers::has_template('partials/component', $field)):
+                set_query_var(self::$content_key, $content);
+                get_template_part('partials/component', $field);
+                self::clear_query_vars();
+                break 1;
             elseif (is_array($field)):
                 self::ACF_loop($field);
             elseif ($name == 'acf_fc_layout'):

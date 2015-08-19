@@ -15,7 +15,7 @@ class VACComponent {
     function __construct($config, $left, $right = false) {
         //XXX: need this to be hardcoded because of multiple plugin structure
         //     and ACF not correctly showing relationships on search filter
-        $this->featured_posts[1]['post_type'] = array(
+        $post_types = array(
             'vac-event',
             'vac-artist',
             'vac-collaboration',
@@ -25,6 +25,9 @@ class VACComponent {
             'vac-publication',
             'vac-school'
         );
+        $this->featured_posts[1]['post_type'] = $post_types;
+        $this->hero[1]['post_type'] = $post_types;
+
         $this->fields = $this->assemble($config, $left, $right);
     }
 
@@ -124,9 +127,9 @@ class VACComponent {
 
         foreach ($group['fields'] as $index => $field) {
             $layout = array(
-                'key' => "layout_{$id}_{$field}_{$index}",
-                'name' => "layout_{$field}",
-                'label' => ucfirst($field)
+                'key' => "vac_layout_{$id}_{$field}_{$index}",
+                'name' => "vac_layout_{$field}",
+                'label' => str_replace('_', ' ', ucfirst($field))
             );
 
             $subfield = $modules[$field];
@@ -137,7 +140,10 @@ class VACComponent {
             } else {
                 $subfield = array_map(array(__CLASS__, 'update_key'),
                                       $subfield,
-                                      array_fill(0, count($subfield), $id));
+                                      array_fill(0,
+                                                 count($subfield),
+                                                 "{$id}_{$index}")
+                                    );
                 $layout['sub_fields'] = $subfield;
             }
 
@@ -332,17 +338,18 @@ class VACComponent {
         array(
             'key' => 'field_55d1cc70d7bb3',
             'label' => 'Hero title',
-            'name' => 'vac_block_hero_title',
+            'name' => 'vac_hero_title',
             'type' => 'text',
         ),
         array(
             'key' => 'field_vac_block_home_hero',
             'label' => 'Posts',
-            'name' => 'vac_block_hero_posts',
+            'name' => 'vac_hero_posts',
             'type' => 'relationship',
             'instructions' => 'Start typing to select posts',
 			'filters' => array(
-				0 => 'search'
+                0 => 'search',
+                1 => 'post_type'
 			),
             'return_format' => 'id',
         )
@@ -351,7 +358,7 @@ class VACComponent {
     private $floating_image = array(
         'key' => 'field_vac_floating_image',
         'label' => 'Floating image',
-        'name' => 'floating_image',
+        'name' => 'vac_block_floating_image',
         'type' => 'image',
         'return_format' => 'id',
         'preview_size' => 'thumbnail',
@@ -362,13 +369,13 @@ class VACComponent {
         array(
             'key' => 'field_55d1cc70d7bb3',
             'label' => 'Side images title',
-            'name' => 'vac_block_side_images_title',
+            'name' => 'vac_side_gallery_title',
             'type' => 'text',
         ),
         array(
             'key' => 'field_vac_block_side_gallery',
             'label' => 'Side images',
-            'name' => 'side_gallery',
+            'name' => 'vac_side_gallery',
             'type' => 'gallery',
             'instructions' => 'Click on picture to add caption',
             'preview_size' => 'thumbnail',
