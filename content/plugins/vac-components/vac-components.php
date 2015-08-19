@@ -13,6 +13,18 @@ class VACComponent {
     var $fields;
 
     function __construct($config, $left, $right = false) {
+        //XXX: need this to be hardcoded because of multiple plugin structure
+        //     and ACF not correctly showing relationships on search filter
+        $this->featured_posts[1]['post_type'] = array(
+            'vac-event',
+            'vac-artist',
+            'vac-collaboration',
+            'vac-exhibition',
+            'vac-grant',
+            'vac-research',
+            'vac-publication',
+            'vac-school'
+        );
         $this->fields = $this->assemble($config, $left, $right);
     }
 
@@ -63,7 +75,8 @@ class VACComponent {
             return $component_fields;
         }
 
-        $modules = get_class_vars(__CLASS__);
+        $modules = get_object_vars($this);
+
         foreach ($fields['fields'] as $field) {
             $component_field = $modules[$field];
             $component_field['name'] = "{$component_field['name']}_{$column}";
@@ -97,7 +110,7 @@ class VACComponent {
     }
 
     private function assemble_fields($group, $id, $column) {
-        $modules = get_class_vars(__CLASS__);
+        $modules = get_object_vars($this);
 
         $fields = array(
             'key' => "field_group_{$id}_{$column}",
@@ -113,19 +126,33 @@ class VACComponent {
             $layout = array(
                 'key' => "layout_{$id}_{$field}_{$index}",
                 'name' => "layout_{$field}",
-                'label' => ucfirst($field),
-                'sub_fields' => array($modules[$field])
+                'label' => ucfirst($field)
             );
 
             $subfield = $modules[$field];
 
+            if (isset($modules[$field]['key'])) {
                 $subfield['key'] .= "_{$id}";
                 $layout['sub_fields'] = array($subfield);
+            } else {
+                $subfield = array_map(array(__CLASS__, 'update_key'),
+                                      $subfield,
+                                      array_fill(0, count($subfield), $id));
+                $layout['sub_fields'] = $subfield;
+            }
 
             $fields['layouts'][] = $layout;
         }
 
         return $fields;
+    }
+
+    private function update_key($field, $id) {
+        if (!isset($field['key'])) return $field;
+
+        $field['key'] .= "_{$id}";
+
+        return $field;
     }
 
     private function has_acf() {
@@ -261,15 +288,6 @@ class VACComponent {
         )
     );
 
-    private $featured = array(
-        'key' => 'vac_side_featured',
-        'label' => 'Show on front page?',
-        'name' => 'featured',
-        'type' => 'true_false',
-        'instructions' => 'Check this box if content should be visible in archive pages and/or front page',
-        'default_value' => 0,
-    );
-
     private $aside = array (
             'key' => 'field_55cb7d3574408',
             'label' => 'Asides',
@@ -310,6 +328,26 @@ class VACComponent {
             )
         );
 
+    private $hero = array(
+        array(
+            'key' => 'field_55d1cc70d7bb3',
+            'label' => 'Hero title',
+            'name' => 'vac_block_hero_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_vac_block_home_hero',
+            'label' => 'Posts',
+            'name' => 'vac_block_hero_posts',
+            'type' => 'relationship',
+            'instructions' => 'Start typing to select posts',
+			'filters' => array(
+				0 => 'search'
+			),
+            'return_format' => 'id',
+        )
+    );
+
     private $floating_image = array(
         'key' => 'field_vac_floating_image',
         'label' => 'Floating image',
@@ -321,33 +359,21 @@ class VACComponent {
     );
 
     private $side_gallery = array(
-        'key' => 'field_vac_block_side_gallery',
-        'label' => 'Side gallery',
-        'name' => 'side_gallery',
-        'type' => 'gallery',
-        'instructions' => 'Click on picture to add caption',
-        'preview_size' => 'thumbnail',
-        'library' => 'uploadedTo',
-    );
-
-    private $featured_title = array (
-        'key' => 'field_55d1cc70d7bb3',
-        'label' => 'Featured posts title',
-        'name' => 'vac_featured_post_title',
-        'type' => 'text',
-    );
-
-    private $featured_posts = array(
-        'key' => 'field_55d1cdea309a2',
-        'label' => 'Featured posts',
-        'name' => 'vac_featured_posts',
-        'type' => 'post_object',
-        'instructions' => 'Start typing to select posts',
-        'post_type' => array(),
-        'allow_null' => 0,
-        'multiple' => 1,
-        'return_format' => 'id',
-        'ui' => 1,
+        array(
+            'key' => 'field_55d1cc70d7bb3',
+            'label' => 'Side images title',
+            'name' => 'vac_block_side_images_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_vac_block_side_gallery',
+            'label' => 'Side images',
+            'name' => 'side_gallery',
+            'type' => 'gallery',
+            'instructions' => 'Click on picture to add caption',
+            'preview_size' => 'thumbnail',
+            'library' => 'uploadedTo',
+        )
     );
 
     private $archive = array(
@@ -355,7 +381,29 @@ class VACComponent {
         'label' => 'Archive title',
         'name' => 'vac_block_archive',
         'type' => 'text',
-        'instructions' => 'This block will print out a list of all posts.'
+        'instructions' => 'This block will print out a list of all posts of this type (so all exhibitions in the exhibition archive, etc).'
     );
 
+    private $featured_posts = array(
+        array(
+            'key' => 'field_featured_post_title',
+            'label' => 'Featured posts title',
+            'name' => 'vac_featured_post_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_featured_posts',
+            'label' => 'Featured posts',
+            'name' => 'vac_featured_posts',
+            'type' => 'relationship',
+            'instructions' => 'Start typing to select posts',
+			'filters' => array(
+                'search',
+                'post_type'
+			),
+            'post_type' => array(
+            ),
+            'return_format' => 'id',
+        )
+    );
 }

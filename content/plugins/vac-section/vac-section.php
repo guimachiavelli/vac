@@ -141,8 +141,8 @@ class VACSection {
             'name' => static::$post_name
         ), array(
             'single' => array(
-                'type' => 'single',
-                'fields' => array('text', 'featured_title', 'featured_posts', 'archive'),
+                'type' => 'group',
+                'fields' => array('text', 'featured_posts', 'archive'),
         )));
         $main_component->register();
     }

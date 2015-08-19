@@ -44,9 +44,15 @@ class VACTemplate {
         $fields = array_values($fields);
         $fields = $fields[0];
 
-        $content = array();
+        $content = array(
+            'image' => null,
+            'standfirst' => null
+        );
+
+        if (empty($fields)) return $content;
 
         foreach ($fields as $field) {
+            if (empty($field)) continue;
             foreach ($field as $subfields) {
                 foreach ($subfields as $name => $subfield) {
                     if ($name == 'vac_block_image_slider') {
