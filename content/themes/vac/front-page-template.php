@@ -1,1 +1,1 @@
-<?php /* Template Name: Exhibition archive */ ?>
+<?php /* Template Name: Front page */ ?>

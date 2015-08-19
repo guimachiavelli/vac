@@ -31,6 +31,5 @@
                     </a>
                 </li>
         <?php endforeach; ?>
-
     </ol>
 </div>

@@ -1,20 +1,20 @@
 <?php
 
 /*
-    Plugin Name:  VAC Front page
+    Plugin Name:  VAC Foundation
     Plugin URI:   http://vac.com
-    Description:  VAC content type plugin. Depends on VACComponent.
+    Description:  VAC page. Depends on VACComponent.
     Version:      0.0.0
     Author:       Gui Machiavelli
     Author URI:   http://guimachiavelli.com
 */
 
-class VACFrontPage {
-    public static $slug = 'front-page';
-    public static $slug_russian = 'stranitsa';
-    public static $template = 'front-page-template.php';
-    public static $title = 'Front page';
-    public static $title_russian = 'титульная страница';
+class VACFoundation {
+    public static $slug = 'foundation';
+    public static $slug_russian = 'uchrezhdeniye';
+    public static $template = 'foundation-template.php';
+    public static $title = 'Foundation';
+    public static $title_russian = 'Yчреждение';
 
     public static function init() {
         register_activation_hook(__FILE__, array(__CLASS__, 'activate'));
@@ -59,8 +59,8 @@ class VACFrontPage {
             'edit_pages',
             "post.php?post={$page->ID}&action=edit",
             null,
-            'dashicons-welcome-widgets-menus',
-            '4'
+            'dashicons-nametag',
+            '6'
         );
     }
 
@@ -74,13 +74,12 @@ class VACFrontPage {
         ), array(
             'left' => array(
                 'type' => 'group',
-                'fields' => array('hero', 'featured_posts'),
+                'fields' => array('text', 'featured_posts', 'accordion'),
             ),
             'right' => array(
                 'type' => 'group',
-                'fields' => array('featured_posts',
-                                  'floating_image',
-                                  'side_gallery'),
+                'fields' => array('text',
+                                  'featured_posts'),
             )
         ));
 
@@ -88,4 +87,4 @@ class VACFrontPage {
     }
 }
 
-VACFrontPage::init();
+VACFoundation::init();

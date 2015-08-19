@@ -48,10 +48,10 @@
             remove_menu_page('edit-comments.php');
             remove_menu_page('edit.php?post_type=page');
             remove_menu_page('upload.php');
+            remove_menu_page('index.php');
             if (self::is_admin_user()) return;
             remove_menu_page('profile.php');
             remove_menu_page('tools.php');
-            remove_menu_page('index.php');
             remove_menu_page('themes.php');
             remove_menu_page('plugins.php');
             remove_menu_page('users.php');
