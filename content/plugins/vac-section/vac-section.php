@@ -122,7 +122,11 @@ class VACSection {
         ), array(
             'left' => array(
                 'type' => 'group',
-                'fields' => array('slider', 'standfirst', 'text', 'accordion'),
+                'fields' => array('slider',
+                                  'standfirst',
+                                  'text',
+                                  'accordion',
+                                  'featured_posts'),
             ),
             'right' => array(
                 'type' => 'single',
