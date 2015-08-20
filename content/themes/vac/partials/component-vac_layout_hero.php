@@ -3,6 +3,7 @@
 <div>
     <h2><?php echo $vac_content['vac_hero_title']; ?></h2>
 
+    <?php if (!empty($vac_content['vac_hero_posts'])): ?>
     <ol>
         <?php foreach ($vac_content['vac_hero_posts'] as $post): ?>
         <?php
@@ -24,5 +25,6 @@
         </li>
         <?php endforeach; ?>
     </ol>
+    <?php endif; ?>
 
 </div>
