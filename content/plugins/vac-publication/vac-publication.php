@@ -36,7 +36,7 @@ class VACPublication extends VACSection {
                                       'vac-publication_type');
 
 
-    public static function menu_order() {
+    public static function menu_order($menu) {
         global $submenu;
 
         $new_menu = array();
