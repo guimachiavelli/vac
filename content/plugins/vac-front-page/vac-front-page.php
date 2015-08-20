@@ -19,7 +19,7 @@ class VACFrontPage {
     public static function init() {
         register_activation_hook(__FILE__, array(__CLASS__, 'activate'));
         register_deactivation_hook(__FILE__, array(__CLASS__, 'deactivate'));
-        add_action('admin_init', array(__CLASS__, 'add_to_menu'));
+        add_action('admin_menu', array(__CLASS__, 'add_to_menu'));
         add_action('admin_init', array(__CLASS__, 'set_front_page'));
         add_action('init', array(__CLASS__, 'register_fields'));
     }
@@ -75,7 +75,7 @@ class VACFrontPage {
             "post.php?post={$page->ID}&action=edit",
             null,
             'dashicons-welcome-widgets-menus',
-            '4'
+            '3'
         );
     }
 

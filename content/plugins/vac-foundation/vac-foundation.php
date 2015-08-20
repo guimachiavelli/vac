@@ -9,6 +9,7 @@
     Author URI:   http://guimachiavelli.com
 */
 
+
 class VACFoundation {
     public static $slug = 'foundation';
     public static $slug_russian = 'uchrezhdeniye';
@@ -19,7 +20,7 @@ class VACFoundation {
     public static function init() {
         register_activation_hook(__FILE__, array(__CLASS__, 'activate'));
         register_deactivation_hook(__FILE__, array(__CLASS__, 'deactivate'));
-        add_action('admin_init', array(__CLASS__, 'add_to_menu'));
+        add_action('admin_menu', array(__CLASS__, 'add_to_menu'), 1000);
         add_action('init', array(__CLASS__, 'register_fields'));
     }
 
@@ -50,6 +51,7 @@ class VACFoundation {
     }
 
     public static function add_to_menu() {
+
         $page = get_page_by_title(self::$title);
         if (!$page) return;
 
@@ -59,8 +61,8 @@ class VACFoundation {
             'edit_pages',
             "post.php?post={$page->ID}&action=edit",
             null,
-            'dashicons-nametag',
-            '6'
+            'dashicons-calendar',
+            '3.1'
         );
     }
 
