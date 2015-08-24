@@ -7,7 +7,7 @@ add_action( 'admin_init', 'wr2x_admin_init' );
  * SETTINGS PAGE
  *
  */
- 
+
 function wr2x_settings_page() {
     global $wr2x_settings_api;
 	echo '<div class="wrap">';
@@ -32,13 +32,13 @@ function wr2x_settings_page() {
                 echo " <span style='color: red;'>" . __( "By the way, you are using a <b>WordPress Multi-Site installation</b>! You must edit your .htaccess manually and add '<b>RewriteRule ^files/(.+) wp-content/plugins/wp-retina-2x/wr2x_image.php?ms=true&file=$1 [L]</b>' as the first RewriteRule if you want the server-side to work.", 'wp-retina-2x' ) . "</span>";
             }
             else
-                echo " <span style='color: red;'>" . __( "By the way, you are using a <b>WordPress Multi-Site installation</b>! You must edit your .htaccess manually and add '<b>RewriteRule ^(wp-content/.+\.(png|gif|jpg|jpeg|bmp|PNG|GIF|JPG|JPEG|BMP)) wp-content/plugins/wp-retina-2x/wr2x_image.php?ms=true&file=$1 [L]</b>' as the first RewriteRule if you want the server-side to work.", 'wp-retina-2x' ) . "</span>";   
+                echo " <span style='color: red;'>" . __( "By the way, you are using a <b>WordPress Multi-Site installation</b>! You must edit your .htaccess manually and add '<b>RewriteRule ^(wp-content/.+\.(png|gif|jpg|jpeg|bmp|PNG|GIF|JPG|JPEG|BMP)) wp-content/plugins/wp-retina-2x/wr2x_image.php?ms=true&file=$1 [L]</b>' as the first RewriteRule if you want the server-side to work.", 'wp-retina-2x' ) . "</span>";
         }
 		echo "</p>";
 		if ( !get_option('permalink_structure') )
 			echo "<p><span style='color: red;'>" . __( "The permalinks are not enabled. They need to be enabled in order to use the server-side method.", 'wp-retina-2x' ) . "</span>";
 	}
-	
+
     //settings_errors();
     $wr2x_settings_api->show_navigation();
     $wr2x_settings_api->show_forms();
@@ -70,21 +70,21 @@ function wr2x_getoption( $option, $section, $default = '' ) {
 }
 
 function wr2x_admin_init() {
-    if ( isset( $_POST ) && isset( $_POST['wr2x_pro'] ) )
-        wr2x_validate_pro( $_POST['wr2x_pro']['subscr_id'] );
-    $pro_status = get_option( 'wr2x_pro_status', "Not Pro." );
+  if ( isset( $_POST ) && isset( $_POST['wr2x_pro'] ) )
+      wr2x_validate_pro( $_POST['wr2x_pro']['subscr_id'] );
+  $pro_status = get_option( 'wr2x_pro_status', "Not Pro." );
 	require( 'wr2x_class.settings-api.php' );
 	if ( delete_transient( 'wr2x_flush_rules' ) ) {
 		global $wp_rewrite;
 		wr2x_generate_rewrite_rules( $wp_rewrite, true );
 	}
-	
+
 	$sections = array(
         array(
             'id' => 'wr2x_basics',
             'title' => __( 'Basics', 'wp-retina-2x' )
         ),
-		array(
+		    array(
             'id' => 'wr2x_advanced',
             'title' => __( 'Advanced', 'wp-retina-2x' )
         ),
@@ -93,7 +93,7 @@ function wr2x_admin_init() {
             'title' => __( 'Pro', 'wp-retina-2x' )
         )
     );
-	
+
     // Default Auto-Generate
     $auto_generate = wr2x_getoption( 'auto_generate', 'wr2x_basics', null );
     if ( $auto_generate === null )
@@ -103,7 +103,7 @@ function wr2x_admin_init() {
 	$sizes = array();
 	foreach ( $wpsizes as $name => $attr )
 		$sizes["$name"] = sprintf( "%s (%dx%d)", $name, $attr['width'], $attr['height'] );
-	
+
 	$fields = array(
         'wr2x_basics' => array(
 			array(
@@ -132,7 +132,7 @@ function wr2x_admin_init() {
 			array(
                 'name' => 'method',
                 'label' => __( 'Method', 'wp-retina-2x' ),
-                'desc' => __( '<br />Check the <a href="http://apps.meow.fr/wp-retina-2x/">plugin official page</a> if you want to know more about the methods to deliver the retina images.', 'wp-retina-2x' ),
+                'desc' => __( '<br />Check the <a href="http://apps.meow.fr/wp-retina-2x/retina-methods/">Retina Methods</a> page if you want to know more about those methods.', 'wp-retina-2x' ),
                 'type' => 'radio',
                 'default' => 'Picturefill',
                 'options' => array(
@@ -231,7 +231,7 @@ function wr2x_admin_init() {
                 'type' => 'checkbox',
                 'default' => false
             ),
-		),
+		    ),
         'wr2x_pro' => array(
             array(
                 'name' => 'pro',
@@ -269,13 +269,13 @@ function wr2x_generate_rewrite_rules( $wp_rewrite, $flush = false ) {
 		// MODIFICATION: docwhat
 		// get_home_url() -> trailingslashit(site_url())
 		// REFERENCE: http://wordpress.org/support/topic/plugin-wp-retina-2x-htaccess-generated-with-incorrect-rewriterule
-		
-		// MODIFICATION BY h4ir9 
+
+		// MODIFICATION BY h4ir9
 		// .*\.(jpg|jpeg|gif|png|bmp) -> (.+.(?:jpe?g|gif|png))
 		// REFERENCE: http://wordpress.org/support/topic/great-but-needs-a-little-update
-		
+
 		$handlerurl = str_replace( trailingslashit(site_url()), '', plugins_url( 'wr2x_image.php', __FILE__ ) );
-		add_rewrite_rule( '(.+.(?:jpe?g|gif|png))', $handlerurl, 'top' );		
+		add_rewrite_rule( '(.+.(?:jpe?g|gif|png))', $handlerurl, 'top' );
 	}
 	if ( $flush == true ) {
 		$wp_rewrite->flush_rules();

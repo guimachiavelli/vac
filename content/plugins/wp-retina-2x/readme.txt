@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: retina, images, image, admin, attachment, media, files, iphone, ipad, plugin, picture, pictures
 License: GPLv2 or later
 Requires at least: 3.5
-Tested up to: 4.2.4
-Stable tag: 3.4.6
+Tested up to: 4.3
+Stable tag: 3.4.8
 
 Make your website look beautiful and crisp on Retina / High DPI displays.
 
@@ -27,10 +27,14 @@ Languages: English, French.
 
 == Changelog ==
 
+= 3.4.8 =
+* Update: For WordPress 4.3.
+* Update: RetinaImages to 1.7.2.
+* Info: If you like the plugin, please tell me so here: https://wordpress.org/support/view/plugin-reviews/wp-retina-2x :) Thank you, and have a nice week-end everyone!
+
 = 3.4.6 =
 * Fix: Search string not null but empty induces error.
 * Change: User Agent used for Pro authentification.
-* Info: If you use Lightroom & WP, please have a look at http://apps.meow.fr/wplr-sync/ :)
 
 = 3.4.4 =
 * Fix: Issues with class containing trailing spaces. Fixed in in SimpleHTMLDOM.
