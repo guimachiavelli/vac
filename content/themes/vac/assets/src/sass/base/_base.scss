@@ -1,0 +1,90 @@
+body {
+    @include container(1280px);
+    margin: 0 auto;
+    padding: 1em;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+    @include span(6);
+}
+
+.column--full {
+    @include span(12);
+}
+
+.column--wide {
+    @include span(8);
+}
+
+.column--narrow {
+    @include span(4);
+}
+
+.column--last {
+    @include last;
+}
+
+.component {
+}
+
+.component--wide {
+    @include span(8 of 8);
+}
+
+.component--narrow {
+    @include span(4 of 4);
+}
+
+.component--full {
+    @include span(12 of 8);
+    margin-right: 0;
+    background: red;
+    height: 300px;
+}
+
+.element {
+
+    .element {
+    }
+}
+
+.element--full {
+    @include span(full);
+}
+
+.element--narrow {
+    .component--wide & {
+        @include span(3 of 8);
+    }
+
+    .component--narrow & {
+        @include span(full);
+    }
+
+    &.element--last {
+        @include last;
+    }
+}
+
+.element--wide {
+    .component--wide & {
+        @include span(5 of 8);
+    }
+
+    .component--narrow & {
+        @include span(full);
+    }
+
+    &.element--last {
+        @include last;
+    }
+}
+
+

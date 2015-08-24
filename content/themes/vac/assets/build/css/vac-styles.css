@@ -1,0 +1,144 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  padding: 1em; }
+  body:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.column {
+  width: 48.57143%;
+  float: left;
+  margin-right: 2.85714%; }
+
+.column--full {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.column--wide {
+  width: 65.71429%;
+  float: left;
+  margin-right: 2.85714%; }
+
+.column--narrow {
+  width: 31.42857%;
+  float: left;
+  margin-right: 2.85714%; }
+
+.column--last {
+  float: right;
+  margin-right: 0; }
+
+.component--wide {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.component--narrow {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.component--full {
+  width: 152.17391%;
+  float: left;
+  margin-right: 4.34783%;
+  margin-right: 0;
+  background: red;
+  height: 300px; }
+
+.element--full {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.component--wide .element--narrow {
+  width: 34.78261%;
+  float: left;
+  margin-right: 4.34783%; }
+
+.component--narrow .element--narrow {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.element--narrow.element--last {
+  float: right;
+  margin-right: 0; }
+
+.component--wide .element--wide {
+  width: 60.86957%;
+  float: left;
+  margin-right: 4.34783%; }
+
+.component--narrow .element--wide {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.element--wide.element--last {
+  float: right;
+  margin-right: 0; }

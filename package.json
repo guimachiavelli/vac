@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "description": "",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "node-reset-scss": "^1.0.1",
+  },
   "author": "gui machiavelli",
   "license": "MIT",
   "devDependencies": {
     "browserify": "^11.0.1",
     "node-sass": "^3.2.0",
+    "susy": "^2.2.5",
     "watch": "^0.16.0"
   }
 }

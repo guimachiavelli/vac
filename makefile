@@ -11,7 +11,7 @@ BROWSERIFY_DEPS=$(wildcard $(JS_SRC)/vac-main.js $(JS_SRC)/*.js $(JS_SRC)/**/*.j
 
 SASS_DIR=$(THEME)/assets/src/sass
 CSS_DIR=$(THEME)/assets/build/css
-SASS_DEPS=$(wildcard $(SASS_DIR)/vac-stylesheet.scss $(SASS_DIR)/**.scss)
+SASS_DEPS=$(wildcard $(SASS_DIR)/vac-styles.scss $(SASS_DIR)/**/*.scss)
 
 provision:
 	@sh install.sh
@@ -23,7 +23,7 @@ server:
 install: ./package.json
 	@npm install --verbose
 
-assets: $(JS_BUNDLE)/vac-bundle.js $(CSS_DIR)/vac-stylesheet.css
+assets: $(JS_BUNDLE)/vac-bundle.js $(CSS_DIR)/vac-styles.css
 
 develop: $(SRC_DIR)
 	@$(BIN)/watch "make assets" $<
@@ -31,5 +31,5 @@ develop: $(SRC_DIR)
 $(JS_BUNDLE)/vac-bundle.js: $(BROWSERIFY_DEPS)
 	@$(BIN)/browserify $< -o $@
 
-$(CSS_DIR)/vac-stylesheet.css: $(SASS_DEPS)
+$(CSS_DIR)/vac-styles.css: $(SASS_DEPS)
 	@$(BIN)/node-sass $< -o $(CSS_DIR)

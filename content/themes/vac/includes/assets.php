@@ -4,7 +4,7 @@ add_action('wp_enqueue_scripts', 'vac_enqueue_scripts');
 add_action('wp_enqueue_scripts', 'vac_enqueue_styles');
 
 function vac_enqueue_styles() {
-    wp_register_style('vac-styles', TEMPLATE_URL . '/css/vac-styles.css');
+    wp_register_style('vac-styles', TEMPLATE_URL . '/assets/build/css/vac-styles.css');
     wp_enqueue_style('vac-styles');
 }
 

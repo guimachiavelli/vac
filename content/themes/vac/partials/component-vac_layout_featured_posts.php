@@ -2,7 +2,7 @@
 
 <div>
     <h2><?php echo $vac_content['vac_featured_post_title']; ?></h2>
-
+    <?php if ($vac_content['vac_featured_posts'] != null): ?>
     <ol>
         <?php foreach ($vac_content['vac_featured_posts'] as $post): ?>
         <?php
@@ -24,5 +24,6 @@
         </li>
         <?php endforeach; ?>
     </ol>
+    <?php endif; ?>
 
 </div>
