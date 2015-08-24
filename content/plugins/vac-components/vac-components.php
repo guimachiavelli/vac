@@ -50,12 +50,19 @@ class VACComponent {
         );
 
         foreach ($columns as $name => $column) {
-            if ($name == 'right' && count($columns) == 2) {
+            if ($name == 'right' && count($columns) >= 2) {
                 $component['fields'][] = $this->right_tab;
             }
 
-            if ($name == 'left' && count($columns) == 2) {
+            if ($name == 'left' && count($columns) >= 2) {
                 $component['fields'][] = $this->left_tab;
+            }
+
+            if ($name == 'hero') {
+                $component['fields'][] = $this->hero_tab;
+                $component['fields'][] = $this->hero[0];
+                $component['fields'][] = $this->hero[1];
+                continue;
             }
 
              $component['fields'] = $this->add_fields(
@@ -170,12 +177,19 @@ class VACComponent {
         'label' => 'Left Column',
         'name' => '',
         'type' => 'tab',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
         'placement' => 'top',
         'endpoint' => 0,
     );
+
+    private $hero_tab = array (
+        'key' => 'field_vac_main_component_hero_tab',
+        'label' => 'Hero',
+        'name' => '',
+        'type' => 'tab',
+        'placement' => 'top',
+        'endpoint' => 0,
+    );
+
 
     private $right_tab = array(
         'key' => 'field_vac_main_component_right_tab',

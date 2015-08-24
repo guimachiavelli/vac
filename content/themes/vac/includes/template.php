@@ -2,10 +2,12 @@
 
 class VACTemplate {
     public static $content_key = 'vac_content';
+    public static $content_position_key = 'vac_content_position';
     public static $post_type_key = 'vac_post_type';
 
     public static function parsed_ACF($fields) {
         $parsed = array(
+            'hero' => array(),
             'left' => array(),
             'right' => array()
         );
@@ -22,6 +24,10 @@ class VACTemplate {
     public static function ACF_loop($content, $key = null) {
         if (!is_array($content)) return;
         if ($key && !isset($content[$key])) return;
+
+        $content = $key != null ? $content[$key] : $content;
+
+        set_query_var(self::$content_position_key, $key);
 
         foreach ($content as $name => $field) {
             if (VACHelpers::has_template('partials/component', $name)):
@@ -41,6 +47,8 @@ class VACTemplate {
                 echo 'missing template: ' . $name . "\n";
             endif;
         }
+
+        set_query_var(self::$content_position_key, null);
     }
 
     public static function ACF_featured_content($post_id) {

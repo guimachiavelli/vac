@@ -87,9 +87,13 @@ class VACFrontPage {
             'post_type' => self::$slug,
             'name' => self::$slug
         ), array(
+            'hero' => array(
+                'type' => 'single',
+                'fields' => array('hero'),
+            ),
             'left' => array(
                 'type' => 'group',
-                'fields' => array('hero', 'featured_posts'),
+                'fields' => array('featured_posts'),
             ),
             'right' => array(
                 'type' => 'group',
