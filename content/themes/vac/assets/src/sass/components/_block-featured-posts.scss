@@ -1,0 +1,40 @@
+.featured-posts__title {
+    margin-bottom: baselines(2);
+    font-size: fontsize(h2);
+    color: $colour-main;
+    text-transform: uppercase;
+}
+
+.featured-post {
+    display: table;
+    margin-bottom: baselines(4);
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.featured-post__title,
+.featured-post__standfirst {
+    color: $colour-text;
+    text-decoration: none;
+}
+
+.featured-post__title {
+    text-transform: uppercase;
+}
+
+.column--wide .featured-post:first-child {
+    .element {
+        @include span(full);
+        float: none;
+    }
+
+    .element--narrow {
+        display: table-footer-group;
+    }
+
+    .element--wide {
+        display: table-header-group;
+    }
+}

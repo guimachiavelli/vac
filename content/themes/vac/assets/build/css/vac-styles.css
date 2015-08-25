@@ -46,9 +46,9 @@ table {
   border-spacing: 0; }
 
 .column {
-  width: 48.57143%;
+  width: 48.93617%;
   float: left;
-  margin-right: 2.85714%; }
+  margin-right: 2.12766%; }
 
 .column--full {
   width: 100%;
@@ -57,36 +57,23 @@ table {
   margin-right: 0; }
 
 .column--wide {
-  width: 65.71429%;
+  width: 57.44681%;
   float: left;
-  margin-right: 2.85714%; }
+  margin-right: 2.12766%;
+  margin-right: 8.51064%; }
 
 .column--narrow {
-  width: 31.42857%;
+  width: 31.91489%;
   float: left;
-  margin-right: 2.85714%; }
+  margin-right: 2.12766%; }
 
 .column--last {
   float: right;
   margin-right: 0; }
 
-.component--wide {
+.component img {
   width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
-
-.component--narrow {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
-
-.component--full {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
+  display: block; }
 
 .element {
   overflow: hidden; }
@@ -100,41 +87,41 @@ table {
   margin-left: 0;
   margin-right: 0; }
 
-.component--wide .element--narrow {
-  width: 34.78261%;
+.column--wide .element--narrow {
+  width: 35.48387%;
   float: left;
-  margin-right: 4.34783%; }
+  margin-right: 3.22581%; }
 
-.component--narrow .element--narrow {
+.column--narrow .element--narrow {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0; }
 
-.component--full .element--narrow {
-  width: 31.42857%;
+.column--full .element--narrow {
+  width: 31.91489%;
   float: left;
-  margin-right: 2.85714%; }
+  margin-right: 2.12766%; }
 
 .element--narrow.element--last {
   float: right;
   margin-right: 0; }
 
-.component--wide .element--wide {
-  width: 60.86957%;
+.column--wide .element--wide {
+  width: 61.29032%;
   float: left;
-  margin-right: 4.34783%; }
+  margin-right: 3.22581%; }
 
-.component--narrow .element--wide {
+.column--narrow .element--wide {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0; }
 
-.component--full .element--wide {
-  width: 65.71429%;
+.column--full .element--wide {
+  width: 65.95745%;
   float: left;
-  margin-right: 2.85714%; }
+  margin-right: 2.12766%; }
 
 .element--wide.element--last {
   float: right;
@@ -235,7 +222,9 @@ body {
   text-decoration: none; }
 
 .hero {
-  margin-top: 48px; }
+  margin-top: 48px;
+  margin-bottom: 48px;
+  overflow: hidden; }
 
 .hero__title {
   font-size: 49px;
@@ -256,3 +245,36 @@ body {
   .hero-post__excerpt em {
     color: #103ffb;
     text-decoration: underline; }
+
+.featured-posts__title {
+  margin-bottom: 12px;
+  font-size: 49px;
+  color: #103ffb;
+  text-transform: uppercase; }
+
+.featured-post {
+  display: table;
+  margin-bottom: 24px; }
+  .featured-post a {
+    text-decoration: none; }
+
+.featured-post__title,
+.featured-post__standfirst {
+  color: #111;
+  text-decoration: none; }
+
+.featured-post__title {
+  text-transform: uppercase; }
+
+.column--wide .featured-post:first-child .element {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  float: none; }
+
+.column--wide .featured-post:first-child .element--narrow {
+  display: table-footer-group; }
+
+.column--wide .featured-post:first-child .element--wide {
+  display: table-header-group; }
