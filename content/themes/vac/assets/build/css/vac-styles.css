@@ -45,23 +45,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0 auto;
-  padding: 1em; }
-  body:after {
-    content: " ";
-    display: block;
-    clear: both; }
-
-html {
-  box-sizing: border-box; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
 .column {
   width: 48.57143%;
   float: left;
@@ -100,12 +83,16 @@ html {
   margin-right: 0; }
 
 .component--full {
-  width: 152.17391%;
+  width: 100%;
   float: left;
-  margin-right: 4.34783%;
-  margin-right: 0;
-  background: red;
-  height: 300px; }
+  margin-left: 0;
+  margin-right: 0; }
+
+.element {
+  overflow: hidden; }
+  .element img {
+    width: 100%;
+    display: block; }
 
 .element--full {
   width: 100%;
@@ -124,6 +111,11 @@ html {
   margin-left: 0;
   margin-right: 0; }
 
+.component--full .element--narrow {
+  width: 31.42857%;
+  float: left;
+  margin-right: 2.85714%; }
+
 .element--narrow.element--last {
   float: right;
   margin-right: 0; }
@@ -139,6 +131,28 @@ html {
   margin-left: 0;
   margin-right: 0; }
 
+.component--full .element--wide {
+  width: 65.71429%;
+  float: left;
+  margin-right: 2.85714%; }
+
 .element--wide.element--last {
   float: right;
   margin-right: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  padding: 1em; }
+  body:after {
+    content: " ";
+    display: block;
+    clear: both; }
