@@ -1,0 +1,39 @@
+.logo {
+    text-transform: lowercase;
+}
+
+.logo__link {
+    text-decoration: none;
+
+    &, &:visited {
+        color: $colour-main;
+    }
+}
+
+.logo__letter {
+    font-size: fontsize(h2);
+}
+
+.logo__dash {
+    text-indent: -9999px;
+    display: inline-block;
+    position: relative;
+    width: 15px;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: $colour-main;
+        top: 50%;
+        left: 0;
+        margin-top: -4px;
+    }
+}
+
+.logo__dash--long {
+    width: 10%;
+    min-width: 50px;
+}

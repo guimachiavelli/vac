@@ -140,6 +140,13 @@ table {
   float: right;
   margin-right: 0; }
 
+@font-face {
+  font-family: 'Futura';
+  src: url("../fonts/futura/futurabookc-webfont.eot");
+  src: url("../fonts/futura/futurabookc-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/futurabookc-webfont.woff2") format("woff2"), url("../fonts/futura/futurabookc-webfont.woff") format("woff"), url("../fonts/futura/futurabookc-webfont.ttf") format("truetype"), url("../fonts/futura/futurabookc-webfont.svg#futurabookcregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   box-sizing: border-box; }
 
@@ -150,9 +157,58 @@ body {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Futura", sans-serif;
+  font-size: 28px;
+  line-height: 30px;
   margin: 0 auto;
   padding: 1em; }
   body:after {
     content: " ";
     display: block;
     clear: both; }
+
+.logo {
+  text-transform: lowercase; }
+
+.logo__link {
+  text-decoration: none; }
+  .logo__link, .logo__link:visited {
+    color: #103ffb; }
+
+.logo__letter {
+  font-size: 49px; }
+
+.logo__dash {
+  text-indent: -9999px;
+  display: inline-block;
+  position: relative;
+  width: 15px; }
+  .logo__dash:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #103ffb;
+    top: 50%;
+    left: 0;
+    margin-top: -4px; }
+
+.logo__dash--long {
+  width: 10%;
+  min-width: 50px; }
+
+.menu-item {
+  float: left;
+  font-size: 49px;
+  line-height: 48px;
+  margin-right: 12px; }
+  .menu-item a {
+    text-decoration: none; }
+    .menu-item a:visited {
+      color: #103ffb; }
+  .menu-item:hover {
+    text-decoration: underline; }
+
+.current-menu-item {
+  text-decoration: underline; }

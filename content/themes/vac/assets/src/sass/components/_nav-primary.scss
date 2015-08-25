@@ -1,0 +1,22 @@
+.menu-item {
+    float: left;
+    font-size: fontsize(h2);
+    line-height: baselines(8);
+    margin-right: baselines(2);
+
+    a {
+        text-decoration: none;
+
+        &:visited {
+            color: $colour-main;
+        }
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.current-menu-item {
+    text-decoration: underline;
+}

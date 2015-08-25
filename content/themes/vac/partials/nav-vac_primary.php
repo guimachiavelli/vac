@@ -1,9 +1,3 @@
-<h1>
-    <a href="<?php echo get_bloginfo('url');  ?>">
-        <?php echo get_bloginfo('title'); ?>
-    </a>
-</h1>
-
 <?php
     wp_nav_menu(array(
         'theme_location' => VACNav::$location,

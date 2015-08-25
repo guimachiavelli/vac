@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/futurabookc-webfont.eot');
+    src: url('../fonts/futura/futurabookc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura/futurabookc-webfont.woff2') format('woff2'),
+         url('../fonts/futura/futurabookc-webfont.woff') format('woff'),
+         url('../fonts/futura/futurabookc-webfont.ttf') format('truetype'),
+         url('../fonts/futura/futurabookc-webfont.svg#futurabookcregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$font-main: 'Futura', sans-serif;
+
+$baseline: 6px;
+$fontsize: 7px;
+
+$fontsizes: (
+    h1: $fontsize * 11,
+    h2: $fontsize * 7,
+    h3: $fontsize * 3,
+    p: $fontsize * 4,
+    caption: $fontsize * 3,
+    aside: $fontsize * 2.5
+);
+
+
+@function fontsize($size) {
+    @return map-get($fontsizes, $size);
+}

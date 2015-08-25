@@ -1,13 +1,16 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
     @include container(1280px);
+    font-family: $font-main;
+    font-size: fontsize(p);
+    line-height: baselines(5);
     margin: 0 auto;
     padding: 1em;
 }

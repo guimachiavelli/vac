@@ -1,5 +1,11 @@
 @import 'base/vendors';
 @import 'base/colours';
 @import 'base/grid';
+@import 'base/typography';
+
+@import 'utils/typography';
+
 @import 'base/base';
 
+@import 'components/header-logo';
+@import 'components/nav-primary';

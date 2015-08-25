@@ -1,0 +1,3 @@
+@function baselines($lines) {
+    @return $baseline * $lines;
+}
