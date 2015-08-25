@@ -101,7 +101,7 @@ class VACTemplate {
     }
 
     public static function image_src($image_id) {
-        $img = wp_get_attachment_image_src($image_id);
+        $img = wp_get_attachment_image_src($image_id, 'large');
         return $img[0];
     }
 

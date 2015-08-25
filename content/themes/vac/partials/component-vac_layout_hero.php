@@ -39,7 +39,7 @@
                     <?php endif; ?>
                     <div class="element element--narrow element--last">
                         <div class="hero-post__excerpt">
-                            lorem ipsum dolor sit amet
+                            <p>lorem ipsum dolor sit amet. stabat mater dolorosa juxtra crucis lacrimosa dum pendebat filius cuius animam gementem contristatam et dolentem pertransivit gladius. <em>read&nbsp;more</em></p>
                         </div>
                     </div>
             </a>

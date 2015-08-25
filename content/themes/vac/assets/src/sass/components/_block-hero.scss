@@ -1,0 +1,29 @@
+.hero {
+    margin-top: baselines(8);
+}
+
+.hero__title {
+    font-size: fontsize(h2);
+    line-height: baselines(8);
+    color: $colour-main;
+}
+
+.hero-post__header {
+    margin-bottom: baselines(4);
+}
+
+.hero-post__title,
+.hero-post__standfirst {
+    font-size: fontsize(h2);
+    line-height: baselines(8);
+    color: $colour-text;
+}
+
+.hero-post__excerpt {
+    color: $colour-text;
+
+    em {
+        color: $colour-main;
+        text-decoration: underline;
+    }
+}

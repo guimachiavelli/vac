@@ -233,3 +233,26 @@ body {
   font-size: 21px;
   color: #103ffb;
   text-decoration: none; }
+
+.hero {
+  margin-top: 48px; }
+
+.hero__title {
+  font-size: 49px;
+  line-height: 48px;
+  color: #103ffb; }
+
+.hero-post__header {
+  margin-bottom: 24px; }
+
+.hero-post__title,
+.hero-post__standfirst {
+  font-size: 49px;
+  line-height: 48px;
+  color: #111; }
+
+.hero-post__excerpt {
+  color: #111; }
+  .hero-post__excerpt em {
+    color: #103ffb;
+    text-decoration: underline; }
