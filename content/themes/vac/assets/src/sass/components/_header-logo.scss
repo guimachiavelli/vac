@@ -1,4 +1,5 @@
 .logo {
+    margin-bottom: baselines(1);
     text-transform: lowercase;
 }
 
@@ -36,4 +37,9 @@
 .logo__dash--long {
     width: 10%;
     min-width: 50px;
+    transition: width 20000ms 1500ms;
+
+    .logo:hover & {
+        width: 70%;
+    }
 }

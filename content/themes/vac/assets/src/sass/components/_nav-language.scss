@@ -1,0 +1,14 @@
+.nav-language {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nav-language__item {
+}
+
+.nav-language__link {
+    font-size: fontsize(caption);
+    color: $colour-main;
+    text-decoration: none;
+}

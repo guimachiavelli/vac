@@ -1,8 +1,13 @@
+.nav-primary {
+    margin-bottom: baselines(3);
+    overflow: hidden;
+}
+
 .menu-item {
     float: left;
     font-size: fontsize(h2);
     line-height: baselines(8);
-    margin-right: baselines(2);
+    margin-right: baselines(5);
 
     a {
         text-decoration: none;
