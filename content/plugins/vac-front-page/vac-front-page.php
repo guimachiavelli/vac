@@ -88,7 +88,7 @@ class VACFrontPage {
             'name' => self::$slug
         ), array(
             'hero' => array(
-                'type' => 'single',
+                'type' => 'group',
                 'fields' => array('hero'),
             ),
             'left' => array(

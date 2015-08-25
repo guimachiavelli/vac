@@ -60,9 +60,6 @@ class VACComponent {
 
             if ($name == 'hero') {
                 $component['fields'][] = $this->hero_tab;
-                $component['fields'][] = $this->hero[0];
-                $component['fields'][] = $this->hero[1];
-                continue;
             }
 
              $component['fields'] = $this->add_fields(

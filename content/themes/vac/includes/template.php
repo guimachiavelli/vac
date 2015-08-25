@@ -18,7 +18,7 @@ class VACTemplate {
             $parsed[$name][str_replace("_{$name}", '', $field_name)] = $field;
         }
 
-        return $parsed;
+        return array_filter($parsed);
     }
 
     public static function ACF_loop($content, $key = null) {
@@ -56,6 +56,7 @@ class VACTemplate {
         $fields = self::parsed_ACF($fields);
         $fields = array_values($fields);
         $fields = $fields[0];
+
 
         $content = array(
             'image' => null,
