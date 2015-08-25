@@ -8,6 +8,10 @@ class VACHelpers {
     }
 
     public static function has_template($slug, $name) {
+        if (!is_string($name) || !is_string($slug)) {
+            return false;
+        }
+
         if (locate_template("{$slug}-{$name}.php") == '') {
             return false;
         }
