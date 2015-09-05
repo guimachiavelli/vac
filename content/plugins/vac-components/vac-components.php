@@ -26,7 +26,7 @@ class VACComponent {
             'vac-school'
         );
         $this->featured_posts[1]['post_type'] = $post_types;
-        $this->hero[1]['post_type'] = $post_types;
+        $this->hero[1]['sub_fields'][4]['post_type'] = $post_types;
 
         $this->fields = $this->assemble($config, $left, $right);
     }
@@ -353,17 +353,56 @@ class VACComponent {
             'type' => 'text',
         ),
         array(
-            'key' => 'field_vac_block_home_hero',
-            'label' => 'Posts',
-            'name' => 'vac_hero_posts',
-            'type' => 'relationship',
-            'instructions' => 'Start typing to select posts',
-			'filters' => array(
-                0 => 'search',
-                1 => 'post_type'
-			),
-            'return_format' => 'id',
-        )
+            'key' => 'field_55cb73dbe1d47_hero_posts',
+            'label' => '',
+            'name' => 'vac_block_hero_posts',
+            'type' => 'repeater',
+            'instructions' => '',
+            'layout' => 'block',
+            'button_label' => 'Add hero item',
+            'sub_fields' => array(
+                array (
+                    'key' => 'field_55cb73ebe1d48_vac_hero_title',
+                    'label' => 'Title',
+                    'name' => 'vac_hero_post_title',
+                    'type' => 'text',
+                ),
+                array (
+                    'key' => 'field_55cb73ebe1d48_vac_hero_standfirst',
+                    'label' => 'Standfirst',
+                    'name' => 'vac_hero_post_standfirst',
+                    'type' => 'text',
+                ),
+                array(
+                    'key' => 'field_key_vac_hero_excerpt',
+                    'label' => 'Excerpt',
+                    'name' => 'vac_hero_post_excerpt',
+                    'type' => 'textarea',
+                ),
+                array(
+                    'key' => 'field_key_vac_hero_image',
+                    'label' => 'Image',
+                    'name' => 'vac_hero_post_image',
+                    'type' => 'image',
+                    'return_format' => 'id',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'uploadedTo',
+                ),
+                array(
+                    'key' => 'field_key_vac_block_home_hero_post',
+                    'label' => 'Link',
+                    'name' => 'vac_hero_post_link',
+                    'type' => 'relationship',
+                    'instructions' => 'Start typing to select posts',
+                    'max' => 1,
+                    'filters' => array(
+                        0 => 'search',
+                        1 => 'post_type'
+                    ),
+                    'return_format' => 'id',
+                )
+            )
+        ),
     );
 
     private $floating_image = array(

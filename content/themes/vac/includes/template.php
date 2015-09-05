@@ -105,4 +105,8 @@ class VACTemplate {
         return $img[0];
     }
 
+    public static function image($image_id) {
+        return wp_get_attachment_image($image_id, 'large');
+    }
+
 }

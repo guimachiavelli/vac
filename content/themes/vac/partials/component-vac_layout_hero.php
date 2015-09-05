@@ -8,38 +8,31 @@
             </h2>
         </div>
 
-        <?php if (!empty($vac_content['vac_hero_posts'])): ?>
+        <?php if (!empty($vac_content['vac_block_hero_posts'])): ?>
         <ol class="hero__posts">
-            <?php foreach ($vac_content['vac_hero_posts'] as $post): ?>
-            <?php
-                $featured_content = VACTemplate::ACF_featured_content($post);
-                $image = $featured_content['image'];
-            ?>
+            <?php foreach ($vac_content['vac_block_hero_posts'] as $post): ?>
             <li class="hero-post">
-            <a href="<?php echo get_the_permalink($post); ?>">
+            <a href="<?php echo get_the_permalink($post['vac_hero_post_link']); ?>">
                 <div class="element element--full">
                     <div class="hero-post__header">
                         <h3 class="hero-post__title">
-                            <?php echo get_the_title($post); ?>
+                            <?php echo $post['vac_hero_post_title']; ?>
                         </h3>
                         <div class="hero-post__standfirst">
-                            <?php echo $featured_content['standfirst']; ?>
+                            <?php echo $post['vac_hero_post_standfirst']; ?>
                         </div>
                     </div>
                 </div>
                 <div class="element element--full">
-                    <?php if ($image): ?>
-                        <div class="element element--wide">
-                            <figure class="hero-post__picture">
-                                <img src="<?php echo VACTemplate::image_src($image['id']); ?>"
-                                     alt="<?php $image['alt'] ?>">
-                                <figcaption><?php echo $image['caption']; ?></figcaption>
-                            </figure>
-                        </div>
-                    <?php endif; ?>
+                    <div class="element element--wide">
+                        <figure class="hero-post__picture">
+                            <?php echo VACTemplate::image($post['vac_hero_post_image']); ?>
+                        </figure>
+                    </div>
                     <div class="element element--narrow element--last">
                         <div class="hero-post__excerpt">
-                            <p>lorem ipsum dolor sit amet. stabat mater dolorosa juxtra crucis lacrimosa dum pendebat filius cuius animam gementem contristatam et dolentem pertransivit gladius. <em>read&nbsp;more</em></p>
+                            <p><?php echo $post['vac_hero_post_excerpt']; ?></p>
+                            <em>Read more</em>
                         </div>
                     </div>
             </a>
