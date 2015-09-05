@@ -25,7 +25,7 @@ class VACComponent {
             'vac-publication',
             'vac-school'
         );
-        $this->featured_posts[1]['post_type'] = $post_types;
+        $this->featured_posts[1]['sub_fields'][3]['post_type'] = $post_types;
         $this->hero[1]['sub_fields'][4]['post_type'] = $post_types;
 
         $this->fields = $this->assemble($config, $left, $right);
@@ -445,22 +445,53 @@ class VACComponent {
         array(
             'key' => 'field_featured_post_title',
             'label' => 'Featured posts title',
-            'name' => 'vac_featured_post_title',
+            'name' => 'vac_featured_posts_title',
             'type' => 'text',
         ),
         array(
-            'key' => 'field_featured_posts',
-            'label' => 'Featured posts',
-            'name' => 'vac_featured_posts',
-            'type' => 'relationship',
-            'instructions' => 'Start typing to select posts',
-			'filters' => array(
-                'search',
-                'post_type'
-			),
-            'post_type' => array(
-            ),
-            'return_format' => 'id',
+            'key' => 'field_55cb73dbe1d47_featured',
+            'label' => '',
+            'name' => 'vac_block_featured_posts',
+            'type' => 'repeater',
+            'instructions' => '',
+            'layout' => 'block',
+            'button_label' => 'Add featured item',
+            'sub_fields' => array(
+                array (
+                    'key' => 'field_55cb73ebe1d48_vac_featured_title',
+                    'label' => 'Title',
+                    'name' => 'vac_featured_post_title',
+                    'type' => 'text',
+                ),
+                array (
+                    'key' => 'field_55cb73ebe1d48_vac_featured_standfirst',
+                    'label' => 'Standfirst',
+                    'name' => 'vac_featured_post_standfirst',
+                    'type' => 'text',
+                ),
+                array(
+                    'key' => 'field_key_vac_featured_image',
+                    'label' => 'Image',
+                    'name' => 'vac_featured_post_image',
+                    'type' => 'image',
+                    'return_format' => 'id',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'uploadedTo',
+                ),
+                array(
+                    'key' => 'field_key_vac_block_home_featured_post',
+                    'label' => 'Link',
+                    'name' => 'vac_featured_post_link',
+                    'type' => 'relationship',
+                    'instructions' => 'Start typing to select posts',
+                    'max' => 1,
+                    'filters' => array(
+                        0 => 'search',
+                        1 => 'post_type'
+                    ),
+                    'return_format' => 'id',
+                )
+            )
         )
     );
 }

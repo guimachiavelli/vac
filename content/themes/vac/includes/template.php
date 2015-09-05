@@ -109,4 +109,23 @@ class VACTemplate {
         return wp_get_attachment_image($image_id, 'large');
     }
 
+    public static function image_metadata($image_id) {
+        $attachment = get_post($image_id);
+        return array(
+            'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+            'caption' => $attachment->post_excerpt,
+            'description' => $attachment->post_content,
+            'href' => get_permalink( $attachment->ID ),
+            'src' => $attachment->guid,
+            'title' => $attachment->post_title
+        );
+    }
+
+    public static function image_caption($image_id) {
+        $metadata = self::image_metadata($image_id);
+        if (!isset($metadata['caption'])) return '';
+
+        return $metadata['caption'];
+    }
+
 }
