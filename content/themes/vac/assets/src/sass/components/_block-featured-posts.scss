@@ -37,4 +37,8 @@
     .element--wide {
         display: table-header-group;
     }
+
+    .featured-post__content {
+        margin-top: baselines(2);
+    }
 }

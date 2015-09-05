@@ -73,6 +73,7 @@ table {
 
 .component img {
   width: 100%;
+  height: auto;
   display: block; }
 
 .element {
@@ -278,3 +279,6 @@ body {
 
 .column--wide .featured-post:first-child .element--wide {
   display: table-header-group; }
+
+.column--wide .featured-post:first-child .featured-post__content {
+  margin-top: 12px; }
