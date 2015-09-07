@@ -12,5 +12,5 @@ body {
     font-size: fontsize(p);
     line-height: baselines(5);
     margin: 0 auto;
-    padding: baselines(1) baselines(4);
+    padding: baselines(1) $grid-outer-padding;
 }

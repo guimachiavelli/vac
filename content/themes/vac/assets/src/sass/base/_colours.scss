@@ -1,12 +1,15 @@
 $blue: #103ffb;
 $black: #111;
+$white: #fff;
+$white-background: rgba($white, 0.75);
 
 $colour-main: $blue;
 $colour-text: $black;
 
 $colours: (
     main: $blue,
-    text: $black
+    text: $black,
+    modal-bg: $white-background
 );
 
 @function colour($colour) {

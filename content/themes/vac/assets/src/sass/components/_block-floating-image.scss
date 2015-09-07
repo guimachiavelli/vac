@@ -1,0 +1,19 @@
+.floating-image {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 25%;
+    top: 0;
+
+    &:focus {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.floating-image--active {
+    display: block;
+}

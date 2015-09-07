@@ -45,6 +45,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'Futura';
+  src: url("../fonts/futura/futurabookc-webfont.eot");
+  src: url("../fonts/futura/futurabookc-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/futurabookc-webfont.woff2") format("woff2"), url("../fonts/futura/futurabookc-webfont.woff") format("woff"), url("../fonts/futura/futurabookc-webfont.ttf") format("truetype"), url("../fonts/futura/futurabookc-webfont.svg#futurabookcregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 .column {
   width: 48.93617%;
   float: left;
@@ -127,13 +134,6 @@ table {
 .element--wide.element--last {
   float: right;
   margin-right: 0; }
-
-@font-face {
-  font-family: 'Futura';
-  src: url("../fonts/futura/futurabookc-webfont.eot");
-  src: url("../fonts/futura/futurabookc-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/futurabookc-webfont.woff2") format("woff2"), url("../fonts/futura/futurabookc-webfont.woff") format("woff"), url("../fonts/futura/futurabookc-webfont.ttf") format("truetype"), url("../fonts/futura/futurabookc-webfont.svg#futurabookcregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 html {
   box-sizing: border-box; }
@@ -298,3 +298,55 @@ body {
 .column--wide .featured-post:first-child .featured-post__content {
   margin-bottom: 0;
   margin-top: 12px; }
+
+.floating-image {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 25%;
+  top: 0; }
+  .floating-image:focus {
+    display: block; }
+  .floating-image img {
+    width: 100%; }
+
+.floating-image--active {
+  display: block; }
+
+.side-gallery {
+  overflow: hidden; }
+
+.side-gallery__mask {
+  left: -50vw;
+  position: relative;
+  width: 90vw; }
+
+.side-gallery__title {
+  display: none;
+  margin-bottom: 48px; }
+
+.side-gallery__item {
+  margin-bottom: 48px; }
+  .side-gallery__item img {
+    width: auto; }
+
+.side-gallery--expanded {
+  overflow: visible; }
+  .side-gallery--expanded:before {
+    background: rgba(255, 255, 255, 0.75);
+    content: '';
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw; }
+  .side-gallery--expanded .side-gallery__title {
+    display: block; }
+  .side-gallery--expanded .side-gallery__mask {
+    left: 0;
+    padding: 0 24px;
+    position: absolute;
+    width: 100%; }
+  .side-gallery--expanded img {
+    max-width: 80%;
+    margin-left: 20%; }

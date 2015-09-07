@@ -1,9 +1,9 @@
 @import 'base/vendors';
 @import 'base/colours';
-@import 'base/grid';
 @import 'base/typography';
-
 @import 'utils/typography';
+@import 'base/grid';
+
 
 @import 'base/base';
 
@@ -14,3 +14,5 @@
 
 @import 'components/block-hero';
 @import 'components/block-featured-posts';
+@import 'components/block-floating-image';
+@import 'components/block-side-gallery';

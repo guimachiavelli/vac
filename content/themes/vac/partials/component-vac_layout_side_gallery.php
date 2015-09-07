@@ -1,17 +1,23 @@
 <?php $vac_content = VACTemplate::ACF_content($wp_query); ?>
 
-<div>
-    <h2><?php echo $vac_content['vac_side_gallery_title']; ?></h2>
+<div class="component">
+    <div class="side-gallery">
+        <div class="side-gallery__mask">
+            <h2 class="side-gallery__title">
+                <?php echo $vac_content['vac_side_gallery_title']; ?>
+            </h2>
 
-    <ol>
-        <?php foreach ($vac_content['vac_side_gallery'] as $image): ?>
-        <li>
-            <figure>
-                <img src="<?php echo VACTemplate::image_src($image['id']); ?>"
-                     alt="<?php echo $image['alt']; ?>">
-                <figcaption><?php echo $image['caption']; ?></figcaption>
-            </figure>
-        </li>
-        <?php endforeach; ?>
-    </ol>
+             <ol class="side-gallery__list">
+                <?php foreach ($vac_content['vac_side_gallery'] as $image): ?>
+                <li class="side-gallery__item">
+                    <figure>
+                        <img src="<?php echo VACTemplate::image_src($image['id']); ?>"
+                             alt="<?php echo $image['alt']; ?>">
+                        <figcaption><?php echo $image['caption']; ?></figcaption>
+                    </figure>
+                </li>
+                <?php endforeach; ?>
+            </ol>
+        </div>
+    </div>
 </div>

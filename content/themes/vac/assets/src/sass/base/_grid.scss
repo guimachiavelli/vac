@@ -3,6 +3,8 @@ $susy: (
     gutters: 1/3
 );
 
+$grid-outer-padding: baselines(4);
+
 .column {
     @include span(6);
 }
