@@ -1,0 +1,16 @@
+.footer {
+    clear: left;
+
+    p {
+        font-size: fontsize(caption);
+    }
+
+    p:last-child {
+        margin-top: baselines(2);
+    }
+
+    a {
+        color: colour(text);
+    }
+}
+

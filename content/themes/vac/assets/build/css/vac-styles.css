@@ -222,6 +222,15 @@ body {
   color: #103ffb;
   text-decoration: none; }
 
+.footer {
+  clear: left; }
+  .footer p {
+    font-size: 21px; }
+  .footer p:last-child {
+    margin-top: 12px; }
+  .footer a {
+    color: #111; }
+
 .hero {
   margin-top: 48px;
   margin-bottom: 72px;

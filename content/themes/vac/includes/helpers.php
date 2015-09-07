@@ -1,6 +1,11 @@
 <?php
 
 class VACHelpers {
+    public static function translated_page_id_from_slug($slug) {
+        $footer = get_page_by_path('footer');
+        return pll_get_post($footer->ID);
+    }
+
     public static function get_page_link($slug) {
         $page = get_page_by_path($slug);
         if (!$page) { return ''; }
