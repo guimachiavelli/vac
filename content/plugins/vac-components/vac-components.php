@@ -215,7 +215,7 @@ class VACComponent {
         'label' => '',
         'name' => 'vac_block_standfirst',
         'type' => 'wysiwyg',
-        'toolbar' => 'basic',
+        'toolbar' => 'full',
         'tabs' => 'visual',
         'media_upload' => 0,
     );
@@ -273,7 +273,7 @@ class VACComponent {
                     ),
                 ),
                 'tabs' => 'visual',
-                'toolbar' => 'basic',
+                'toolbar' => 'full',
                 'media_upload' => 0,
             ),
             array (
@@ -339,7 +339,7 @@ class VACComponent {
                     'name' => 'aside_text',
                     'type' => 'wysiwyg',
                     'tabs' => 'visual',
-                    'toolbar' => 'basic',
+                    'toolbar' => 'full',
                     'media_upload' => 0,
                 ),
             )

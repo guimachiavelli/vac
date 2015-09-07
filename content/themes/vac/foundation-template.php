@@ -10,7 +10,7 @@
             <?php VACTemplate::ACF_loop($fields['left']); ?>
         </div>
 
-        <div class="column column--right">
+        <div class="column column--right column--last">
             <?php VACTemplate::ACF_loop($fields['right']); ?>
         </div>
     <?php endwhile; ?>

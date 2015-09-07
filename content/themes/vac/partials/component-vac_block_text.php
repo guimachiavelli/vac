@@ -1,7 +1,7 @@
 <?php $vac_content = VACTemplate::ACF_content($wp_query); ?>
 
-<hr>
-
-<div>
-    <?php echo $vac_content; ?>
+<div class="component">
+    <div class="text">
+        <?php echo $vac_content; ?>
+    </div>
 </div>
