@@ -3,3 +3,12 @@ $black: #111;
 
 $colour-main: $blue;
 $colour-text: $black;
+
+$colours: (
+    main: $blue,
+    text: $black
+);
+
+@function colour($colour) {
+    @return map-get($colours, $colour);
+}

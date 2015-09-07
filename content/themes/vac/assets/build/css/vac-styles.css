@@ -224,7 +224,7 @@ body {
 
 .hero {
   margin-top: 48px;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   overflow: hidden; }
 
 .hero__title {
@@ -247,10 +247,17 @@ body {
     color: #103ffb;
     text-decoration: underline; }
 
+.featured-posts {
+  margin-bottom: 72px; }
+
 .featured-posts__title {
-  margin-bottom: 12px;
-  font-size: 49px;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
   color: #103ffb;
+  font-size: 49px;
+  line-height: 49px;
+  margin-bottom: 12px;
   text-transform: uppercase; }
 
 .featured-post {
@@ -259,13 +266,21 @@ body {
   .featured-post a {
     text-decoration: none; }
 
+.featured-post__content {
+  margin-bottom: 12px; }
+
 .featured-post__title,
 .featured-post__standfirst {
   color: #111;
   text-decoration: none; }
 
-.featured-post__title {
-  text-transform: uppercase; }
+.featured-post__caption {
+  font-size: 21px;
+  line-height: 24px;
+  color: #111; }
+
+.column--wide .featured-posts__title {
+  margin-bottom: 0; }
 
 .column--wide .featured-post:first-child .element {
   width: 100%;
@@ -281,4 +296,5 @@ body {
   display: table-header-group; }
 
 .column--wide .featured-post:first-child .featured-post__content {
+  margin-bottom: 0;
   margin-top: 12px; }
