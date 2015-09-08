@@ -66,10 +66,10 @@ table {
 .column--wide {
   width: 57.44681%;
   float: left;
-  margin-right: 2.12766%;
-  margin-right: 8.51064%; }
+  margin-right: 2.12766%; }
 
 .column--narrow {
+  padding-left: 8.51064%;
   width: 31.91489%;
   float: left;
   margin-right: 2.12766%; }
@@ -404,3 +404,16 @@ body {
 
 .accordion-item[aria-expanded=true] .accordion-item__content {
   display: block; }
+
+.page-template-foundation-template .column--wide {
+  margin-top: 264px; }
+
+.page-template-foundation-template .column--narrow {
+  padding-left: 0%;
+  width: 40.42553%;
+  float: left;
+  margin-right: 2.12766%; }
+
+.page-template-foundation-template .column--last {
+  float: right;
+  margin-right: 0; }

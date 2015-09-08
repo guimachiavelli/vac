@@ -1,0 +1,14 @@
+.page-template-foundation-template {
+    .column--wide {
+        margin-top: baselines(44);
+    }
+
+    .column--narrow {
+        @include prefix(0);
+        @include span(5);
+    }
+
+    .column--last {
+        @include last;
+    }
+}

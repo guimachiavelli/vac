@@ -15,10 +15,10 @@ $grid-outer-padding: baselines(4);
 
 .column--wide {
     @include span(7);
-    @include post(1);
 }
 
 .column--narrow {
+    @include prefix(1);
     @include span(4);
 }
 
