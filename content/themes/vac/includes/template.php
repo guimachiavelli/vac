@@ -132,4 +132,42 @@ class VACTemplate {
         return $value == true ? 'true' : 'false';
     }
 
+    public static function page_slug($post, $wp_query) {
+        if (isset($post->post_name)) {
+            return $post->name;
+        }
+
+        if (isset($wp_query->post->post_name)) {
+            return $wp_query->post->post_name;
+        }
+
+        return '';
+    }
+
+    public static function taxonomies_from_post_type($post_type) {
+        $taxonomies = get_object_taxonomies($post_type);
+        return array_filter($taxonomies, array(__CLASS__, 'filter_vac_taxonomy'));
+    }
+
+    public static function terms_from_post_type($post_type) {
+        $taxonomies = self::taxonomies_from_post_type($post_type);
+        $terms = get_terms($taxonomies);
+        $parsed_terms = array();
+
+        foreach ($terms as $term) {
+            $taxonomy = $term->taxonomy;
+            if (!isset($parsed_terms[$taxonomy])) {
+                $parsed_terms[$taxonomy] = array();
+            }
+
+            $parsed_terms[$taxonomy][] = array($term->name, $term->slug);
+        }
+
+        return $parsed_terms;
+    }
+
+    private static function filter_vac_taxonomy($taxonomy) {
+        return strpos($taxonomy, 'vac') !== false;
+    }
+
 }

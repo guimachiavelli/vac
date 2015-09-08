@@ -1,7 +1,8 @@
 <?php $vac_content = VACTemplate::ACF_content($wp_query); ?>
 
+<?php //var_dump($wp_query); ?>
 <div class="component">
-    <div class="featured-posts">
+    <div class="featured-posts featured-posts--<?php echo VACTemplate::page_slug($post, $wp_query); ?>">
         <h2 class="featured-posts__title">
             <?php echo $vac_content['vac_featured_posts_title']; ?>
         </h2>
