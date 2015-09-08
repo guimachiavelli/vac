@@ -128,4 +128,8 @@ class VACTemplate {
         return $metadata['caption'];
     }
 
+    public static function field_toggle($value) {
+        return $value == true ? 'true' : 'false';
+    }
+
 }

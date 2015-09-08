@@ -370,3 +370,36 @@ body {
 .text__p--big {
   font-size: 49px;
   line-height: 48px; }
+
+.accordion-item {
+  margin-right: -10vw;
+  padding: 12px 10vw 12px 0;
+  border-bottom: 3px solid #103ffb; }
+
+.accordion-item__title {
+  color: #103ffb; }
+
+.accordion-item__content {
+  border-top: 3px solid #103ffb;
+  padding: 12px 10vw 12px 0;
+  margin-right: -10vw;
+  margin-top: 12px;
+  display: none; }
+  .accordion-item__content p {
+    margin-top: 24px; }
+  .accordion-item__content p:first-child {
+    margin-top: 0; }
+
+.accordion-item__image-list {
+  overflow: hidden; }
+
+.accordion-item__image {
+  width: 20%;
+  height: auto;
+  float: left;
+  margin: 24px 5% 24px 0; }
+  .accordion-item__image:nth-child(4n) {
+    margin-right: 0; }
+
+.accordion-item[aria-expanded=true] .accordion-item__content {
+  display: block; }
