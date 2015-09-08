@@ -31,6 +31,7 @@ class VACTinyMCE {
             array(
                 'title' => 'Heading',
                 'block' => 'h3',
+                'classes' => 'text__heading'
             ),
         );
 

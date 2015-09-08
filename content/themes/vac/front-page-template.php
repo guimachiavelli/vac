@@ -7,15 +7,15 @@
             $fields = VACTemplate::parsed_ACF($fields);
         ?>
 
-        <div class="column column--full">
+        <div class="column column--full column--home">
             <?php VACTemplate::ACF_loop($fields, 'hero'); ?>
         </div>
 
-        <div class="column column--wide">
+        <div class="column column--wide column--home">
             <?php VACTemplate::ACF_loop($fields, 'left'); ?>
         </div>
 
-        <div class="column column--narrow column--last">
+        <div class="column column--narrow column--home column--last">
             <?php VACTemplate::ACF_loop($fields, 'right'); ?>
         </div>
     <?php endwhile; ?>

@@ -1,5 +1,5 @@
 .featured-posts {
-    margin-bottom: baselines(12)
+    margin-bottom: baselines(12);
 }
 
 .featured-posts__title {
@@ -8,7 +8,6 @@
     font-size: fontsize(h2);
     line-height: fontsize(h2);
     margin-bottom: baselines(2);
-    text-transform: uppercase;
 }
 
 .featured-post {
@@ -31,13 +30,13 @@
 }
 
 .featured-post__caption {
+    color: colour(text);
     font-size: fontsize(caption);
     line-height: baselines(4);
-    color: colour(text);
 }
 
 
-.column--wide {
+.column--home.column--wide {
     .featured-posts__title {
         margin-bottom: 0;
     }

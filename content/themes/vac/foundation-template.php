@@ -6,11 +6,11 @@
             $fields = VACTemplate::parsed_ACF($fields);
         ?>
 
-        <div class="column column--left">
+        <div class="column column--wide">
             <?php VACTemplate::ACF_loop($fields['left']); ?>
         </div>
 
-        <div class="column column--right column--last">
+        <div class="column column--narrow column--last">
             <?php VACTemplate::ACF_loop($fields['right']); ?>
         </div>
     <?php endwhile; ?>

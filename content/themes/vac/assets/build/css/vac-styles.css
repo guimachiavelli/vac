@@ -266,8 +266,7 @@ body {
   color: #103ffb;
   font-size: 49px;
   line-height: 49px;
-  margin-bottom: 12px;
-  text-transform: uppercase; }
+  margin-bottom: 12px; }
 
 .featured-post {
   display: table;
@@ -284,27 +283,27 @@ body {
   text-decoration: none; }
 
 .featured-post__caption {
+  color: #111;
   font-size: 21px;
-  line-height: 24px;
-  color: #111; }
+  line-height: 24px; }
 
-.column--wide .featured-posts__title {
+.column--home.column--wide .featured-posts__title {
   margin-bottom: 0; }
 
-.column--wide .featured-post:first-child .element {
+.column--home.column--wide .featured-post:first-child .element {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
   float: none; }
 
-.column--wide .featured-post:first-child .element--narrow {
+.column--home.column--wide .featured-post:first-child .element--narrow {
   display: table-footer-group; }
 
-.column--wide .featured-post:first-child .element--wide {
+.column--home.column--wide .featured-post:first-child .element--wide {
   display: table-header-group; }
 
-.column--wide .featured-post:first-child .featured-post__content {
+.column--home.column--wide .featured-post:first-child .featured-post__content {
   margin-bottom: 0;
   margin-top: 12px; }
 
@@ -367,6 +366,7 @@ body {
 .text__p--blue {
   color: #103ffb; }
 
+.text__heading,
 .text__p--big {
   font-size: 49px;
   line-height: 48px; }
