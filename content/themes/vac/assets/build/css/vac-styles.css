@@ -223,7 +223,8 @@ body {
   text-decoration: none; }
 
 .footer {
-  clear: left; }
+  clear: left;
+  padding: 96px 0 48px; }
   .footer p {
     font-size: 21px; }
   .footer p:last-child {
