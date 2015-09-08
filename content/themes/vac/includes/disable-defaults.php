@@ -17,12 +17,6 @@
             //remove menu cruft
             add_action('admin_menu', array(__CLASS__, 'remove_menus'));
             add_action('admin_head', array(__CLASS__, 'remove_collapse'));
-            add_action('init', array(__CLASS__, 'tiny_mce_full_width'));
-
-            //tiny mce settings
-            add_filter('tiny_mce_before_init', array(__CLASS__, 'tinymce_styles'), 999);
-            add_filter('mce_buttons', array(__CLASS__, 'tinymce_buttons'));
-            add_filter('mce_buttons_2', array(__CLASS__, 'tinymce_buttons_2'));
 
             // remove wp emoji stuff
             remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -35,56 +29,6 @@
             remove_action('wp_head', 'wp_shortlink_wp_head');
             remove_action('wp_head', 'rsd_link');
         }
-
-        public static function tinymce_styles($settings) {
-            $settings['textcolor_map'] = '["103ffb", "Blue", "111111", "Black"]';
-            $settings['keep_styles'] = false;
-            $settings['paste_remove_styles'] = true;
-            $settings['paste_remove_spans'] = true;
-            $style_formats = array(
-                array(
-                    'title' => 'Regular text',
-                    'block' => 'p',
-                    'classes' => '',
-                    'wrapper' => true,
-                ),
-                array(
-                    'title' => 'Big text',
-                    'block' => 'p',
-                    'classes' => 'text__p text__p--big',
-                    'wrapper' => true,
-                ),
-                array(
-                    'title' => 'Header',
-                    'block' => 'h3',
-                    'classes' => '',
-                    'wrapper' => true,
-                ),
-            );
-
-            $settings['style_formats'] = json_encode( $style_formats );
-            return $settings;
-        }
-
-        public static function tinymce_buttons_2() {
-            return array();
-        }
-
-        public static function tinymce_buttons($buttons) {
-            return array(
-                'forecolor',
-                'bold',
-                'italic',
-                'underline',
-                'link',
-                'unlink',
-                'styleselect',
-                'pastetext',
-                'removeformat',
-            );
-        }
-
-
 
         public static function post_image_defaults() {
             update_option('image_default_link_type', 'none');
@@ -126,10 +70,6 @@
         public static function is_admin_user() {
             $user = wp_get_current_user();
             return in_array('administrator', $user->roles);
-        }
-
-        public static function tiny_mce_full_width() {
-            add_editor_style('css/tiny-mce.css');
         }
     }
 

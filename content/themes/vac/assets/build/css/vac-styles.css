@@ -359,3 +359,14 @@ body {
   .side-gallery--expanded img {
     max-width: 80%;
     margin-left: 20%; }
+
+.text p,
+.text .text__p {
+  margin-bottom: 24px; }
+
+.text__p--blue {
+  color: #103ffb; }
+
+.text__p--big {
+  font-size: 49px;
+  line-height: 48px; }

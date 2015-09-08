@@ -23,7 +23,6 @@ class VACNav {
         set_theme_mod('nav_menu_locations', $locations);
     }
 
-
     public static function language() {
         if (!function_exists('pll_the_languages')) {
             return;
