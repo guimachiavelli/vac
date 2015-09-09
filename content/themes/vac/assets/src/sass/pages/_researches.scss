@@ -1,0 +1,37 @@
+.column--researches {
+    @include span(12);
+
+    .archive__header {
+        @include span(12);
+    }
+
+    .archive__title {
+        @include span(3 of 12);
+    }
+
+    .archive__filters {
+        @include span(last 9 of 12);
+    }
+
+    .archive-item {
+        @include span(8 of 10);
+    }
+
+    .archive-item__standfirst {
+        margin-bottom: baselines(2);
+    }
+
+    .archive-item__title,
+    .archive-item__standfirst {
+        font-size: fontsize(h2);
+        line-height: baselines(8);
+    }
+
+    .archive-item__figure img {
+        max-width: 780px;
+    }
+
+    .text {
+        max-width: 960px;
+    }
+}

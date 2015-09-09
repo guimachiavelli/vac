@@ -9,7 +9,7 @@
             set_query_var(VACTemplate::$post_type_key, VACResearch::$post_type);
         ?>
 
-        <div>
+        <div class="column column--single column--researches">
             <?php VACTemplate::ACF_loop($fields, 'single'); ?>
         </div>
 

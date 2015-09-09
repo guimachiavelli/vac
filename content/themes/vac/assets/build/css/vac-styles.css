@@ -580,3 +580,36 @@ body {
   float: right;
   margin-right: 0;
   display: block; }
+
+.column--researches {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+  .column--researches .archive__header {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .column--researches .archive__title {
+    width: 23.40426%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--researches .archive__filters {
+    width: 74.46809%;
+    float: right;
+    margin-right: 0; }
+  .column--researches .archive-item {
+    width: 79.48718%;
+    float: left;
+    margin-right: 2.5641%; }
+  .column--researches .archive-item__standfirst {
+    margin-bottom: 12px; }
+  .column--researches .archive-item__title,
+  .column--researches .archive-item__standfirst {
+    font-size: 49px;
+    line-height: 48px; }
+  .column--researches .archive-item__figure img {
+    max-width: 780px; }
+  .column--researches .text {
+    max-width: 960px; }

@@ -34,16 +34,16 @@
                 </ul>
             </form>
         </div>
-        <?php if ($posts): ?>
-        <ol class="archive__list">
-            <?php
-                $posts = get_posts(array(
-                    'posts_per_page' => 100,
-                    'post_type' => $post_type
-                ));
-            ?>
+        <?php
+            $archive_posts = get_posts(array(
+                'posts_per_page' => 100,
+                'post_type' => $post_type
+            ));
+        ?>
 
-            <?php foreach ($posts as $post): ?>
+        <?php if (!empty($archive_posts)): ?>
+        <ol class="archive__list">
+            <?php foreach ($archive_posts as $post): ?>
                 <?php
                     $content = VACTemplate::ACF_featured_content($post->ID);
                     $content['title'] = $post->post_title;
@@ -73,6 +73,9 @@
                 </li>
             <?php endforeach; ?>
         </ol>
+        <?php else: ?>
+            <p class="text__p text__p--big">К сожалению, ничего не показать прямо сейчас.</p>
+            <p class="text__p">Sorry, nothing to show right now.</p>
         <?php endif; ?>
     </div>
 </div>
