@@ -1,14 +1,23 @@
-.page-template-foundation-template {
-    .column--wide {
+.column--foundation {
+    &.column--wide {
         margin-top: baselines(44);
     }
 
-    .column--narrow {
+    &.column--narrow {
         @include prefix(0);
         @include span(5);
     }
 
-    .column--last {
+    &.column--last {
         @include last;
+    }
+
+    .featured-posts__title {
+        margin-bottom: baselines(2);
+    }
+
+    .featured-post:first-child .featured-post__header {
+        font-size: fontsize(p);
+        line-height: baselines(5);
     }
 }

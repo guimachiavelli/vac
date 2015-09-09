@@ -151,7 +151,7 @@ class VACTemplate {
 
     public static function terms_from_post_type($post_type) {
         $taxonomies = self::taxonomies_from_post_type($post_type);
-        $terms = get_terms($taxonomies);
+        $terms = get_terms($taxonomies, 'hide_empty=0');
         $parsed_terms = array();
 
         foreach ($terms as $term) {

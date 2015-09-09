@@ -32,9 +32,7 @@ class VACPublication extends VACSection {
     public static $file = __FILE__;
     public static $class = __CLASS__;
     public static $taxonomies = array('vac-year',
-                                      'vac-city',
                                       'vac-publication_type');
-
 
     public static function menu_order($menu) {
         global $submenu;
@@ -54,6 +52,24 @@ class VACPublication extends VACSection {
         $new_menu[17] = $old_menu[17];
 
         $submenu[static::$menu_link] = $new_menu;
+    }
+
+    public static function register_archive_fields() {
+        $main_component = new VACComponent(array(
+            'id' => str_replace('-', '_', static::$post_type) . '_archive',
+            'location' => array('page_template', static::$archive_template),
+            'position' => 'normal',
+            'post_type' => static::$post_type,
+            'name' => static::$post_name
+        ), array(
+            'single' => array(
+                'type' => 'group',
+                'fields' => array('text', 'featured_posts', 'archive'),
+        )));
+
+        $main_component->add_featured_post_excerpt();
+
+        $main_component->register();
     }
 }
 

@@ -25,14 +25,23 @@ class VACComponent {
             'vac-publication',
             'vac-school'
         );
-        $this->featured_posts[1]['sub_fields'][3]['post_type'] = $post_types;
+        $this->featured_posts[1]['sub_fields'][0]['post_type'] = $post_types;
         $this->hero[1]['sub_fields'][4]['post_type'] = $post_types;
+        $this->cached_settings = array($config, $left, $right);
 
         $this->fields = $this->assemble($config, $left, $right);
     }
 
     function register() {
         acf_add_local_field_group($this->fields);
+    }
+
+    function add_featured_post_excerpt() {
+        $config = $this->cached_settings[0];
+        $left = $this->cached_settings[1];
+        $right = $this->cached_settings[2];
+        $this->featured_posts[1]['sub_fields'][] = $this->featured_excerpt;
+        $this->fields = $this->assemble($config, $left, $right);
     }
 
     private function assemble($config, $columns) {
@@ -457,17 +466,27 @@ class VACComponent {
             'layout' => 'block',
             'button_label' => 'Add featured item',
             'sub_fields' => array(
-                array (
-                    'key' => 'field_55cb73ebe1d48_vac_featured_title',
-                    'label' => 'Title',
-                    'name' => 'vac_featured_post_title',
-                    'type' => 'text',
+                array(
+                    'key' => 'field_key_vac_block_home_featured_post',
+                    'label' => 'Link',
+                    'name' => 'vac_featured_post_link',
+                    'type' => 'relationship',
+                    'max' => 1,
+                    'required' => 1,
+                    'filters' => array(
+                        0 => 'search',
+                        1 => 'post_type'
+                    ),
+                    'return_format' => 'id',
                 ),
                 array (
-                    'key' => 'field_55cb73ebe1d48_vac_featured_standfirst',
-                    'label' => 'Standfirst',
-                    'name' => 'vac_featured_post_standfirst',
-                    'type' => 'text',
+                    'key' => 'field_55cb73ebe1d48_vac_featured_text',
+                    'label' => 'Text',
+                    'name' => 'vac_featured_post_text',
+                    'type' => 'wysiwyg',
+                    'toolbar' => 'full',
+                    'tabs' => 'visual',
+                    'media_upload' => 0,
                 ),
                 array(
                     'key' => 'field_key_vac_featured_image',
@@ -478,20 +497,19 @@ class VACComponent {
                     'preview_size' => 'thumbnail',
                     'library' => 'uploadedTo',
                 ),
-                array(
-                    'key' => 'field_key_vac_block_home_featured_post',
-                    'label' => 'Link',
-                    'name' => 'vac_featured_post_link',
-                    'type' => 'relationship',
-                    'instructions' => 'Start typing to select posts',
-                    'max' => 1,
-                    'filters' => array(
-                        0 => 'search',
-                        1 => 'post_type'
-                    ),
-                    'return_format' => 'id',
-                )
             )
         )
     );
+
+    private $featured_excerpt = array(
+        'key' => 'field_vac_block_featured_excerpt',
+        'label' => 'Excerpt',
+        'instructions' => 'Only shown on archive pages',
+        'name' => 'vac_featured_post_excerpt',
+        'type' => 'wysiwyg',
+        'toolbar' => 'full',
+        'tabs' => 'visual',
+        'media_upload' => 0,
+    );
+
 }

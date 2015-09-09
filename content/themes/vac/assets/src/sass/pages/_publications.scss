@@ -1,0 +1,44 @@
+.column--publications {
+    .featured-post {
+        .element {
+            @include span(full);
+            float: none;
+        }
+
+        .element--narrow {
+            display: table-footer-group;
+        }
+
+        .element--wide {
+            display: table-header-group;
+        }
+
+        .featured-post__content {
+            margin-bottom: 0;
+            margin-top: baselines(2);
+        }
+    }
+
+    .archive__filters {
+        @include break;
+    }
+
+    .archive-item {
+        @include span(10 of 10);
+        @include post(0);
+    }
+
+    .archive-item__header {
+        @include span(6 of 10);
+    }
+
+    .archive-item__figure {
+        @include span(3 of 10);
+    }
+
+    .archive-item__year {
+        @include span(1 of 10);
+        @include last;
+        display: block;
+    }
+}

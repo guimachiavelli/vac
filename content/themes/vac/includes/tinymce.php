@@ -25,7 +25,7 @@ class VACTinyMCE {
             ),
             array(
                 'title' => 'Blue text',
-                'selector' => 'p, h3',
+                'selector' => 'span, p, h3',
                 'classes' => 'text__p text__p--blue'
             ),
             array(

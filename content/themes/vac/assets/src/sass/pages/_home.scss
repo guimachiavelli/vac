@@ -1,0 +1,26 @@
+.column--home.column--wide {
+    .featured-posts__title {
+        margin-bottom: 0;
+    }
+
+    .featured-post:first-child {
+        .element {
+            @include span(full);
+            float: none;
+        }
+
+        .element--narrow {
+            display: table-footer-group;
+        }
+
+        .element--wide {
+            display: table-header-group;
+        }
+
+        .featured-post__header {
+            font-size: fontsize(h2);
+            line-height: baselines(8);
+            margin-bottom: baselines(3);
+        }
+    }
+}

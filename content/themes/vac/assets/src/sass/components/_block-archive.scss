@@ -68,6 +68,7 @@
 .archive-item {
     @include span(4 of 10);
     @include post(1 of 10);
+    display: table;
     margin-bottom: baselines(8);
 
     &:nth-child(2n+1) {
@@ -82,4 +83,14 @@
 
 .archive-item__header {
     margin-bottom: baselines(2);
+    display: table-header-group;
+}
+
+.archive-item__figure {
+    display: table-footer-group;
+}
+
+
+.archive-item__year {
+    display: none;
 }

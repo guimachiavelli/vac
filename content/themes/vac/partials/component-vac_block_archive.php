@@ -34,6 +34,7 @@
                 </ul>
             </form>
         </div>
+        <?php if ($posts): ?>
         <ol class="archive__list">
             <?php
                 $posts = get_posts(array(
@@ -48,19 +49,30 @@
                     $content['title'] = $post->post_title;
                     $content['permalink'] = get_the_permalink($post->ID);
                     $image = $content['image'];
+                    $year = get_the_terms($post->ID, 'vac-year');
+                    $year = isset($year[0]->name) ? $year[0]->name : '';
                 ?>
                 <li class="archive-item">
                     <a href="<?php echo $content['permalink']; ?>">
-                    <div class="archive-item__header">
-                        <h3 class="archive-item__title"><?php echo $content['title']; ?></h3>
-                        <div class="archive-item__standfirst"><?php echo $content['standfirst']; ?></div>
-                    </div>
-                    <figure>
+                    <figure class="archive-item__figure">
                         <?php echo VACTemplate::image($image['id']); ?>
                     </figure>
+
+                    <div class="archive-item__header">
+                        <h3 class="archive-item__title">
+                            <?php echo $content['title']; ?>
+                        </h3>
+                        <div class="archive-item__standfirst">
+                            <?php echo $content['standfirst']; ?>
+                        </div>
+                    </div>
+                    <aside class="archive-item__year">
+                        <?php echo $year; ?>
+                    </aside>
                     </a>
                 </li>
             <?php endforeach; ?>
         </ol>
+        <?php endif; ?>
     </div>
 </div>
