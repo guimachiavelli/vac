@@ -419,7 +419,7 @@ body {
   margin-right: -23.07692%; }
 
 .archive-filter {
-  float: left;
+  float: right;
   line-height: 48px;
   margin-right: 12px;
   position: relative;
@@ -600,9 +600,9 @@ body {
     float: right;
     margin-right: 0; }
   .column--researches .archive-item {
-    width: 79.48718%;
+    width: 65.95745%;
     float: left;
-    margin-right: 2.5641%; }
+    margin-right: 2.12766%; }
   .column--researches .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--researches .archive-item__title,
@@ -610,6 +610,72 @@ body {
     font-size: 49px;
     line-height: 48px; }
   .column--researches .archive-item__figure img {
-    max-width: 780px; }
+    max-width: 720px; }
   .column--researches .text {
+    max-width: 960px; }
+
+.column--collaborations {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+  .column--collaborations .archive__header {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .column--collaborations .archive__title {
+    width: 23.40426%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--collaborations .archive__filters {
+    width: 74.46809%;
+    float: right;
+    margin-right: 0; }
+  .column--collaborations .archive-item {
+    width: 65.95745%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--collaborations .archive-item__standfirst {
+    margin-bottom: 12px; }
+  .column--collaborations .archive-item__title,
+  .column--collaborations .archive-item__standfirst {
+    font-size: 49px;
+    line-height: 48px; }
+  .column--collaborations .archive-item__figure img {
+    max-width: 720px; }
+  .column--collaborations .text {
+    max-width: 960px; }
+
+.column--grants {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+  .column--grants .archive__header {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .column--grants .archive__title {
+    width: 23.40426%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--grants .archive__filters {
+    width: 74.46809%;
+    float: right;
+    margin-right: 0; }
+  .column--grants .archive-item {
+    width: 65.95745%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--grants .archive-item__standfirst {
+    margin-bottom: 12px; }
+  .column--grants .archive-item__title,
+  .column--grants .archive-item__standfirst {
+    font-size: 49px;
+    line-height: 48px; }
+  .column--grants .archive-item__figure img {
+    max-width: 720px; }
+  .column--grants .text {
     max-width: 960px; }

@@ -17,7 +17,7 @@
 }
 
 .archive-filter {
-    float: left;
+    float: right;
     line-height: baselines(8);
     margin-right: baselines(2);
     //FIXME: magic numbers
@@ -93,4 +93,39 @@
 
 .archive-item__year {
     display: none;
+}
+
+@mixin archive-big {
+    @include span(12);
+
+    .archive__header {
+        @include span(12);
+    }
+
+    .archive__title {
+        @include span(3 of 12);
+    }
+
+    .archive__filters {
+        @include span(last 9 of 12);
+    }
+
+    .archive-item {
+        @include span(8 of 12);
+    }
+
+    .archive-item__standfirst {
+        margin-bottom: baselines(2);
+    }
+
+    .archive-item__title,
+    .archive-item__standfirst {
+        font-size: fontsize(h2);
+        line-height: baselines(8);
+    }
+
+    .archive-item__figure img {
+        max-width: 720px;
+    }
+
 }

@@ -6,10 +6,11 @@
         <?php
             $fields = get_fields($post->ID);
             $fields = VACTemplate::parsed_ACF($fields);
-            set_query_var(VACTemplate::$post_type_key, VACGrant::$post_type);
+            set_query_var(VACTemplate::$post_type_key,
+                          VACGrant::$post_type);
         ?>
 
-        <div>
+        <div class="column column--single column--grants">
             <?php VACTemplate::ACF_loop($fields, 'single'); ?>
         </div>
 

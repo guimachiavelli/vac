@@ -10,11 +10,6 @@
             <h3 class="archive__title"><?php echo $vac_content; ?></h3>
             <form class="archive__filters">
                 <ul>
-                    <li class="archive-filter">
-                        <button class="archive-filter__button" type="reset">
-                            All
-                        </button>
-                    </li>
                     <?php foreach($taxonomies as $tax => $terms): ?>
                     <?php foreach($terms as $term): ?>
                         <?php $filter_id = "{$tax}:{$term[1]}"; ?>
@@ -31,6 +26,11 @@
                         </li>
                     <?php endforeach; ?>
                     <?php endforeach; ?>
+                    <li class="archive-filter">
+                        <button class="archive-filter__button" type="reset">
+                            All
+                        </button>
+                    </li>
                 </ul>
             </form>
         </div>
