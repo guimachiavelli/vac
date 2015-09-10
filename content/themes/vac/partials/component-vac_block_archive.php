@@ -48,14 +48,14 @@
                     $content = VACTemplate::ACF_featured_content($post->ID);
                     $content['title'] = $post->post_title;
                     $content['permalink'] = get_the_permalink($post->ID);
-                    $image = $content['image'];
+                    $image = VACTemplate::featured_image($post->ID);
                     $year = get_the_terms($post->ID, 'vac-year');
                     $year = isset($year[0]->name) ? $year[0]->name : '';
                 ?>
                 <li class="archive-item">
                     <a href="<?php echo $content['permalink']; ?>">
                     <figure class="archive-item__figure">
-                        <?php echo VACTemplate::image($image['id']); ?>
+                        <?php echo VACTemplate::image($image); ?>
                     </figure>
 
                     <div class="archive-item__header">

@@ -96,7 +96,7 @@ class VACComponent {
         foreach ($fields['fields'] as $field) {
             $component_field = $modules[$field];
             $component_field['name'] = "{$component_field['name']}_{$column}";
-            $component_field['key'] = "{$component_field['key']}_{$id}";
+            $component_field['key'] = "{$component_field['key']}_{$id}_{$column}";
 
             if (isset($component_field['post_type'])) {
                 $component_field['post_type'] = array(
@@ -511,5 +511,16 @@ class VACComponent {
         'tabs' => 'visual',
         'media_upload' => 0,
     );
+
+    private $image = array(
+        'key' => 'field_key_vac_block_image123',
+        'label' => 'Featured image',
+        'name' => 'vac_block_featured_image123',
+        'type' => 'image',
+        'return_format' => 'id',
+        'preview_size' => 'thumbnail',
+        'library' => 'uploadedTo',
+    );
+
 
 }

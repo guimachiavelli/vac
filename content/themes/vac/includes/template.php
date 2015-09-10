@@ -51,12 +51,21 @@ class VACTemplate {
         set_query_var(self::$content_position_key, null);
     }
 
+    public static function featured_image($post_id) {
+        $fields = get_fields($post_id);
+        $fields = self::parsed_ACF($fields);
+
+        if (!isset($fields['hero'])) return null;
+
+        $field = $fields['hero'];
+
+        return $field['vac_block_image_slider'][0]['id'];
+    }
+
     public static function ACF_featured_content($post_id) {
         $fields = get_fields($post_id);
         $fields = self::parsed_ACF($fields);
-        $fields = array_values($fields);
-        $fields = $fields[0];
-
+        $fields = $fields['left'];
 
         $content = array(
             'image' => null,

@@ -43,9 +43,15 @@
     margin-top: baselines(4);
 }
 
-.column--narrow {
+@mixin featured-post-small-first-child() {
     .featured-post:first-child .featured-post__header {
         font-size: fontsize(p);
         line-height: baselines(5);
     }
 }
+
+.column--narrow {
+    @include featured-post-small-first-child;
+}
+
+

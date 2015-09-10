@@ -1,0 +1,21 @@
+.post__header {
+    @include span(10 of 12);
+}
+
+.post__date {
+    color: colour(main);
+}
+
+.post__title {
+    font-size: fontsize(h1);
+    line-height: baselines(13);
+}
+
+.column--post {
+    @include featured-post-small-first-child;
+
+    &.column--narrow {
+        @include span(3 of 12);
+        @include last;
+    }
+}

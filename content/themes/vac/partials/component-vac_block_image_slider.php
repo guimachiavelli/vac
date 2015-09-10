@@ -1,15 +1,16 @@
 <?php $vac_content = VACTemplate::ACF_content($wp_query); ?>
 
-<hr>
-
-<ol>
-    <?php foreach ($vac_content as $image): ?>
-    <li>
-        <figure>
-            <img src="<?php echo VACTemplate::image_src($image['id']); ?>"
-                 alt="<?php echo $image['alt']; ?>">
-            <figcaption><?php echo $image['caption']; ?></figcaption>
-        </figure>
-    </li>
-    <?php endforeach; ?>
-</ol>
+<div class="component">
+    <div class="slider">
+        <ol class="slider__list">
+            <?php foreach ($vac_content as $image): ?>
+            <li class="slider-item">
+                <figure class="slider-item__figure">
+                    <?php echo VACTemplate::image($image['id']); ?>
+                    <figcaption><?php echo $image['caption']; ?></figcaption>
+                </figure>
+            </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+</div>

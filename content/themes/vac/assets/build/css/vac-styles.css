@@ -478,6 +478,16 @@ body {
 .archive-item__year {
   display: none; }
 
+.aside-item {
+  margin-bottom: 24px; }
+
+.aside-item__figure {
+  margin-bottom: 12px; }
+
+.aside-item__text {
+  font-size: 17.5px;
+  line-height: 21px; }
+
 .column--home.column--wide .featured-posts__title {
   margin-bottom: 0; }
 
@@ -679,3 +689,26 @@ body {
     max-width: 720px; }
   .column--grants .text {
     max-width: 960px; }
+
+.post__header {
+  width: 82.97872%;
+  float: left;
+  margin-right: 2.12766%; }
+
+.post__date {
+  color: #103ffb; }
+
+.post__title {
+  font-size: 77px;
+  line-height: 78px; }
+
+.column--post .featured-post:first-child .featured-post__header {
+  font-size: 28px;
+  line-height: 30px; }
+
+.column--post.column--narrow {
+  width: 23.40426%;
+  float: left;
+  margin-right: 2.12766%;
+  float: right;
+  margin-right: 0; }

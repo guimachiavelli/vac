@@ -120,6 +120,10 @@ class VACSection {
             'location' => array('post_type', static::$post_type),
             'position' => 'normal'
         ), array(
+            'hero' => array(
+                'type' => 'single',
+                'fields' => array('slider'),
+            ),
             'left' => array(
                 'type' => 'group',
                 'fields' => array('slider',
