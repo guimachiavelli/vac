@@ -565,6 +565,7 @@ class VACComponent {
                     'label' => 'Title',
                     'name' => 'vac_school_title',
                     'type' => 'textarea',
+                    'new_lines' => 'br'
                 ),
                 array(
                     'key' => 'field_key_vac_schools_excerpt',

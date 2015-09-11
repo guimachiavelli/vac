@@ -506,7 +506,8 @@ body {
 .schools__filters {
   float: right;
   margin-right: -19.14894%;
-  width: 14.89362%; }
+  width: 14.89362%;
+  text-align: right; }
   .schools__filters .archive-filter {
     display: block;
     float: none;
