@@ -1,6 +1,23 @@
 (function(){
     'use strict';
 
+    function toggleAttribute(node, attribute) {
+        var current;
+
+        current = node.getAttribute(attribute);
+        console.log(current);
+
+        if (current === 'true') {
+            node.setAttribute(attribute, false);
+            return;
+        }
+
+        if (current === 'false') {
+            node.setAttribute(attribute, true);
+        }
+
+    }
+
     function firstElementChild(parentNode, index, children) {
         children = children || parentNode.childNodes;
         index = index || 0;
@@ -75,7 +92,8 @@
         closestAncestorWithClass: closestAncestorWithClass,
         firstElementChild: firstElementChild,
         nextSiblingOfType: nextSiblingOfType,
-        previousSiblingOfType: previousSiblingOfType
+        previousSiblingOfType: previousSiblingOfType,
+        toggleAttribute: toggleAttribute
     };
 
 }());

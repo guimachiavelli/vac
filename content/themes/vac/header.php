@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html lang="<?php echo pll_current_language(); ?>">
 	<head>
 		<meta charset="utf-8">
 

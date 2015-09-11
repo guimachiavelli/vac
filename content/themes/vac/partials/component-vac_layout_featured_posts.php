@@ -4,9 +4,8 @@
     $posts = $vac_content['vac_block_featured_posts'];
 ?>
 
-<?php //var_dump($wp_query); ?>
 <div class="component">
-    <div class="featured-posts featured-posts--<?php echo VACTemplate::page_slug($post, $wp_query); ?>">
+    <div class="featured-posts">
         <h2 class="featured-posts__title">
             <?php echo $title; ?>
         </h2>

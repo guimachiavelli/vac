@@ -21,7 +21,22 @@
     }
 }
 
-.side-gallery--expanded {
+.side-galery__close {
+    position: absolute;
+    border: 0;
+    background: 0;
+    top: 0;
+    right: $grid-outer-padding;
+    font-size: fontsize(aside);
+    color: colour(main);
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.side-gallery[aria-expanded=true] {
     overflow: visible;
 
     &:before {

@@ -2,6 +2,23 @@
 (function(){
     'use strict';
 
+    function toggleAttribute(node, attribute) {
+        var current;
+
+        current = node.getAttribute(attribute);
+        console.log(current);
+
+        if (current === 'true') {
+            node.setAttribute(attribute, false);
+            return;
+        }
+
+        if (current === 'false') {
+            node.setAttribute(attribute, true);
+        }
+
+    }
+
     function firstElementChild(parentNode, index, children) {
         children = children || parentNode.childNodes;
         index = index || 0;
@@ -76,7 +93,8 @@
         closestAncestorWithClass: closestAncestorWithClass,
         firstElementChild: firstElementChild,
         nextSiblingOfType: nextSiblingOfType,
-        previousSiblingOfType: previousSiblingOfType
+        previousSiblingOfType: previousSiblingOfType,
+        toggleAttribute: toggleAttribute
     };
 
 }());
@@ -169,6 +187,7 @@
     'use strict';
 
     var Accordion = require('./vac-accordion.js'),
+        SideGallery = require('./vac-side-gallery.js'),
         FloatingImage = require('./vac-floating-image.js');
 
     var App;
@@ -180,6 +199,13 @@
 
             this.initNodeList(document.querySelectorAll('.floating-image'),
                               FloatingImage);
+
+            this.initNodeList(document.querySelectorAll('.side-gallery'),
+                              SideGallery);
+
+            //this.initNodeList(document.querySelectorAll('.side-gallery'),
+                              //SideGallery);
+
         },
 
         initNodeList: function(nodeList, Component) {
@@ -196,4 +222,41 @@
     App.init();
 }());
 
-},{"./vac-accordion.js":2,"./vac-floating-image.js":3}]},{},[4]);
+},{"./vac-accordion.js":2,"./vac-floating-image.js":3,"./vac-side-gallery.js":5}],5:[function(require,module,exports){
+(function() {
+    'use strict';
+
+    var dom = require('./utils/dom-traversal.js');
+
+    var SideGallery;
+
+    SideGallery = function(el) {
+        this.el = el;
+        this.mask = el.querySelector('.side-gallery__mask');
+    };
+
+    SideGallery.prototype.bind = function() {
+        this.el.addEventListener('click', this.onImageClick.bind(this));
+    };
+
+    SideGallery.prototype.onImageClick = function() {
+        dom.toggleAttribute(this.el, 'aria-expanded');
+        this.mask.appendChild(this.button);
+    };
+
+    SideGallery.prototype.button = (function() {
+        var button, lang;
+        button = document.createElement('button');
+        lang = document.documentElement.lang;
+        button.innerHTML = lang === 'ru' ? 'Закрыть' : 'close';
+        button.className = 'side-galery__close';
+        button.type = 'button';
+        return button;
+    }());
+
+
+    module.exports = SideGallery;
+
+}());
+
+},{"./utils/dom-traversal.js":1}]},{},[4]);
