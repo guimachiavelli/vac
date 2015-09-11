@@ -16,7 +16,7 @@ function vac_enqueue_scripts() {
         //false, false, true);
 
     wp_register_script('vac-bundle',
-        TEMPLATE_URL . '/js/vac-bundle.js',
+        TEMPLATE_URL . '/assets/build/js/vac-bundle.js',
         false, false, true);
 
     wp_enqueue_script('vac-bundle');

@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "node-reset-scss": "^1.0.1",
+    "node-reset-scss": "^1.0.1"
   },
   "author": "gui machiavelli",
   "license": "MIT",
