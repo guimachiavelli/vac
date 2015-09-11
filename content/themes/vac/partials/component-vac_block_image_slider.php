@@ -7,7 +7,9 @@
             <li class="slider-item">
                 <figure class="slider-item__figure">
                     <?php echo VACTemplate::image($image['id']); ?>
-                    <figcaption><?php echo $image['caption']; ?></figcaption>
+                    <figcaption class="slider-item__caption">
+                        <?php echo $image['caption']; ?>
+                    </figcaption>
                 </figure>
             </li>
             <?php endforeach; ?>

@@ -629,6 +629,9 @@ body {
     display: block;
     overflow: hidden; }
 
+.slider-item__caption {
+  font-size: 21px; }
+
 .column--home.column--wide .featured-posts__title {
   margin-bottom: 0; }
 
