@@ -3,6 +3,7 @@
 
     var Accordion = require('./vac-accordion.js'),
         SideGallery = require('./vac-side-gallery.js'),
+        FeaturedPosts = require('./vac-featured-posts.js'),
         FloatingImage = require('./vac-floating-image.js');
 
     var App;
@@ -18,8 +19,18 @@
             this.initNodeList(document.querySelectorAll('.side-gallery'),
                               SideGallery);
 
-            //this.initNodeList(document.querySelectorAll('.side-gallery'),
-                              //SideGallery);
+            this.initFeaturedPosts(document.querySelectorAll('.featured-posts'),
+                              FeaturedPosts);
+
+        },
+
+        initFeaturedPosts: function(nodeList, Component) {
+            var i, len, component;
+
+            for (i = 0, len = nodeList.length; i < len; i += 1) {
+                component = new Component(nodeList[i]);
+                component.setupPostLoading();
+            }
 
         },
 

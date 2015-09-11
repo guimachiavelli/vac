@@ -279,6 +279,21 @@ body {
     .featured-post a:visited {
       color: #111; }
 
+.featured-posts__load {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 28px;
+  font-family: "Futura", sans-serif;
+  color: #103ffb; }
+  .featured-posts__load:hover {
+    text-decoration: underline; }
+  .featured-posts__load:focus {
+    outline: none; }
+
+.featured-post[aria-hidden=true] {
+  display: none; }
+
 .featured-post__content {
   margin-bottom: 12px; }
 

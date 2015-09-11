@@ -18,6 +18,27 @@
     }
 }
 
+.featured-posts__load {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font-size: fontsize(p);
+    font-family: $font-main;
+    color: colour(main);
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.featured-post[aria-hidden=true] {
+    display: none;
+}
+
 .featured-post__content {
     margin-bottom: baselines(2);
 }
