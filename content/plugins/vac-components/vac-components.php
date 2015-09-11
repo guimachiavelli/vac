@@ -26,7 +26,7 @@ class VACComponent {
             'vac-school'
         );
         $this->featured_posts[1]['sub_fields'][0]['post_type'] = $post_types;
-        $this->hero[1]['sub_fields'][4]['post_type'] = $post_types;
+        $this->hero[1]['sub_fields'][3]['post_type'] = $post_types;
         $this->schools[1]['sub_fields'][5]['sub_fields'][0]['post_type'] = $post_types;
         $this->talks_and_lectures[1]['sub_fields'][0]['post_type'] = $post_types;
 
@@ -376,16 +376,8 @@ class VACComponent {
                     'key' => 'field_55cb73ebe1d48_vac_hero_title',
                     'label' => 'Title',
                     'name' => 'vac_hero_post_title',
-                    'type' => 'text',
-                ),
-                array (
-                    'key' => 'field_55cb73ebe1d48_vac_hero_standfirst',
-                    'label' => 'Standfirst',
-                    'name' => 'vac_hero_post_standfirst',
-                    'type' => 'wysiwyg',
-                    'toolbar' => 'full',
-                    'tabs' => 'visual',
-                    'media_upload' => 0,
+                    'type' => 'textarea',
+                    'new_lines' => 'br'
                 ),
                 array(
                     'key' => 'field_key_vac_hero_excerpt',

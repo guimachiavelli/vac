@@ -18,9 +18,6 @@
                         <h3 class="hero-post__title">
                             <?php echo $post['vac_hero_post_title']; ?>
                         </h3>
-                        <div class="hero-post__standfirst">
-                            <?php echo $post['vac_hero_post_standfirst']; ?>
-                        </div>
                     </div>
                 </div>
                 <div class="element element--full">
