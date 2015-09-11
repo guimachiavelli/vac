@@ -7,11 +7,11 @@
         ?>
 
         <div class="column column--wide column--foundation">
-            <?php VACTemplate::ACF_loop($fields['left']); ?>
+            <?php VACTemplate::ACF_loop($fields, 'left'); ?>
         </div>
 
         <div class="column column--narrow column--foundation column--last">
-            <?php VACTemplate::ACF_loop($fields['right']); ?>
+            <?php VACTemplate::ACF_loop($fields, 'right'); ?>
         </div>
     <?php endwhile; ?>
 <?php get_footer(); ?>
