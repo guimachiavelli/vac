@@ -400,8 +400,14 @@ body {
   display: block; }
 
 .archive__header {
-  margin-bottom: 24px;
-  overflow: hidden; }
+  margin-bottom: 24px; }
+  .archive__header:after {
+    clear: both;
+    content: '';
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden; }
 
 .archive__title {
   width: 38.46154%;
@@ -416,14 +422,18 @@ body {
   width: 79.48718%;
   float: left;
   margin-right: 2.5641%;
-  margin-right: -23.07692%; }
+  margin-right: -23.07692%;
+  text-align: right; }
 
 .archive-filter {
-  float: right;
+  display: inline-block;
   line-height: 48px;
   margin-right: 12px;
   position: relative;
-  top: 6px; }
+  top: 6px;
+  letter-spacing: -.5px; }
+  .archive-filter:last-child {
+    margin-right: 0; }
 
 .archive-filter__input {
   display: none; }
@@ -664,7 +674,12 @@ body {
   margin-top: 12px; }
 
 .column--publications .archive__filters {
-  clear: both; }
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  clear: both;
+  text-align: left; }
 
 .column--publications .archive-item {
   width: 100%;

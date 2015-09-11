@@ -20,7 +20,9 @@
     }
 
     .archive__filters {
+        @include span(10 of 10);
         @include break;
+        text-align: left;
     }
 
     .archive-item {

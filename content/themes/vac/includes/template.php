@@ -172,6 +172,12 @@ class VACTemplate {
             $parsed_terms[$taxonomy][] = array($term->name, $term->slug);
         }
 
+        if (isset($parsed_terms['vac-year'])) {
+            rsort($parsed_terms['vac-year']);
+        }
+
+        ksort($parsed_terms);
+
         return $parsed_terms;
     }
 

@@ -1,14 +1,6 @@
 .talks__header {
+    @include clearfix;
     margin-bottom: baselines(4);
-
-    &:after {
-        clear: both;
-        content: '';
-        display: block;
-        font-size: 0;
-        height: 0;
-        visibility: hidden;
-    }
 }
 
 .talks__title {
