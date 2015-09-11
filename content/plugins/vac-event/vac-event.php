@@ -23,7 +23,7 @@ class VACEvent extends VACSection {
     public static $post_slug = 'event';
     public static $post_name = 'events';
     public static $dashicon = 'dashicons-calendar-alt';
-    public static $taxonomies = array();
+    public static $taxonomies = array('vac-year', 'vac-city');
     public static $file = __FILE__;
     public static $class = __CLASS__;
 

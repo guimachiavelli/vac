@@ -9,7 +9,7 @@
             set_query_var(VACTemplate::$post_type_key, VACSchool::$post_type);
         ?>
 
-        <div>
+        <div class="column column--single column--school">
             <?php VACTemplate::ACF_loop($fields, 'single'); ?>
         </div>
 

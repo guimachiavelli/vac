@@ -32,6 +32,22 @@ class VACSchool extends VACSection {
     public static $file = __FILE__;
     public static $class = __CLASS__;
     public static $taxonomies = array('vac-year');
+
+    public static function register_archive_fields() {
+        $main_component = new VACComponent(array(
+            'id' => str_replace('-', '_', static::$post_type) . '_archive',
+            'location' => array('page_template', static::$archive_template),
+            'position' => 'normal',
+            'post_type' => static::$post_type,
+            'name' => static::$post_name
+        ), array(
+            'single' => array(
+                'type' => 'group',
+                'fields' => array('text', 'schools', 'talks_and_lectures'),
+        )));
+
+        $main_component->register();
+    }
 }
 
 VACSchool::init();

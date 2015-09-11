@@ -1,0 +1,46 @@
+.talks__header {
+    margin-bottom: baselines(4);
+
+    &:after {
+        clear: both;
+        content: '';
+        display: block;
+        font-size: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+.talks__title {
+    color: colour(main);
+    float: left;
+    font-size: fontsize(h2);
+    line-height: baselines(8);
+    width: span(4 of 10);
+}
+
+.talks__filters {
+    float: right;
+    margin-right: span(-2);
+    overflow: hidden;
+    width: span(8 of 10);
+}
+
+.talks__list {
+    @include featured-post-small-first-child;
+    clear: both;
+
+    .element--wide {
+        @include span(7 of 10);
+        @include last;
+    }
+
+    .element--narrow {
+        @include span(3 of 10);
+    }
+
+    .featured-post {
+        display: block;
+        overflow: hidden;
+    }
+}

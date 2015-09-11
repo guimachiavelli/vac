@@ -488,6 +488,106 @@ body {
   font-size: 17.5px;
   line-height: 21px; }
 
+.schools__title {
+  color: #103ffb;
+  font-size: 49px;
+  line-height: 48px; }
+
+.schools__filters {
+  float: right;
+  margin-right: -19.14894%;
+  width: 14.89362%; }
+  .schools__filters .archive-filter {
+    display: block;
+    float: none;
+    height: auto;
+    line-height: 1;
+    margin: 0; }
+  .schools__filters .archive-filter__label {
+    line-height: 30px; }
+
+.school {
+  margin-bottom: 72px; }
+  .school a {
+    color: #111;
+    text-decoration: none; }
+
+.school__content {
+  margin-bottom: 72px; }
+
+.school__title {
+  font-size: 49px;
+  line-height: 48px;
+  margin-bottom: 24px; }
+
+.school__figure {
+  margin-bottom: 24px; }
+
+.school__caption {
+  font-size: 21px; }
+
+.school__events .featured-post:first-child .featured-post__header {
+  font-size: 28px;
+  line-height: 30px; }
+
+.school__events .element--wide {
+  width: 69.23077%;
+  float: left;
+  margin-right: 2.5641%;
+  float: right;
+  margin-right: 0; }
+
+.school__events .element--narrow {
+  width: 28.20513%;
+  float: left;
+  margin-right: 2.5641%; }
+
+.school__events .featured-post {
+  display: block;
+  overflow: hidden; }
+
+.talks__header {
+  margin-bottom: 24px; }
+  .talks__header:after {
+    clear: both;
+    content: '';
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden; }
+
+.talks__title {
+  color: #103ffb;
+  float: left;
+  font-size: 49px;
+  line-height: 48px;
+  width: 38.46154%; }
+
+.talks__filters {
+  float: right;
+  margin-right: -19.14894%;
+  overflow: hidden;
+  width: 79.48718%; }
+
+.talks__list {
+  clear: both; }
+  .talks__list .featured-post:first-child .featured-post__header {
+    font-size: 28px;
+    line-height: 30px; }
+  .talks__list .element--wide {
+    width: 69.23077%;
+    float: left;
+    margin-right: 2.5641%;
+    float: right;
+    margin-right: 0; }
+  .talks__list .element--narrow {
+    width: 28.20513%;
+    float: left;
+    margin-right: 2.5641%; }
+  .talks__list .featured-post {
+    display: block;
+    overflow: hidden; }
+
 .column--home.column--wide .featured-posts__title {
   margin-bottom: 0; }
 

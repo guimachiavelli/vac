@@ -27,6 +27,9 @@ class VACComponent {
         );
         $this->featured_posts[1]['sub_fields'][0]['post_type'] = $post_types;
         $this->hero[1]['sub_fields'][4]['post_type'] = $post_types;
+        $this->schools[1]['sub_fields'][5]['sub_fields'][0]['post_type'] = $post_types;
+        $this->talks_and_lectures[1]['sub_fields'][0]['post_type'] = $post_types;
+
         $this->cached_settings = array($config, $left, $right);
 
         $this->fields = $this->assemble($config, $left, $right);
@@ -522,5 +525,160 @@ class VACComponent {
         'library' => 'uploadedTo',
     );
 
+    private $schools = array(
+        array(
+            'key' => 'field_55cb73ebe1d48_vac_schools_title',
+            'label' => 'Title',
+            'name' => 'vac_schools_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_55cb73dbe1d47_school_posts',
+            'label' => '',
+            'name' => 'vac_block_schools',
+            'type' => 'repeater',
+            'instructions' => '',
+            'layout' => 'block',
+            'button_label' => 'Add school',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_key_vac_block_schools_post',
+                    'label' => 'Link',
+                    'name' => 'vac_schools_link',
+                    'type' => 'relationship',
+                    'instructions' => 'Start typing to select posts',
+                    'max' => 1,
+                    'filters' => array(
+                        0 => 'search',
+                        1 => 'post_type'
+                    ),
+                    'post_type' => array('vac-school'),
+                    'return_format' => 'id',
+                ),
+                array (
+                    'key' => 'field_55cb73ebe1d48_vac_schools_title',
+                    'label' => 'Title',
+                    'name' => 'vac_school_title',
+                    'type' => 'textarea',
+                ),
+                array(
+                    'key' => 'field_key_vac_schools_excerpt',
+                    'label' => 'Excerpt',
+                    'name' => 'vac_school_excerpt',
+                    'type' => 'wysiwyg',
+                    'toolbar' => 'full',
+                    'tabs' => 'visual',
+                    'media_upload' => 0,
+                ),
+                array(
+                    'key' => 'field_key_vac_schools_image',
+                    'label' => 'Image',
+                    'name' => 'vac_school_image',
+                    'type' => 'image',
+                    'return_format' => 'id',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'uploadedTo',
+                ),
+                array(
+                    'key' => 'field_featured_school_post_title',
+                    'label' => 'Featured posts title',
+                    'name' => 'vac_school_featured_events_title',
+                    'type' => 'text',
+                ),
+                 array(
+                    'key' => 'field_55cb73dbe1d47_featured_school',
+                    'label' => '',
+                    'name' => 'vac_school_featured_events',
+                    'type' => 'repeater',
+                    'instructions' => '',
+                    'layout' => 'block',
+                    'button_label' => 'Add featured event',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_key_vac_block_featured_school_post',
+                            'label' => 'Link',
+                            'name' => 'vac_school_featured_event_link',
+                            'type' => 'relationship',
+                            'max' => 1,
+                            'required' => 1,
+                            'filters' => array(
+                                0 => 'search',
+                                1 => 'post_type'
+                            ),
+                            'return_format' => 'id',
+                        ),
+                        array(
+                            'key' => 'field_55cbe1d48_vac_featured_school_text',
+                            'label' => 'Text',
+                            'name' => 'vac_school_featured_event_text',
+                            'type' => 'wysiwyg',
+                            'toolbar' => 'full',
+                            'tabs' => 'visual',
+                            'media_upload' => 0,
+                        ),
+                        array(
+                            'key' => 'field_key_vac_featured_school_image',
+                            'label' => 'Image',
+                            'name' => 'vac_school_featured_event_image',
+                            'type' => 'image',
+                            'return_format' => 'id',
+                            'preview_size' => 'thumbnail',
+                            'library' => 'uploadedTo',
+                        ),
+                    )
+                )
+            )
+        )
+    );
 
+    private $talks_and_lectures = array(
+        array(
+            'key' => 'field_featured_talks_title',
+            'label' => 'Featured talks and lectures title',
+            'name' => 'vac_talks_title',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_55cb73dbe1d47_featured_talks',
+            'label' => '',
+            'name' => 'vac_block_talks',
+            'type' => 'repeater',
+            'instructions' => '',
+            'layout' => 'block',
+            'button_label' => 'Add featured talk',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_key_vac_block_featured_talks',
+                    'label' => 'Link',
+                    'name' => 'vac_talk_link',
+                    'type' => 'relationship',
+                    'max' => 1,
+                    'required' => 1,
+                    'filters' => array(
+                        0 => 'search',
+                        1 => 'post_type'
+                    ),
+                    'return_format' => 'id',
+                ),
+                array (
+                    'key' => 'field_55cb73ebe1d48_vac_featured_talk_text',
+                    'label' => 'Text',
+                    'name' => 'vac_talk_text',
+                    'type' => 'wysiwyg',
+                    'toolbar' => 'full',
+                    'tabs' => 'visual',
+                    'media_upload' => 0,
+                ),
+                array(
+                    'key' => 'field_key_vac_featured_talk_image',
+                    'label' => 'Image',
+                    'name' => 'vac_talk_image',
+                    'type' => 'image',
+                    'return_format' => 'id',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'uploadedTo',
+                ),
+            )
+        )
+    );
 }

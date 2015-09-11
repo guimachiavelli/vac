@@ -1,0 +1,68 @@
+.schools__title {
+    color: colour(main);
+    font-size: fontsize(h2);
+    line-height: baselines(8);
+}
+
+.schools__filters {
+    float: right;
+    margin-right: span(-2);
+    width: span(2);
+
+    .archive-filter {
+        display: block;
+        float: none;
+        height: auto;
+        line-height: 1;
+        margin: 0;
+    }
+
+    .archive-filter__label {
+        line-height: baselines(5);
+    }
+}
+
+.school {
+    margin-bottom: baselines(12);
+
+    a {
+        color: colour(text);
+        text-decoration: none;
+    }
+}
+
+.school__content {
+    margin-bottom: baselines(12);
+}
+
+.school__title {
+    font-size: fontsize(h2);
+    line-height: baselines(8);
+    margin-bottom: baselines(4);
+}
+
+.school__figure {
+    margin-bottom: baselines(4);
+}
+
+.school__caption {
+    font-size: fontsize(caption);
+}
+
+.school__events {
+    @include featured-post-small-first-child;
+
+    .element--wide {
+        @include span(7 of 10);
+        @include last;
+    }
+
+    .element--narrow {
+        @include span(3 of 10);
+    }
+
+    .featured-post {
+        display: block;
+        overflow: hidden;
+    }
+}
