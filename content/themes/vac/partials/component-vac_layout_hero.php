@@ -31,8 +31,7 @@
                     </div>
                     <div class="element element--narrow element--last">
                         <div class="hero-post__excerpt">
-                            <p><?php echo $post['vac_hero_post_excerpt']; ?></p>
-                            <em>Read more</em>
+                            <?php echo $post['vac_hero_post_excerpt']; ?>
                         </div>
                     </div>
             </a>

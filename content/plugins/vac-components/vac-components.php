@@ -199,7 +199,6 @@ class VACComponent {
         'endpoint' => 0,
     );
 
-
     private $right_tab = array(
         'key' => 'field_vac_main_component_right_tab',
         'label' => 'Right Column',
@@ -318,44 +317,44 @@ class VACComponent {
     );
 
     private $aside = array (
-            'key' => 'field_55cb7d3574408',
-            'label' => 'Asides',
-            'name' => 'vac_block_aside',
-            'type' => 'repeater',
-            'instructions' => '',
-            'layout' => 'block',
-            'button_label' => 'Add aside',
-            'sub_fields' => array (
-                array (
-                    'key' => 'field_55cb7d4774409',
-                    'label' => 'Aside paragraph number',
-                    'name' => 'aside_paragraph_number',
-                    'type' => 'number',
-                    'instructions' => 'Insert the paragraph number to which the the aside should be aligned',
-                    'default_value' => 1,
-                    'min' => 1,
-                    'step' => 1,
-                ),
-                array (
-                    'key' => 'field_55cb7dc57440a',
-                    'label' => 'Aside image',
-                    'name' => 'aside_image',
-                    'type' => 'image',
-                    'return_format' => 'id',
-                    'preview_size' => 'thumbnail',
-                    'library' => 'uploadedTo',
-                ),
-                array (
-                    'key' => 'field_55cb7deb7440b',
-                    'label' => 'Aside text',
-                    'name' => 'aside_text',
-                    'type' => 'wysiwyg',
-                    'tabs' => 'visual',
-                    'toolbar' => 'full',
-                    'media_upload' => 0,
-                ),
-            )
-        );
+        'key' => 'field_55cb7d3574408',
+        'label' => 'Asides',
+        'name' => 'vac_block_aside',
+        'type' => 'repeater',
+        'instructions' => '',
+        'layout' => 'block',
+        'button_label' => 'Add aside',
+        'sub_fields' => array (
+            array (
+                'key' => 'field_55cb7d4774409',
+                'label' => 'Aside paragraph number',
+                'name' => 'aside_paragraph_number',
+                'type' => 'number',
+                'instructions' => 'Insert the paragraph number to which the the aside should be aligned',
+                'default_value' => 1,
+                'min' => 1,
+                'step' => 1,
+            ),
+            array (
+                'key' => 'field_55cb7dc57440a',
+                'label' => 'Aside image',
+                'name' => 'aside_image',
+                'type' => 'image',
+                'return_format' => 'id',
+                'preview_size' => 'thumbnail',
+                'library' => 'uploadedTo',
+            ),
+            array (
+                'key' => 'field_55cb7deb7440b',
+                'label' => 'Aside text',
+                'name' => 'aside_text',
+                'type' => 'wysiwyg',
+                'tabs' => 'visual',
+                'toolbar' => 'full',
+                'media_upload' => 0,
+            ),
+        )
+    );
 
     private $hero = array(
         array(
@@ -383,13 +382,19 @@ class VACComponent {
                     'key' => 'field_55cb73ebe1d48_vac_hero_standfirst',
                     'label' => 'Standfirst',
                     'name' => 'vac_hero_post_standfirst',
-                    'type' => 'text',
+                    'type' => 'wysiwyg',
+                    'toolbar' => 'full',
+                    'tabs' => 'visual',
+                    'media_upload' => 0,
                 ),
                 array(
                     'key' => 'field_key_vac_hero_excerpt',
                     'label' => 'Excerpt',
                     'name' => 'vac_hero_post_excerpt',
-                    'type' => 'textarea',
+                    'type' => 'wysiwyg',
+                    'toolbar' => 'full',
+                    'tabs' => 'visual',
+                    'media_upload' => 0,
                 ),
                 array(
                     'key' => 'field_key_vac_hero_image',
