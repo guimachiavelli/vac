@@ -304,7 +304,6 @@ body {
 
 .floating-image {
   cursor: pointer;
-  display: none;
   position: absolute;
   right: 25%;
   top: 0; }
@@ -313,7 +312,10 @@ body {
   .floating-image img {
     width: 100%; }
 
-.floating-image--active {
+.floating-image[aria-hidden=true] {
+  display: none; }
+
+.floating-image[aria-hidden=false] {
   display: block; }
 
 .side-gallery {
@@ -372,7 +374,8 @@ body {
   border-bottom: 3px solid #103ffb; }
 
 .accordion-item__title {
-  color: #103ffb; }
+  color: #103ffb;
+  cursor: pointer; }
 
 .accordion-item__content {
   border-top: 3px solid #103ffb;
@@ -506,8 +509,8 @@ body {
 .schools__filters {
   float: right;
   margin-right: -19.14894%;
-  width: 14.89362%;
-  text-align: right; }
+  text-align: right;
+  width: 14.89362%; }
   .schools__filters .archive-filter {
     display: block;
     float: none;

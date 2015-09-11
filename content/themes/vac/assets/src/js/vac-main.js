@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    var Accordion = require('./vac-accordion.js');
+    var Accordion = require('./vac-accordion.js'),
+        FloatingImage = require('./vac-floating-image.js');
 
     var App;
 
@@ -9,6 +10,9 @@
         init: function() {
             this.initNodeList(document.querySelectorAll('.accordion'),
                               Accordion);
+
+            this.initNodeList(document.querySelectorAll('.floating-image'),
+                              FloatingImage);
         },
 
         initNodeList: function(nodeList, Component) {

@@ -142,7 +142,34 @@
 (function() {
     'use strict';
 
-    var Accordion = require('./vac-accordion.js');
+    var dom = require('./utils/dom-traversal.js');
+
+    var FloatingImage;
+
+    FloatingImage = function(el) {
+        this.el = el;
+        this.el.setAttribute('aria-hidden', false);
+    };
+
+    FloatingImage.prototype.bind = function() {
+        this.el.addEventListener('click', this.onImageClick.bind(this));
+    };
+
+    FloatingImage.prototype.onImageClick = function() {
+        this.el.setAttribute('aria-hidden', true);
+    };
+
+
+    module.exports = FloatingImage;
+
+}());
+
+},{"./utils/dom-traversal.js":1}],4:[function(require,module,exports){
+(function() {
+    'use strict';
+
+    var Accordion = require('./vac-accordion.js'),
+        FloatingImage = require('./vac-floating-image.js');
 
     var App;
 
@@ -150,6 +177,9 @@
         init: function() {
             this.initNodeList(document.querySelectorAll('.accordion'),
                               Accordion);
+
+            this.initNodeList(document.querySelectorAll('.floating-image'),
+                              FloatingImage);
         },
 
         initNodeList: function(nodeList, Component) {
@@ -166,4 +196,4 @@
     App.init();
 }());
 
-},{"./vac-accordion.js":2}]},{},[3]);
+},{"./vac-accordion.js":2,"./vac-floating-image.js":3}]},{},[4]);

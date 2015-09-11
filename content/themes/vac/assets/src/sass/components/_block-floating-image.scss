@@ -1,6 +1,5 @@
 .floating-image {
     cursor: pointer;
-    display: none;
     position: absolute;
     right: 25%;
     top: 0;
@@ -14,6 +13,10 @@
     }
 }
 
-.floating-image--active {
+.floating-image[aria-hidden=true] {
+    display: none;
+}
+
+.floating-image[aria-hidden=false] {
     display: block;
 }
