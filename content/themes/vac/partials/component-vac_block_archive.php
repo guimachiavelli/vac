@@ -2,16 +2,18 @@
     $vac_content = VACTemplate::ACF_content($wp_query);
     $post_type = VACTemplate::post_type_from_wp_query($wp_query);
     $taxonomies = VACTemplate::terms_from_post_type($post_type);
+    $filters = implode(', ', array_keys($taxonomies));
 ?>
 
 <div class="component">
-    <div class="archive">
+    <div class="archive" data-filters="true">
         <div class="archive__header">
             <h3 class="archive__title"><?php echo $vac_content; ?></h3>
             <form class="archive__filters">
                 <ul>
                     <li class="archive-filter">
-                        <button class="archive-filter__button" type="reset">
+                        <button class="archive-filter__button"
+                                disabled type="reset">
                             All
                         </button>
                     </li>
@@ -23,7 +25,7 @@
                                    type="checkbox"
                                    name="<?php echo $filter_id; ?>"
                                    id="<?php echo $filter_id; ?>"
-                                   value="<?php echo $filter_id; ?>">
+                                   value="<?php echo $term[1]; ?>">
                             <label class="archive-filter__label"
                                    for="<?php echo $filter_id; ?>">
                                         <?php echo $term[0] ?>
@@ -51,8 +53,10 @@
                     $image = VACTemplate::featured_image($post->ID);
                     $year = get_the_terms($post->ID, 'vac-year');
                     $year = isset($year[0]->name) ? $year[0]->name : '';
+
+                    $item_terms = VACTemplate::post_terms($post->ID);
                 ?>
-                <li class="archive-item">
+                    <li class="archive-item" data-categories="<?php echo $item_terms; ?>">
                     <a href="<?php echo $content['permalink']; ?>">
                     <figure class="archive-item__figure">
                         <?php echo VACTemplate::image($image); ?>

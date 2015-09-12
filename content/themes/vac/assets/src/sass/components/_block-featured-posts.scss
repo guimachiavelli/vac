@@ -25,6 +25,7 @@
     font-size: fontsize(p);
     font-family: $font-main;
     color: colour(main);
+    clear: both;
 
     &:hover {
         text-decoration: underline;
@@ -32,6 +33,10 @@
 
     &:focus {
         outline: none;
+    }
+
+    &:disabled {
+        display: none;
     }
 }
 

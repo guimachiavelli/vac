@@ -181,6 +181,27 @@ class VACTemplate {
         return $parsed_terms;
     }
 
+    public static function post_terms($post_id) {
+        $post = get_post($post_id);
+        $post_type = $post->post_type;
+        $taxonomies = self::taxonomies_from_post_type($post_type);
+
+
+        $out = array();
+        foreach ($taxonomies as $taxonomy):
+            // get the terms related to post
+            $terms = get_the_terms($post->ID, $taxonomy);
+
+            if ( !empty( $terms ) ) {
+              foreach ( $terms as $term ) {
+                $out[] = $term->slug;
+              }
+            }
+        endforeach;
+
+        return implode(', ', $out );
+    }
+
     private static function filter_vac_taxonomy($taxonomy) {
         return strpos($taxonomy, 'vac') !== false;
     }

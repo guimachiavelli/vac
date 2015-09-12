@@ -19,19 +19,27 @@
             this.initNodeList(document.querySelectorAll('.side-gallery'),
                               SideGallery);
 
-            this.initFeaturedPosts(document.querySelectorAll('.featured-posts'),
-                              FeaturedPosts);
+            this.initFeaturedPosts(document.querySelectorAll('.featured-posts'));
+
+            this.initFeaturedPosts(
+                            document.querySelectorAll('.archive'),
+                            '.archive',
+                            '.archive-item');
 
         },
 
-        initFeaturedPosts: function(nodeList, Component) {
-            var i, len, component;
+        initFeaturedPosts: function(nodeList, mainSelector, childSelector) {
+            var i, len, component, node, filters;
 
             for (i = 0, len = nodeList.length; i < len; i += 1) {
-                component = new Component(nodeList[i]);
-                component.setupPostLoading();
+                node = nodeList[i];
+                filters = node.getAttribute('data-filters');
+                component = new FeaturedPosts(node, filters, {
+                    mainSelector: mainSelector,
+                    childSelector: childSelector
+                });
+                component.setup();
             }
-
         },
 
         initNodeList: function(nodeList, Component) {

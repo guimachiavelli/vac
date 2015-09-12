@@ -285,11 +285,14 @@ body {
   cursor: pointer;
   font-size: 28px;
   font-family: "Futura", sans-serif;
-  color: #103ffb; }
+  color: #103ffb;
+  clear: both; }
   .featured-posts__load:hover {
     text-decoration: underline; }
   .featured-posts__load:focus {
     outline: none; }
+  .featured-posts__load:disabled {
+    display: none; }
 
 .featured-post[aria-hidden=true] {
   display: none; }
@@ -491,9 +494,19 @@ body {
     outline: 0; }
   .archive-filter__button:hover {
     text-decoration: underline; }
+  .archive-filter__button:disabled {
+    text-decoration: underline; }
 
 .archive-filter__input:checked + .archive-filter__label {
   text-decoration: underline; }
+
+.archive__list:after {
+  clear: both;
+  content: '';
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden; }
 
 .archive-item {
   width: 38.46154%;
@@ -507,6 +520,8 @@ body {
   .archive-item a {
     color: #111;
     text-decoration: none; }
+  .archive-item[aria-hidden=true] {
+    display: none; }
 
 .archive-item__header {
   margin-bottom: 12px;
