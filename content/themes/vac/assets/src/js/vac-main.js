@@ -4,6 +4,7 @@
     var Accordion = require('./vac-accordion.js'),
         SideGallery = require('./vac-side-gallery.js'),
         FeaturedPosts = require('./vac-featured-posts.js'),
+        Slider = require('./vac-slider.js'),
         FloatingImage = require('./vac-floating-image.js');
 
     var App;
@@ -12,6 +13,9 @@
         init: function() {
             this.initNodeList(document.querySelectorAll('.accordion'),
                               Accordion);
+
+            this.initNodeList(document.querySelectorAll('.slider'),
+                              Slider);
 
             this.initNodeList(document.querySelectorAll('.floating-image'),
                               FloatingImage);

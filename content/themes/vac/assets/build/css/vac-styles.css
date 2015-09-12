@@ -651,8 +651,24 @@ body {
   .talks__list .featured-post[aria-hidden=true] {
     display: none; }
 
+.slider {
+  position: relative; }
+
+.slider-item {
+  margin-bottom: 24px; }
+
+.slider-item[aria-hidden=true] {
+  display: none; }
+
 .slider-item__caption {
   font-size: 21px; }
+
+.slider__counter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 21px;
+  transform: translateY(100%); }
 
 .column--home.column--wide .featured-posts__title {
   margin-bottom: 0; }

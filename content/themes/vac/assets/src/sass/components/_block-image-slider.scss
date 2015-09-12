@@ -1,3 +1,23 @@
+.slider {
+    position: relative;
+}
+
+.slider-item {
+    margin-bottom: baselines(4);
+}
+
+.slider-item[aria-hidden=true] {
+    display: none;
+}
+
 .slider-item__caption {
     font-size: fontsize(caption);
+}
+
+.slider__counter {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: fontsize(caption);
+    transform: translateY(100%);
 }

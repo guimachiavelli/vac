@@ -104,7 +104,6 @@
 
         for (i = 0, len = this.posts.length; i < len; i += 1) {
             post = this.posts[i];
-            console.log(this.hasCategory(post));
 
             if (count < this.initialPosts && this.hasCategory(post)) {
                 count += 1;
