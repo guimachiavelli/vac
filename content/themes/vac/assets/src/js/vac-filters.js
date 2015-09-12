@@ -8,7 +8,7 @@
         this.el = el.querySelector(selector + '__filters');
         this.button = this.el.querySelector('button');
         this.bind();
-        this.reset = callback;
+        this.callback = callback;
     };
 
     Filters.prototype.bind = function() {
@@ -22,7 +22,7 @@
         values = this.checkedValues(checkedElements);
         this.categories = values;
         this.updateButtonState();
-        this.reset();
+        this.callback();
     };
 
     Filters.prototype.checkedValues = function(nodes) {
@@ -51,6 +51,10 @@
     };
 
     Filters.prototype.updateButtonState = function() {
+        if (!this.button) {
+            return;
+        }
+
         var checked = this.el.querySelectorAll(':checked');
         this.button.disabled = checked.length < 1;
     };

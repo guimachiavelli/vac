@@ -1,3 +1,9 @@
+.schools {
+    > button {
+        display: none !important;
+    }
+}
+
 .schools__title {
     color: colour(main);
     font-size: fontsize(h2);
@@ -29,6 +35,10 @@
     a {
         color: colour(text);
         text-decoration: none;
+    }
+
+    &[aria-hidden=true] {
+        display: none;
     }
 }
 

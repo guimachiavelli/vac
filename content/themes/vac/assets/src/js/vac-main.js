@@ -23,21 +23,38 @@
 
             this.initFeaturedPosts(
                             document.querySelectorAll('.archive'),
-                            '.archive',
-                            '.archive-item');
+                            {
+                                mainSelector: '.archive',
+                                childSelector: '.archive-item',
+                                posts: 1
+                            });
+
+            this.initFeaturedPosts(
+                            document.querySelectorAll('.schools'),
+                            {
+                                mainSelector: '.schools',
+                                childSelector: '.school',
+                                posts: 1
+                            });
+
+            this.initFeaturedPosts(
+                            document.querySelectorAll('.talks'),
+                            {
+                                mainSelector: '.talks',
+                                childSelector: '.featured-post',
+                            });
+
+
 
         },
 
-        initFeaturedPosts: function(nodeList, mainSelector, childSelector) {
+        initFeaturedPosts: function(nodeList, configs) {
             var i, len, component, node, filters;
 
             for (i = 0, len = nodeList.length; i < len; i += 1) {
                 node = nodeList[i];
                 filters = node.getAttribute('data-filters');
-                component = new FeaturedPosts(node, filters, {
-                    mainSelector: mainSelector,
-                    childSelector: childSelector
-                });
+                component = new FeaturedPosts(node, filters, configs);
                 component.setup();
             }
         },

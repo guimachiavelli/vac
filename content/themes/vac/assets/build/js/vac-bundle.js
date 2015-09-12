@@ -170,17 +170,23 @@
         this.el = el;
         this.mainSelector = configs.mainSelector || '.featured-posts';
         this.childSelector = configs.childSelector || '.featured-post';
+        this.initialPosts = configs.posts || 4;
+        this.loadNumber = configs.posts || 12;
         this.posts = el.querySelectorAll(this.childSelector);
         this.button = this.loadButton();
         this.setupButton();
 
-        console.log(this.mainSelector + 'init');
-        this.filters = filters ? new Filters(this.el, this.mainSelector, this.reset.bind(this)) : null;
+        if (filters) {
+            this.filters = new Filters(this.el,
+                                      this.mainSelector,
+                                      this.reset.bind(this));
+        }
     };
 
-    FeaturedPosts.prototype.initialPosts = 2;
+    FeaturedPosts.prototype.initialPosts = 4;
     FeaturedPosts.prototype.loadNumber = 10;
     FeaturedPosts.prototype.hiddenPosts = 0;
+    FeaturedPosts.prototype.filters = null;
 
     FeaturedPosts.prototype.reset = function() {
         this.hiddenPosts = 0;
@@ -211,12 +217,20 @@
     };
 
     FeaturedPosts.prototype.updateButton = function() {
+        var moreText;
+
+        if (!this.button) {
+            return;
+        }
+
         if (this.hiddenPosts < 1) {
             this.button.disabled = true;
             return;
         }
 
-        this.button.innerHTML = '+ ' + this.postsToLoad() + ' more';
+        moreText = document.documentElement.lang === 'ru' ? 'Больше' : 'more';
+
+        this.button.innerHTML = '+ ' + this.postsToLoad() + ' ' + moreText;
         this.button.disabled = false;
     };
 
@@ -249,6 +263,7 @@
 
         for (i = 0, len = this.posts.length; i < len; i += 1) {
             post = this.posts[i];
+            console.log(this.hasCategory(post));
 
             if (count < this.initialPosts && this.hasCategory(post)) {
                 count += 1;
@@ -271,6 +286,7 @@
             return node.getAttribute('aria-hidden') === 'true';
         }
 
+
         return node.getAttribute('aria-hidden') === 'true' &&
                 this.hasCategory(node);
     };
@@ -292,8 +308,6 @@
 
         return false;
     };
-
-
 
     FeaturedPosts.prototype.hideExcess = function() {
         var i, len, count;
@@ -327,7 +341,7 @@
         this.el = el.querySelector(selector + '__filters');
         this.button = this.el.querySelector('button');
         this.bind();
-        this.reset = callback;
+        this.callback = callback;
     };
 
     Filters.prototype.bind = function() {
@@ -341,7 +355,7 @@
         values = this.checkedValues(checkedElements);
         this.categories = values;
         this.updateButtonState();
-        this.reset();
+        this.callback();
     };
 
     Filters.prototype.checkedValues = function(nodes) {
@@ -370,6 +384,10 @@
     };
 
     Filters.prototype.updateButtonState = function() {
+        if (!this.button) {
+            return;
+        }
+
         var checked = this.el.querySelectorAll(':checked');
         this.button.disabled = checked.length < 1;
     };
@@ -430,21 +448,38 @@
 
             this.initFeaturedPosts(
                             document.querySelectorAll('.archive'),
-                            '.archive',
-                            '.archive-item');
+                            {
+                                mainSelector: '.archive',
+                                childSelector: '.archive-item',
+                                posts: 1
+                            });
+
+            this.initFeaturedPosts(
+                            document.querySelectorAll('.schools'),
+                            {
+                                mainSelector: '.schools',
+                                childSelector: '.school',
+                                posts: 1
+                            });
+
+            this.initFeaturedPosts(
+                            document.querySelectorAll('.talks'),
+                            {
+                                mainSelector: '.talks',
+                                childSelector: '.featured-post',
+                            });
+
+
 
         },
 
-        initFeaturedPosts: function(nodeList, mainSelector, childSelector) {
+        initFeaturedPosts: function(nodeList, configs) {
             var i, len, component, node, filters;
 
             for (i = 0, len = nodeList.length; i < len; i += 1) {
                 node = nodeList[i];
                 filters = node.getAttribute('data-filters');
-                component = new FeaturedPosts(node, filters, {
-                    mainSelector: mainSelector,
-                    childSelector: childSelector
-                });
+                component = new FeaturedPosts(node, filters, configs);
                 component.setup();
             }
         },

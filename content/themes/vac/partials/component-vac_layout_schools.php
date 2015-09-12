@@ -6,7 +6,7 @@
 ?>
 
 <div class="component component--full">
-    <div class="schools">
+    <div class="schools" data-filters="true">
         <header class="schools__header">
             <h2 class="schools__title">
                 <?php echo $title; ?>
@@ -18,13 +18,13 @@
                 <ul>
                     <?php foreach($taxonomies as $tax => $terms): ?>
                     <?php foreach($terms as $term): ?>
-                        <?php $filter_id = "{$tax}:{$term[1]}"; ?>
+                        <?php $filter_id =  rand(0, 100) . "_{$tax}:{$term[1]}"; ?>
                         <li class="archive-filter">
                             <input class="archive-filter__input"
                                    type="radio"
                                    name="<?php echo $tax; ?>"
                                    id="<?php echo $filter_id; ?>"
-                                   value="<?php echo $filter_id; ?>">
+                                   value="<?php echo $term[1]; ?>">
                             <label class="archive-filter__label"
                                    for="<?php echo $filter_id; ?>">
                                         <?php echo $term[0] ?>
@@ -39,14 +39,15 @@
         <ol class="schools__list">
             <?php foreach ($schools as $school): ?>
             <?php
-                $link = $school['vac_schools_link'];
+                $link = $school['vac_schools_link'][0];
                 $school_title = $school['vac_school_title'];
                 $excerpt = $school['vac_school_excerpt'];
                 $image = $school['vac_school_image'];
                 $events = $school['vac_school_featured_events'];
                 $events_title = $school['vac_school_featured_events_title'];
+                $item_terms = VACTemplate::post_terms($link);
             ?>
-            <li class="school">
+            <li class="school" data-categories="<?php echo $item_terms; ?>">
                 <div class="school__content">
                 <a href="<?php echo get_the_permalink($link); ?>">
                     <header class="school__header">

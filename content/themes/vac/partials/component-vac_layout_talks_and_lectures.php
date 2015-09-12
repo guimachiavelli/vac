@@ -6,7 +6,7 @@
 ?>
 
 <div class="component">
-    <div class="talks">
+    <div class="talks" data-filters="true">
         <div class="talks__header">
             <h3 class="talks__title"><?php echo $title; ?></h3>
             <form class="talks__filters">
@@ -18,13 +18,13 @@
                     </li>
                     <?php foreach($taxonomies as $tax => $terms): ?>
                     <?php foreach($terms as $term): ?>
-                        <?php $filter_id = "{$tax}:{$term[1]}"; ?>
+                        <?php $filter_id =  rand(0, 100) . "_{$tax}:{$term[1]}"; ?>
                         <li class="archive-filter">
                             <input class="archive-filter__input"
                                    type="checkbox"
                                    name="<?php echo $filter_id; ?>"
                                    id="<?php echo $filter_id; ?>"
-                                   value="<?php echo $filter_id; ?>">
+                                   value="<?php echo $term[1]; ?>">
                             <label class="archive-filter__label"
                                    for="<?php echo $filter_id; ?>">
                                         <?php echo $term[0] ?>
@@ -42,9 +42,9 @@
                 $link = $talk['vac_talk_link'][0];
                 $image = $talk['vac_talk_image'];
                 $text = $talk['vac_talk_text'];
+                $terms = VACTemplate::post_terms($link);
             ?>
-            <li class="featured-post">
-
+            <li class="featured-post" data-categories="<?php echo $terms; ?>">
             <a href="<?php echo get_the_permalink($link); ?>">
                 <div class="element element--narrow">
                     <figure class="featured-post__content">

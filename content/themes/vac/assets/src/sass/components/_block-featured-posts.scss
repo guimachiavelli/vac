@@ -18,6 +18,10 @@
     }
 }
 
+.featured-post[aria-hidden=true] {
+    display: none;
+}
+
 .featured-posts__load {
     border: 0;
     background: none;
@@ -40,9 +44,6 @@
     }
 }
 
-.featured-post[aria-hidden=true] {
-    display: none;
-}
 
 .featured-post__content {
     margin-bottom: baselines(2);

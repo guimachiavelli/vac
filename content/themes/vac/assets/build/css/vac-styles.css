@@ -279,6 +279,9 @@ body {
     .featured-post a:visited {
       color: #111; }
 
+.featured-post[aria-hidden=true] {
+  display: none; }
+
 .featured-posts__load {
   border: 0;
   background: none;
@@ -293,9 +296,6 @@ body {
     outline: none; }
   .featured-posts__load:disabled {
     display: none; }
-
-.featured-post[aria-hidden=true] {
-  display: none; }
 
 .featured-post__content {
   margin-bottom: 12px; }
@@ -543,6 +543,9 @@ body {
   font-size: 17.5px;
   line-height: 21px; }
 
+.schools > button {
+  display: none !important; }
+
 .schools__title {
   color: #103ffb;
   font-size: 49px;
@@ -567,6 +570,8 @@ body {
   .school a {
     color: #111;
     text-decoration: none; }
+  .school[aria-hidden=true] {
+    display: none; }
 
 .school__content {
   margin-bottom: 72px; }
@@ -643,6 +648,8 @@ body {
   .talks__list .featured-post {
     display: block;
     overflow: hidden; }
+  .talks__list .featured-post[aria-hidden=true] {
+    display: none; }
 
 .slider-item__caption {
   font-size: 21px; }

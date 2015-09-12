@@ -186,10 +186,8 @@ class VACTemplate {
         $post_type = $post->post_type;
         $taxonomies = self::taxonomies_from_post_type($post_type);
 
-
         $out = array();
         foreach ($taxonomies as $taxonomy):
-            // get the terms related to post
             $terms = get_the_terms($post->ID, $taxonomy);
 
             if ( !empty( $terms ) ) {
@@ -199,7 +197,7 @@ class VACTemplate {
             }
         endforeach;
 
-        return implode(', ', $out );
+        return implode(', ', $out);
     }
 
     private static function filter_vac_taxonomy($taxonomy) {
