@@ -5,6 +5,7 @@
         SideGallery = require('./vac-side-gallery.js'),
         FeaturedPosts = require('./vac-featured-posts.js'),
         Slider = require('./vac-slider.js'),
+        Aside = require('./vac-aside.js'),
         FloatingImage = require('./vac-floating-image.js');
 
     var App;
@@ -22,6 +23,9 @@
 
             this.initNodeList(document.querySelectorAll('.side-gallery'),
                               SideGallery);
+
+            this.initNodeList(document.querySelectorAll('.asides'),
+                              Aside);
 
             this.initFeaturedPosts(document.querySelectorAll('.featured-posts'));
 

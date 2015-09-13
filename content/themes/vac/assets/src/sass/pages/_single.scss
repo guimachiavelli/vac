@@ -13,6 +13,7 @@
 
 .column--post {
     @include featured-post-small-first-child;
+    position: relative;
 
     &.column--narrow {
         @include span(3 of 12);

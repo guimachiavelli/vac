@@ -160,6 +160,60 @@
 (function() {
     'use strict';
 
+    var Aside;
+
+    Aside = function(el) {
+        this.els = el.querySelectorAll('.aside-item');
+        this.paragraphs = this.postParagraphs();
+        this.position(this.els, this.paragraphs);
+        this.lastResize = 0;
+    };
+
+    Aside.prototype.postParagraphs = function() {
+        return document.querySelector('.column--wide').querySelectorAll('p');
+    };
+
+    Aside.prototype.position = function(els, paragraphs) {
+        var i, len, el, index, y;
+
+        for (i = 0, len = els.length; i < len; i += 1) {
+            el = els[i];
+            index = parseInt(els[i].getAttribute('data-paragraph'), 10) - 1;
+
+            if (!paragraphs[i]) {
+                continue;
+            }
+
+            y = paragraphs[index].offsetTop;
+
+            el.style.position = 'absolute';
+            el.style.top = y + 'px';
+        }
+    };
+
+    Aside.prototype.bind = function(){
+        window.addEventListener('resize', this.position.bind(this));
+    };
+
+    Aside.prototype.onResize = function() {
+        var now;
+
+        now = new Date().getTime();
+
+        if (now - this.lastResize > 200) {
+            this.position();
+            this.lastResize = now;
+        }
+    };
+
+    module.exports = Aside;
+
+}());
+
+},{}],4:[function(require,module,exports){
+(function() {
+    'use strict';
+
     var dom = require('./utils/dom-traversal.js'),
         Filters = require('./vac-filters.js');
 
@@ -329,7 +383,7 @@
 
 }());
 
-},{"./utils/dom-traversal.js":1,"./vac-filters.js":4}],4:[function(require,module,exports){
+},{"./utils/dom-traversal.js":1,"./vac-filters.js":5}],5:[function(require,module,exports){
 (function() {
     'use strict';
 
@@ -395,7 +449,7 @@
 
 }());
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function() {
     'use strict';
 
@@ -421,7 +475,7 @@
 
 }());
 
-},{"./utils/dom-traversal.js":1}],6:[function(require,module,exports){
+},{"./utils/dom-traversal.js":1}],7:[function(require,module,exports){
 (function() {
     'use strict';
 
@@ -429,6 +483,7 @@
         SideGallery = require('./vac-side-gallery.js'),
         FeaturedPosts = require('./vac-featured-posts.js'),
         Slider = require('./vac-slider.js'),
+        Aside = require('./vac-aside.js'),
         FloatingImage = require('./vac-floating-image.js');
 
     var App;
@@ -446,6 +501,9 @@
 
             this.initNodeList(document.querySelectorAll('.side-gallery'),
                               SideGallery);
+
+            this.initNodeList(document.querySelectorAll('.asides'),
+                              Aside);
 
             this.initFeaturedPosts(document.querySelectorAll('.featured-posts'));
 
@@ -501,7 +559,7 @@
     App.init();
 }());
 
-},{"./vac-accordion.js":2,"./vac-featured-posts.js":3,"./vac-floating-image.js":5,"./vac-side-gallery.js":7,"./vac-slider.js":8}],7:[function(require,module,exports){
+},{"./vac-accordion.js":2,"./vac-aside.js":3,"./vac-featured-posts.js":4,"./vac-floating-image.js":6,"./vac-side-gallery.js":8,"./vac-slider.js":9}],8:[function(require,module,exports){
 (function() {
     'use strict';
 
@@ -538,7 +596,7 @@
 
 }());
 
-},{"./utils/dom-traversal.js":1}],8:[function(require,module,exports){
+},{"./utils/dom-traversal.js":1}],9:[function(require,module,exports){
 (function() {
     'use strict';
 
@@ -623,4 +681,4 @@
 
 }());
 
-},{"./utils/dom-traversal.js":1}]},{},[6]);
+},{"./utils/dom-traversal.js":1}]},{},[7]);

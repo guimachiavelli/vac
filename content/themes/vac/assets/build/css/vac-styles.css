@@ -533,6 +533,9 @@ body {
 .archive-item__year {
   display: none; }
 
+.aside {
+  position: relative; }
+
 .aside-item {
   margin-bottom: 24px; }
 
@@ -889,13 +892,14 @@ body {
   font-size: 77px;
   line-height: 78px; }
 
-.column--post .featured-post:first-child .featured-post__header {
-  font-size: 28px;
-  line-height: 30px; }
-
-.column--post.column--narrow {
-  width: 23.40426%;
-  float: left;
-  margin-right: 2.12766%;
-  float: right;
-  margin-right: 0; }
+.column--post {
+  position: relative; }
+  .column--post .featured-post:first-child .featured-post__header {
+    font-size: 28px;
+    line-height: 30px; }
+  .column--post.column--narrow {
+    width: 23.40426%;
+    float: left;
+    margin-right: 2.12766%;
+    float: right;
+    margin-right: 0; }
