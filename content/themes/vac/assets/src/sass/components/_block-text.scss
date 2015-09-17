@@ -3,6 +3,10 @@
     .text__p {
         margin-bottom: baselines(4);
     }
+
+    .text__p--big {
+        margin-bottom: baselines(8);
+    }
 }
 
 .text__p--blue {
@@ -14,3 +18,5 @@
     font-size: fontsize(h2);
     line-height: baselines(8);
 }
+
+

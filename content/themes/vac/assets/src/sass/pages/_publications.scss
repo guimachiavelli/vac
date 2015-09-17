@@ -19,19 +19,21 @@
         }
     }
 
-    .archive__filters {
-        @include span(10 of 10);
-        @include break;
-        text-align: left;
-    }
+   .archive__title {
+        margin-bottom: baselines(4);
+   }
 
-    .archive-item {
+   .archive-item {
         @include span(10 of 10);
         @include post(0);
     }
 
     .archive-item__header {
         @include span(6 of 10);
+    }
+
+    .archive-item__standfirst {
+        margin-top: baselines(4);
     }
 
     .archive-item__figure {
@@ -42,5 +44,6 @@
         @include span(1 of 10);
         @include last;
         display: block;
+        font-size: fontsize(caption);
     }
 }

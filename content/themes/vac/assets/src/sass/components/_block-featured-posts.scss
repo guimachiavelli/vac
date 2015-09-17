@@ -44,11 +44,6 @@
     }
 }
 
-
-.featured-post__content {
-    margin-bottom: baselines(2);
-}
-
 .featured-post__header {
     color: $colour-text;
     text-decoration: none;
@@ -56,6 +51,7 @@
     .featured-post:first-child & {
         font-size: fontsize(h2);
         line-height: baselines(8);
+        margin-bottom: baselines(3);
     }
 }
 
@@ -68,15 +64,24 @@
 .featured-post__excerpt {
     color: colour(text);
     margin-top: baselines(4);
+
+    &:empty {
+        margin: 0;
+    }
 }
 
 @mixin featured-post-small-first-child() {
     .featured-post:first-child .featured-post__header {
         font-size: fontsize(p);
-        line-height: baselines(5);
+        line-height: baselines(4);
+        margin-bottom: 0;
     }
 }
 
 .column--narrow {
     @include featured-post-small-first-child;
+
+    .featured-post__content {
+        margin-bottom: baselines(2);
+    }
 }

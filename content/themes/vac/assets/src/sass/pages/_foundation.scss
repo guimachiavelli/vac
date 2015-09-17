@@ -1,6 +1,6 @@
 .column--foundation {
     &.column--wide {
-        margin-top: baselines(44);
+        margin-top: baselines(28);
     }
 
     &.column--narrow {
@@ -13,7 +13,7 @@
     }
 
     .featured-posts__title {
-        margin-bottom: baselines(2);
+        margin-bottom: baselines(4);
     }
 
     .featured-post:first-child .featured-post__header {

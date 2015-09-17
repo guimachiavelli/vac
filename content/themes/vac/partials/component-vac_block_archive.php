@@ -60,14 +60,19 @@
                     <a href="<?php echo $content['permalink']; ?>">
                     <figure class="archive-item__figure">
                         <?php echo VACTemplate::image($image); ?>
+                        <figcaption class="archive-item__caption">
+                            <?php echo VACTemplate::image_caption($image); ?>
+                        </figcaption>
                     </figure>
 
                     <div class="archive-item__header">
-                        <h3 class="archive-item__title">
-                            <?php echo $content['title']; ?>
-                        </h3>
-                        <div class="archive-item__standfirst">
-                            <?php echo $content['standfirst']; ?>
+                        <div class="archive-item__header-spacing">
+                            <h3 class="archive-item__title">
+                                <?php echo $content['title']; ?>
+                            </h3>
+                            <div class="archive-item__standfirst">
+                                <?php echo $content['standfirst']; ?>
+                            </div>
                         </div>
                     </div>
                     <aside class="archive-item__year">

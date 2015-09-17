@@ -4,10 +4,11 @@
 
     p {
         font-size: fontsize(caption);
+        line-height: baselines(4.5);
     }
 
     p:last-child {
-        margin-top: baselines(2);
+        margin-top: baselines(3);
     }
 
     a {

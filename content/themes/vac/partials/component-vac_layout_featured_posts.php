@@ -37,9 +37,7 @@
                 </div>
 
                 <div class="element element-full">
-                    <aside class="featured-post__excerpt">
-                        <?php echo $excerpt; ?>
-                    </aside>
+                    <aside class="featured-post__excerpt"><?php echo $excerpt; ?></aside>
                 </div>
             </a>
             </li>

@@ -19,15 +19,15 @@
 
 .archive-filter {
     display: inline-block;
+    letter-spacing: -1px;
     line-height: baselines(8);
-    margin-right: baselines(2);
+    margin-left: baselines(1.5);
     //FIXME: magic numbers
     position: relative;
     top: 6px;
-    letter-spacing: -.5px;
 
-    &:last-child {
-        margin-right: 0;
+    &:first-child {
+        margin-left: 0;
     }
 }
 
@@ -100,14 +100,20 @@
 }
 
 .archive-item__header {
-    margin-bottom: baselines(2);
     display: table-header-group;
+}
+
+.archive-item__header-spacing {
+    margin-bottom: baselines(3);
 }
 
 .archive-item__figure {
     display: table-footer-group;
 }
 
+.archive-item__caption {
+    font-size: fontsize(caption);
+}
 
 .archive-item__year {
     display: none;
@@ -128,6 +134,10 @@
         @include span(last 9 of 12);
     }
 
+    .archive-item__figure {
+        margin-right: span(-2);
+    }
+
     .archive-item {
         @include span(8 of 12);
     }
@@ -144,5 +154,23 @@
 
     .archive-item__figure img {
         max-width: 720px;
+    }
+}
+
+@mixin archive-big-title {
+    .archive__title {
+        @include span(4 of 12);
+        font-size: fontsize(h1);
+        line-height: baselines(13);
+        letter-spacing: -3.5px;
+    }
+
+    .archive__filters {
+        width: span(8 of 12);
+    }
+
+    .archive-filter {
+        //FIXME: magic numbers
+        top: 21px;
     }
 }
