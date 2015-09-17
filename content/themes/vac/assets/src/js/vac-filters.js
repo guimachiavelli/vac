@@ -38,6 +38,7 @@
     Filters.prototype.reset = function() {
         this.categories = [];
         this.resetCheckboxes(this.el.querySelectorAll(':checked'));
+        this.callback();
     };
 
     Filters.prototype.resetCheckboxes = function(nodeList) {

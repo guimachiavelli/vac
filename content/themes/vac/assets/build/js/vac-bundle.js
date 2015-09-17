@@ -425,6 +425,7 @@
     Filters.prototype.reset = function() {
         this.categories = [];
         this.resetCheckboxes(this.el.querySelectorAll(':checked'));
+        this.callback();
     };
 
     Filters.prototype.resetCheckboxes = function(nodeList) {
@@ -513,7 +514,7 @@
                             {
                                 mainSelector: '.archive',
                                 childSelector: '.archive-item',
-                                posts: 1
+                                posts: 4
                             });
 
             this.initFeaturedPosts(
@@ -521,7 +522,7 @@
                             {
                                 mainSelector: '.schools',
                                 childSelector: '.school',
-                                posts: 1
+                                posts: 4
                             });
 
             this.initFeaturedPosts(

@@ -34,7 +34,7 @@
                             {
                                 mainSelector: '.archive',
                                 childSelector: '.archive-item',
-                                posts: 1
+                                posts: 4
                             });
 
             this.initFeaturedPosts(
@@ -42,7 +42,7 @@
                             {
                                 mainSelector: '.schools',
                                 childSelector: '.school',
-                                posts: 1
+                                posts: 4
                             });
 
             this.initFeaturedPosts(
