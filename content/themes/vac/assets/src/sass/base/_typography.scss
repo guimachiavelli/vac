@@ -1,12 +1,24 @@
 @font-face {
     font-family: 'Futura';
-    src: url('../fonts/futura/futurabookc-webfont.eot');
-    src: url('../fonts/futura/futurabookc-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/futura/futurabookc-webfont.woff2') format('woff2'),
-         url('../fonts/futura/futurabookc-webfont.woff') format('woff'),
-         url('../fonts/futura/futurabookc-webfont.ttf') format('truetype'),
-         url('../fonts/futura/futurabookc-webfont.svg#futurabookcregular') format('svg');
+    src: url('../fonts/futura/futurabook-webfont.eot');
+    src: url('../fonts/futura/futurabook-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura/futurabook-webfont.woff2') format('woff2'),
+         url('../fonts/futura/futurabook-webfont.woff') format('woff'),
+         url('../fonts/futura/futurabook-webfont.ttf') format('truetype'),
+         url('../fonts/futura/futurabook-webfont.svg#futurabookregular') format('svg');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/futura/futuramedium-webfont.eot');
+    src: url('../fonts/futura/futuramedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura/futuramedium-webfont.woff2') format('woff2'),
+         url('../fonts/futura/futuramedium-webfont.woff') format('woff'),
+         url('../fonts/futura/futuramedium-webfont.ttf') format('truetype'),
+         url('../fonts/futura/futuramedium-webfont.svg#futuramediumregular') format('svg');
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -33,4 +45,8 @@ $fontsizes: (
 
 @function fontsize($size) {
     @return map-get($fontsizes, $size);
+}
+
+@function baselines($lines) {
+    @return $baseline * $lines;
 }
