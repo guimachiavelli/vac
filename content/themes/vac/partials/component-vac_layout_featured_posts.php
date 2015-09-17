@@ -22,12 +22,14 @@
             <li class="featured-post">
             <a href="<?php echo get_the_permalink($link); ?>">
                 <div class="element element--narrow">
-                    <figure class="featured-post__content">
-                       <?php echo VACTemplate::image($image); ?>
-                        <figcaption class="featured-post__caption">
-                            <?php echo VACTemplate::image_caption($image); ?>
-                        </figcaption>
-                    </figure>
+                    <div class="featured-post__content">
+                        <figure class="featured-post__figure">
+                           <?php echo VACTemplate::image($image); ?>
+                            <figcaption class="featured-post__caption">
+                                <?php echo VACTemplate::image_caption($image); ?>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
 
                 <div class="element element--wide element--last">

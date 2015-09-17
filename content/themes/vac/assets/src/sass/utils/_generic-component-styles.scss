@@ -1,0 +1,26 @@
+@mixin block-hover {
+    $selector: &;
+
+    &:hover {
+        #{$selector}__header {
+            //text-decoration: underline;
+        }
+
+        #{$selector}__figure {
+            background: saturate(lighten(colour(main), 10%), 10%);
+
+            img {
+                mix-blend-mode: multiply;
+                opacity: 0.75;
+            }
+        }
+
+        #{$selector}__caption {
+            background: colour(site-bg);
+        }
+
+        .text__p--read-more {
+            text-decoration: underline;
+        }
+    }
+}

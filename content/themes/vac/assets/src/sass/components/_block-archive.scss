@@ -80,6 +80,7 @@
 }
 
 .archive-item {
+    @include block-hover;
     @include span(4 of 10);
     @include post(1 of 10);
     display: table;

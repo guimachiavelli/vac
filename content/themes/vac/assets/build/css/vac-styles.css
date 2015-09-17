@@ -252,6 +252,18 @@ body {
   line-height: 48px;
   color: #103ffb; }
 
+.hero-post:hover .hero-post__figure {
+  background: #3f65ff; }
+  .hero-post:hover .hero-post__figure img {
+    mix-blend-mode: multiply;
+    opacity: 0.75; }
+
+.hero-post:hover .hero-post__caption {
+  background: #fff; }
+
+.hero-post:hover .text__p--read-more {
+  text-decoration: underline; }
+
 .hero-post__header {
   margin-bottom: 24px; }
 
@@ -278,6 +290,15 @@ body {
 .featured-post {
   display: table;
   margin-bottom: 24px; }
+  .featured-post:hover .featured-post__figure {
+    background: #3f65ff; }
+    .featured-post:hover .featured-post__figure img {
+      mix-blend-mode: multiply;
+      opacity: 0.75; }
+  .featured-post:hover .featured-post__caption {
+    background: #fff; }
+  .featured-post:hover .text__p--read-more {
+    text-decoration: underline; }
   .featured-post a {
     text-decoration: none; }
     .featured-post a:visited {
@@ -511,6 +532,15 @@ body {
   margin-right: 10.25641%;
   display: table;
   margin-bottom: 48px; }
+  .archive-item:hover .archive-item__figure {
+    background: #3f65ff; }
+    .archive-item:hover .archive-item__figure img {
+      mix-blend-mode: multiply;
+      opacity: 0.75; }
+  .archive-item:hover .archive-item__caption {
+    background: #fff; }
+  .archive-item:hover .text__p--read-more {
+    text-decoration: underline; }
   .archive-item:nth-child(2n+1) {
     clear: both; }
   .archive-item a {
@@ -571,6 +601,15 @@ body {
 
 .school {
   margin-bottom: 72px; }
+  .school:hover .school__figure {
+    background: #3f65ff; }
+    .school:hover .school__figure img {
+      mix-blend-mode: multiply;
+      opacity: 0.75; }
+  .school:hover .school__caption {
+    background: #fff; }
+  .school:hover .text__p--read-more {
+    text-decoration: underline; }
   .school a {
     color: #111;
     text-decoration: none; }
@@ -690,6 +729,9 @@ body {
 .text__p--big {
   font-size: 49px;
   line-height: 48px; }
+
+.text__p--read-more {
+  color: #103ffb; }
 
 .column--home.column--full {
   margin-top: 36px; }

@@ -6,6 +6,7 @@
 }
 
 .featured-post {
+    @include block-hover;
     display: table;
     margin-bottom: baselines(4);
 

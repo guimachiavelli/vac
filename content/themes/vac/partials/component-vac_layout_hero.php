@@ -22,7 +22,7 @@
                 </div>
                 <div class="element element--full">
                     <div class="element element--wide">
-                        <figure class="hero-post__picture">
+                        <figure class="hero-post__figure">
                             <?php echo VACTemplate::image($post['vac_hero_post_image']); ?>
                         </figure>
                     </div>

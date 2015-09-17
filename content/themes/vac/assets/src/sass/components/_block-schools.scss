@@ -30,6 +30,7 @@
 }
 
 .school {
+    @include block-hover;
     margin-bottom: baselines(12);
 
     a {

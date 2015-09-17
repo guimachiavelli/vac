@@ -9,3 +9,7 @@
 .text__heading {
     font-size: x-large;
 }
+
+.text__p--read-more {
+    color: blue;
+}

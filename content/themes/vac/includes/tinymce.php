@@ -29,10 +29,10 @@ class VACTinyMCE {
                 'classes' => 'text__p text__p--blue'
             ),
             array(
-                'title' => 'Heading',
-                'block' => 'h3',
-                'classes' => 'text__heading'
-            ),
+                'title' => 'Read more',
+                'inline' => 'span',
+                'classes' => 'text__p text__p--read-more',
+            )
         );
 
         $settings['style_formats'] = json_encode( $style_formats );
@@ -48,8 +48,8 @@ class VACTinyMCE {
     public static function buttons($buttons) {
         return array(
             'bold',
-            'italic',
-            'underline',
+            //'italic',
+            //'underline',
             'link',
             'unlink',
             'styleselect',
