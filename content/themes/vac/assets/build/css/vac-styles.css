@@ -90,11 +90,17 @@ table {
     height: auto;
     display: block; }
 
-.element {
-  overflow: hidden; }
-  .element img {
-    width: 100%;
-    display: block; }
+.element:after {
+  clear: both;
+  content: '';
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden; }
+
+.element img {
+  width: 100%;
+  display: block; }
 
 .element--full {
   width: 100%;
@@ -206,11 +212,11 @@ body {
   float: left;
   font-size: 49px;
   line-height: 48px;
-  margin-right: 30px; }
+  margin-right: 30px;
+  color: #103ffb; }
   .menu-item a {
-    text-decoration: none; }
-    .menu-item a:visited {
-      color: #103ffb; }
+    text-decoration: none;
+    color: #103ffb; }
   .menu-item:hover {
     text-decoration: underline; }
 
@@ -316,7 +322,7 @@ body {
 
 .column--narrow .featured-post:first-child .featured-post__header {
   font-size: 28px;
-  line-height: 24px;
+  line-height: 30px;
   margin-bottom: 0; }
 
 .column--narrow .featured-post__content {
@@ -587,7 +593,7 @@ body {
 
 .school__events .featured-post:first-child .featured-post__header {
   font-size: 28px;
-  line-height: 24px;
+  line-height: 30px;
   margin-bottom: 0; }
 
 .school__events .element--wide {
@@ -633,7 +639,7 @@ body {
   clear: both; }
   .talks__list .featured-post:first-child .featured-post__header {
     font-size: 28px;
-    line-height: 24px;
+    line-height: 30px;
     margin-bottom: 0; }
   .talks__list .element--wide {
     width: 69.23077%;
@@ -944,8 +950,10 @@ body {
   position: relative; }
   .column--post .featured-post:first-child .featured-post__header {
     font-size: 28px;
-    line-height: 24px;
+    line-height: 30px;
     margin-bottom: 0; }
+  .column--post .featured-posts__title {
+    margin-bottom: 24px; }
   .column--post.column--narrow {
     width: 23.40426%;
     float: left;

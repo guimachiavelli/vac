@@ -41,7 +41,7 @@ $grid-outer-padding: baselines(4);
 }
 
 .element {
-    overflow: hidden;
+    @include clearfix;
 
     img {
         width: 100%;

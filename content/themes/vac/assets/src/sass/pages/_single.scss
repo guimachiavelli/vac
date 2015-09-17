@@ -15,6 +15,10 @@
     @include featured-post-small-first-child;
     position: relative;
 
+    .featured-posts__title {
+        margin-bottom: baselines(4);
+    }
+
     &.column--narrow {
         @include span(3 of 12);
         @include last;

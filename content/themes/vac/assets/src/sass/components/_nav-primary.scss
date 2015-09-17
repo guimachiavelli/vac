@@ -8,13 +8,11 @@
     font-size: fontsize(h2);
     line-height: baselines(8);
     margin-right: baselines(5);
+    color: $colour-main;
 
     a {
         text-decoration: none;
-
-        &:visited {
-            color: $colour-main;
-        }
+        color: $colour-main;
     }
 
     &:hover {

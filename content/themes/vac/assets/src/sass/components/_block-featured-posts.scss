@@ -73,7 +73,7 @@
 @mixin featured-post-small-first-child() {
     .featured-post:first-child .featured-post__header {
         font-size: fontsize(p);
-        line-height: baselines(4);
+        line-height: baselines(5);
         margin-bottom: 0;
     }
 }
