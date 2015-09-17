@@ -33,16 +33,17 @@
     };
 
     Aside.prototype.bind = function(){
-        window.addEventListener('resize', this.position.bind(this));
+        window.addEventListener('resize', this.onResize.bind(this));
     };
 
     Aside.prototype.onResize = function() {
         var now;
+        console.log('resize');
 
         now = new Date().getTime();
 
         if (now - this.lastResize > 200) {
-            this.position();
+            this.position(this.els, this.paragraphs);
             this.lastResize = now;
         }
     };
