@@ -1,5 +1,6 @@
 .search {
     margin-bottom: baselines(8);
+    position: relative;
 }
 
 .search__input {
@@ -9,8 +10,8 @@
     font-family: $font-main;
     font-size: fontsize(h2);
     margin: 0;
-    padding: 0;
-    width: 90%;
+    padding: 0 70px 0 0;
+    width: 100%;
 
     @include placeholder {
         color: colour(text);
@@ -29,6 +30,10 @@
     color: colour(main);
     background: transparent;
     font-size: fontsize(h2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 
     &:focus {
         outline: 0;
@@ -37,6 +42,7 @@
 
 .search--small {
     margin-bottom: 0;
+
     .search__input {
         width: 80px;
         font-size: fontsize(language);

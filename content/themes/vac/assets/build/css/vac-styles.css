@@ -244,7 +244,8 @@ strong {
   text-decoration: none; }
 
 .search {
-  margin-bottom: 48px; }
+  margin-bottom: 48px;
+  position: relative; }
 
 .search__input {
   background: transparent;
@@ -253,8 +254,8 @@ strong {
   font-family: "Futura", sans-serif;
   font-size: 49px;
   margin: 0;
-  padding: 0;
-  width: 90%; }
+  padding: 0 70px 0 0;
+  width: 100%; }
   .search__input::-webkit-input-placeholder {
     color: #111; }
   .search__input:-moz-placeholder {
@@ -273,7 +274,11 @@ strong {
   padding: 0;
   color: #103ffb;
   background: transparent;
-  font-size: 49px; }
+  font-size: 49px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer; }
   .search__button:focus {
     outline: 0; }
 
