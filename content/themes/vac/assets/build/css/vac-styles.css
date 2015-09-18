@@ -287,7 +287,8 @@ strong {
   .search--small .search__input {
     width: 80px;
     font-size: 26.25px;
-    border: 0; }
+    border: 0;
+    padding: 0; }
     .search--small .search__input::-webkit-input-placeholder {
       color: #103ffb; }
     .search--small .search__input:-moz-placeholder {

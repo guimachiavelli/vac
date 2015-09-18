@@ -47,6 +47,7 @@
         width: 80px;
         font-size: fontsize(language);
         border: 0;
+        padding: 0;
 
         @include placeholder {
             color: colour(main);
