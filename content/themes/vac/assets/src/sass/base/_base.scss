@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    @include container(1280px);
+    @include container($grid-max-width);
     font-family: $font-main;
     font-size: fontsize(p);
     line-height: baselines(5);

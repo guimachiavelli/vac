@@ -6,7 +6,6 @@
         var current;
 
         current = node.getAttribute(attribute);
-        console.log(current);
 
         if (current === 'true') {
             node.setAttribute(attribute, false);
@@ -571,16 +570,26 @@
 
     SideGallery = function(el) {
         this.el = el;
-        this.mask = el.querySelector('.side-gallery__mask');
+        this.wrapper = el.querySelector('.side-gallery__wrapper');
+        this.container = el.querySelector('.side-gallery__container');
+        this.wrapper.appendChild(this.button);
+        this.lastResize = 0;
+
+        //defer
+        setTimeout(this.adjustHeight.bind(this), 100);
+    };
+
+    SideGallery.prototype.adjustHeight = function() {
+        this.wrapper.style.height = this.container.offsetHeight + 'px';
     };
 
     SideGallery.prototype.bind = function() {
         this.el.addEventListener('click', this.onImageClick.bind(this));
+        window.addEventListener('resize', this.onResize.bind(this));
     };
 
     SideGallery.prototype.onImageClick = function() {
         dom.toggleAttribute(this.el, 'aria-expanded');
-        this.mask.appendChild(this.button);
     };
 
     SideGallery.prototype.button = (function() {
@@ -592,6 +601,17 @@
         button.type = 'button';
         return button;
     }());
+
+    SideGallery.prototype.onResize = function() {
+        var now;
+
+        now = new Date().getTime();
+
+        if (now - this.lastResize > 200) {
+            this.adjustHeight();
+            this.lastResize = now;
+        }
+    };
 
 
     module.exports = SideGallery;

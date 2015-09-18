@@ -375,55 +375,73 @@ strong {
 .floating-image[aria-hidden=false] {
   display: block; }
 
-.side-gallery {
-  overflow: hidden; }
+.side-gallery__wrapper {
+  height: 100vw;
+  overflow: hidden;
+  position: relative; }
 
 .side-gallery__mask {
-  left: -50vw;
+  left: 0;
+  position: absolute;
+  transform: translateX(-80%);
+  width: 100vw; }
+
+.side-gallery__container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
   position: relative;
-  width: 90vw; }
+  overflow: hidden; }
+  .side-gallery__container:after {
+    content: " ";
+    display: block;
+    clear: both; }
 
 .side-gallery__title {
-  display: none;
-  margin-bottom: 48px; }
+  margin-left: 5vw;
+  margin-bottom: 48px;
+  visibility: hidden; }
 
 .side-gallery__item {
-  margin-bottom: 48px; }
+  margin-bottom: 48px;
+  margin-left: 20vw;
+  max-width: 80vw; }
   .side-gallery__item img {
+    max-width: 100%;
+    min-width: 60vw;
     width: auto; }
 
 .side-galery__close {
-  position: absolute;
-  border: 0;
+  display: none;
   background: 0;
-  top: 0;
-  right: 24px;
-  font-size: 17.5px;
+  border: 0;
   color: #103ffb;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 17.5px;
+  position: absolute;
+  right: 24px;
+  top: 0; }
   .side-galery__close:focus {
     outline: 0; }
 
-.side-gallery[aria-expanded=true] {
+.side-gallery[aria-expanded=true] .side-gallery__wrapper {
   overflow: visible; }
-  .side-gallery[aria-expanded=true]:before {
-    background: rgba(255, 255, 255, 0.75);
-    content: '';
-    height: 100vh;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100vw; }
-  .side-gallery[aria-expanded=true] .side-gallery__title {
-    display: block; }
-  .side-gallery[aria-expanded=true] .side-gallery__mask {
-    left: 0;
-    padding: 0 24px;
-    position: absolute;
-    width: 100%; }
-  .side-gallery[aria-expanded=true] img {
-    max-width: 80%;
-    margin-left: 20%; }
+
+.side-gallery[aria-expanded=true] .side-galery__close {
+  display: block; }
+
+.side-gallery[aria-expanded=true]:before {
+  background: rgba(255, 255, 255, 0.75);
+  content: '';
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw; }
+
+.side-gallery[aria-expanded=true] .side-gallery__title {
+  visibility: visible; }
 
 .accordion-item {
   margin-right: -10vw;

@@ -5,7 +5,6 @@
         var current;
 
         current = node.getAttribute(attribute);
-        console.log(current);
 
         if (current === 'true') {
             node.setAttribute(attribute, false);
