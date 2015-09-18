@@ -33,3 +33,4 @@ $(JS_BUNDLE)/vac-bundle.js: $(BROWSERIFY_DEPS)
 
 $(CSS_DIR)/vac-styles.css: $(SASS_DEPS)
 	@$(BIN)/node-sass $< -o $(CSS_DIR)
+	@$(BIN)/postcss --use autoprefixer $@ -o $@
