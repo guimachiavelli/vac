@@ -175,3 +175,29 @@
         top: 21px;
     }
 }
+
+@mixin archive-full-row {
+   .archive-item {
+        @include span(10 of 10);
+        @include post(0);
+    }
+
+    .archive-item__header {
+        @include span(6 of 10);
+    }
+
+    .archive-item__standfirst {
+        margin-top: baselines(4);
+    }
+
+    .archive-item__figure {
+        @include span(3 of 10);
+    }
+
+    .archive-item__year {
+        @include span(1 of 10);
+        @include last;
+        display: block;
+        font-size: fontsize(caption);
+    }
+}

@@ -1,6 +1,8 @@
 <?php $languages = VACNav::language(); ?>
 
 <nav class="nav-language">
+    <?php get_template_part('partials/nav', 'search'); ?>
+
     <ul>
     <?php foreach ($languages as $language): ?>
         <?php if ($language['current_lang'] == true) { continue; } ?>

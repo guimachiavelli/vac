@@ -1,0 +1,12 @@
+.column--search {
+    @include archive-full-row;
+    @include span(12);
+
+    .archive-item__standfirst {
+        margin-top: 0;
+    }
+
+    .archive-item__year {
+        display: none;
+    }
+}

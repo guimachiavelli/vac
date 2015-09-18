@@ -38,7 +38,6 @@
 
     Aside.prototype.onResize = function() {
         var now;
-        console.log('resize');
 
         now = new Date().getTime();
 
