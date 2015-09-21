@@ -19,6 +19,10 @@
         margin-bottom: baselines(4);
     }
 
+    &.column--wide {
+        @include span(8 of 12);
+    }
+
     &.column--narrow {
         @include span(3 of 12);
         @include last;
