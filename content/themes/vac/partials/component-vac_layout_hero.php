@@ -11,27 +11,33 @@
         <?php if (!empty($vac_content['vac_block_hero_posts'])): ?>
         <ol class="hero__posts">
             <?php foreach ($vac_content['vac_block_hero_posts'] as $post): ?>
+            <?php
+                $title = $post['vac_hero_post_title'];
+                $link = $post['vac_hero_post_link'][0];
+                $image = $post['vac_hero_post_image'];
+                $excerpt = $post['vac_hero_post_excerpt'];
+            ?>
             <li class="hero-post">
-            <a href="<?php echo get_the_permalink($post['vac_hero_post_link'][0]); ?>">
                 <div class="element element--full">
                     <div class="hero-post__header">
-                        <h3 class="hero-post__title">
-                            <?php echo $post['vac_hero_post_title']; ?>
-                        </h3>
+                        <a href="<?php echo get_the_permalink($link); ?>">
+                            <h3 class="hero-post__title"><?php echo $title; ?></h3>
+                        </a>
                     </div>
                 </div>
                 <div class="element element--full">
                     <div class="element element--wide">
-                        <figure class="hero-post__figure">
-                            <?php echo VACTemplate::image($post['vac_hero_post_image']); ?>
-                        </figure>
+                        <a href="<?php echo get_the_permalink($link); ?>">
+                            <figure class="hero-post__figure">
+                                <?php echo VACTemplate::image($image); ?>
+                            </figure>
+                        </a>
                     </div>
                     <div class="element element--narrow element--last">
-                        <div class="hero-post__excerpt">
-                            <?php echo $post['vac_hero_post_excerpt']; ?>
-                        </div>
+                            <div class="hero-post__excerpt">
+                                <?php echo $excerpt; ?>
+                            </div>
                     </div>
-            </a>
             </li>
             <?php endforeach; ?>
         </ol>

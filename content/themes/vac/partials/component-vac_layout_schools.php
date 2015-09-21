@@ -49,19 +49,20 @@
             ?>
             <li class="school" data-categories="<?php echo $item_terms; ?>">
                 <div class="school__content">
-                <a href="<?php echo get_the_permalink($link); ?>">
                     <header class="school__header">
-                        <h3 class="school__title">
-                            <?php echo $school_title; ?>
-                        </h3>
+                        <a href="<?php echo get_the_permalink($link); ?>">
+                            <h3 class="school__title"><?php echo $school_title; ?></h3>
+                        </a>
                     </header>
 
-                    <figure class="school__figure">
-                        <?php echo VACTemplate::image($image); ?>
-                        <figcaption class="school__caption">
-                            <?php echo VACTemplate::image_caption($image); ?>
-                        </figcaption>
-                    </figure>
+                    <a href="<?php echo get_the_permalink($link); ?>">
+                        <figure class="school__figure">
+                            <?php echo VACTemplate::image($image); ?>
+                            <figcaption class="school__caption">
+                                <?php echo VACTemplate::image_caption($image); ?>
+                            </figcaption>
+                        </figure>
+                    </a>
 
                     <div class="school__excerpt">
                         <?php echo $excerpt; ?>
@@ -69,6 +70,7 @@
                 </a>
                 </div>
 
+                <?php if(!empty($events)): ?>
                 <div class="school__events featured-posts">
                     <h4 class="featured-posts__title">
                         <?php echo $events_title; ?>
@@ -103,6 +105,7 @@
                         <?php endforeach; ?>
                     </ul>
                 </div>
+                <?php endif; ?>
             </li>
             <?php endforeach; ?>
         </ol>

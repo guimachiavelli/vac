@@ -30,7 +30,6 @@
 }
 
 .school {
-    @include block-hover;
     margin-bottom: baselines(12);
 
     a {
@@ -51,14 +50,32 @@
     font-size: fontsize(h2);
     line-height: baselines(8);
     margin-bottom: baselines(4);
+
+    &:hover {
+        @include title-hover;
+    }
 }
 
 .school__figure {
     margin-bottom: baselines(4);
+
+    &:hover {
+        @include figure-hover;
+    }
 }
 
 .school__caption {
     font-size: fontsize(caption);
+}
+
+.school__excerpt {
+    a {
+        color: colour(main);
+
+        &:hover {
+            @include link-hover;
+        }
+    }
 }
 
 .school__events {

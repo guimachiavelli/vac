@@ -317,20 +317,22 @@ strong {
   line-height: 48px;
   color: #103ffb; }
 
-.hero-post:hover .hero-post__figure {
+.hero-post .hero-post__header:hover {
+  text-decoration: underline; }
+
+.hero-post .hero-post__figure:hover {
   background: #3f65ff; }
-  .hero-post:hover .hero-post__figure img {
+  .hero-post .hero-post__figure:hover img {
     mix-blend-mode: multiply;
     opacity: 0.75; }
-
-.hero-post:hover .hero-post__caption {
-  background: #fff; }
-
-.hero-post:hover .text__p--read-more {
-  text-decoration: underline; }
+  .hero-post .hero-post__figure:hover figcaption {
+    background: #fff; }
 
 .hero-post__header {
   margin-bottom: 24px; }
+  .hero-post__header a {
+    text-decoration: none;
+    color: #111; }
 
 .hero-post__title,
 .hero-post__standfirst {
@@ -340,9 +342,11 @@ strong {
 
 .hero-post__excerpt {
   color: #111; }
-  .hero-post__excerpt em {
+  .hero-post__excerpt a {
     color: #103ffb;
-    text-decoration: underline; }
+    text-decoration: none; }
+    .hero-post__excerpt a:hover {
+      text-decoration: underline; }
 
 .featured-posts__title {
   text-rendering: optimizeLegibility;
@@ -359,13 +363,15 @@ strong {
 .featured-post {
   display: table;
   margin-bottom: 24px; }
+  .featured-post:hover .featured-post__header {
+    text-decoration: underline; }
   .featured-post:hover .featured-post__figure {
     background: #3f65ff; }
     .featured-post:hover .featured-post__figure img {
       mix-blend-mode: multiply;
       opacity: 0.75; }
-  .featured-post:hover .featured-post__caption {
-    background: #fff; }
+    .featured-post:hover .featured-post__figure figcaption {
+      background: #fff; }
   .featured-post:hover .text__p--read-more {
     text-decoration: underline; }
   .featured-post a {
@@ -624,13 +630,15 @@ strong {
   margin-right: 10.25641%;
   display: table;
   margin-bottom: 48px; }
+  .archive-item:hover .archive-item__header {
+    text-decoration: underline; }
   .archive-item:hover .archive-item__figure {
     background: #3f65ff; }
     .archive-item:hover .archive-item__figure img {
       mix-blend-mode: multiply;
       opacity: 0.75; }
-  .archive-item:hover .archive-item__caption {
-    background: #fff; }
+    .archive-item:hover .archive-item__figure figcaption {
+      background: #fff; }
   .archive-item:hover .text__p--read-more {
     text-decoration: underline; }
   .archive-item:nth-child(2n+1) {
@@ -693,15 +701,6 @@ strong {
 
 .school {
   margin-bottom: 72px; }
-  .school:hover .school__figure {
-    background: #3f65ff; }
-    .school:hover .school__figure img {
-      mix-blend-mode: multiply;
-      opacity: 0.75; }
-  .school:hover .school__caption {
-    background: #fff; }
-  .school:hover .text__p--read-more {
-    text-decoration: underline; }
   .school a {
     color: #111;
     text-decoration: none; }
@@ -715,12 +714,26 @@ strong {
   font-size: 49px;
   line-height: 48px;
   margin-bottom: 24px; }
+  .school__title:hover {
+    text-decoration: underline; }
 
 .school__figure {
   margin-bottom: 24px; }
+  .school__figure:hover {
+    background: #3f65ff; }
+    .school__figure:hover img {
+      mix-blend-mode: multiply;
+      opacity: 0.75; }
+    .school__figure:hover figcaption {
+      background: #fff; }
 
 .school__caption {
   font-size: 21px; }
+
+.school__excerpt a {
+  color: #103ffb; }
+  .school__excerpt a:hover {
+    text-decoration: underline; }
 
 .school__events .featured-post:first-child .featured-post__header {
   font-size: 28px;

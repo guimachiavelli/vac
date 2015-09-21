@@ -6,14 +6,29 @@
     font-size: fontsize(h2);
     line-height: baselines(8);
     color: $colour-main;
+
+    &:hover {
+
+    }
 }
 
 .hero-post {
-    @include block-hover;
+    .hero-post__header:hover {
+        text-decoration: underline;
+    }
+
+    .hero-post__figure:hover {
+        @include figure-hover;
+    }
 }
 
 .hero-post__header {
     margin-bottom: baselines(4);
+
+    a {
+        text-decoration: none;
+        color: colour(text);
+    }
 }
 
 .hero-post__title,
@@ -26,8 +41,12 @@
 .hero-post__excerpt {
     color: $colour-text;
 
-    em {
+    a {
         color: $colour-main;
-        text-decoration: underline;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

@@ -1,26 +1,40 @@
+@mixin figure-hover {
+    background: saturate(lighten(colour(main), 10%), 10%);
+
+    img {
+        mix-blend-mode: multiply;
+        opacity: 0.75;
+    }
+
+    figcaption {
+        background: colour(site-bg);
+    }
+}
+
+@mixin title-hover {
+    text-decoration: underline;
+}
+
+@mixin link-hover {
+    text-decoration: underline;
+}
+
 @mixin block-hover {
     $selector: &;
 
     &:hover {
         #{$selector}__header {
-            //text-decoration: underline;
+            @include title-hover;
         }
 
         #{$selector}__figure {
-            background: saturate(lighten(colour(main), 10%), 10%);
-
-            img {
-                mix-blend-mode: multiply;
-                opacity: 0.75;
-            }
-        }
-
-        #{$selector}__caption {
-            background: colour(site-bg);
+            @include figure-hover;
         }
 
         .text__p--read-more {
-            text-decoration: underline;
+            @include link-hover;
         }
     }
 }
+
+
