@@ -42,7 +42,7 @@
                             {
                                 mainSelector: '.schools',
                                 childSelector: '.school',
-                                posts: 4
+                                posts: 1
                             });
 
             this.initFeaturedPosts(

@@ -24,8 +24,6 @@
         }
     };
 
-    FeaturedPosts.prototype.initialPosts = 4;
-    FeaturedPosts.prototype.loadNumber = 10;
     FeaturedPosts.prototype.hiddenPosts = 0;
     FeaturedPosts.prototype.filters = null;
 
