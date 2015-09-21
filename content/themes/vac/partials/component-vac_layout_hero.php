@@ -12,7 +12,7 @@
         <ol class="hero__posts">
             <?php foreach ($vac_content['vac_block_hero_posts'] as $post): ?>
             <li class="hero-post">
-            <a href="<?php echo get_the_permalink($post['vac_hero_post_link']); ?>">
+            <a href="<?php echo get_the_permalink($post['vac_hero_post_link'][0]); ?>">
                 <div class="element element--full">
                     <div class="hero-post__header">
                         <h3 class="hero-post__title">
