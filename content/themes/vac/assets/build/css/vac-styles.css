@@ -1103,6 +1103,10 @@ strong {
     margin-bottom: 0; }
   .column--post .featured-posts__title {
     margin-bottom: 24px; }
+  .column--post.column--wide {
+    width: 65.95745%;
+    float: left;
+    margin-right: 2.12766%; }
   .column--post.column--narrow {
     width: 23.40426%;
     float: left;
