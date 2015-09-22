@@ -57,7 +57,7 @@
                     $item_terms = VACTemplate::post_terms($post->ID);
                 ?>
                 <li class="archive-item" data-categories="<?php echo $item_terms; ?>">
-                    <a href="<?php echo $content['permalink']; ?>">
+                    <a class="archive-item__link" href="<?php echo $content['permalink']; ?>">
                     <figure class="archive-item__figure">
                         <?php echo VACTemplate::image($image); ?>
                         <figcaption class="archive-item__caption">

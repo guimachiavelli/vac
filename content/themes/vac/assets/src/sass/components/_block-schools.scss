@@ -30,7 +30,6 @@
 
 .school {
     margin-bottom: baselines(12);
-    display: table;
 
     a {
         color: colour(text);
@@ -44,19 +43,29 @@
 
 .school__content {
     margin-bottom: baselines(12);
+    display: table;
+    min-width: 100%;
 
-        .element {
-            @include span(full);
-            float: none;
-        }
+    .element {
+        @include span(full);
+        float: none;
+    }
 
-        .element--narrow {
-            display: table-header-group;
-        }
+    .element--narrow {
+        display: table-header-group;
+    }
 
-        .element--wide {
-            display: table-footer-group;
-        }
+    .element--wide {
+    }
+
+    .element-full {
+
+        display: table-footer-group;
+    }
+
+    .school__figure {
+        padding-right: 20%;
+    }
 
 
 }

@@ -20,7 +20,7 @@
                 $excerpt = isset($post['vac_featured_post_excerpt']) ? $post['vac_featured_post_excerpt'] : '';
             ?>
             <li class="featured-post">
-            <a href="<?php echo get_the_permalink($link); ?>">
+            <a class="featured-post__link" href="<?php echo get_the_permalink($link); ?>">
                 <div class="element element--narrow">
                     <div class="featured-post__content">
                         <figure class="featured-post__figure">

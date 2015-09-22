@@ -150,6 +150,15 @@
         @include h2;
     }
 
+    .archive-item__link {
+        display: table;
+        min-width: 100%;
+    }
+
+    .archive-item__figure img {
+        padding-right: 20%;
+    }
+
     .archive-item__caption {
         display: block;
     }
