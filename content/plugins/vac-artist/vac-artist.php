@@ -34,6 +34,24 @@ class VACArtist extends VACSection {
         add_action('init', array(static::$class, 'register_post_fields'));
     }
 
+    public static function register_post_fields() {
+        $main_component = new VACComponent(array(
+            'id' => str_replace('-', '_', static::$post_type),
+            'location' => array('post_type', static::$post_type),
+            'position' => 'normal'
+        ), array(
+            'left' => array(
+                'type' => 'group',
+                'fields' => array('slider',
+                                  'standfirst',
+                                  'text',
+                                  'accordion',
+                                  'featured_posts'),
+            ),
+        ));
+        $main_component->register();
+    }
+
     public static function activate() {}
 
     public static function deactivate() {}

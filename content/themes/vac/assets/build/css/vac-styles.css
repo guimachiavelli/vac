@@ -934,144 +934,135 @@ strong {
   margin-bottom: 24px; }
 
 .column--researches {
-  width: 100%;
+  width: 82.97872%;
   float: left;
-  margin-left: 0;
-  margin-right: 0; }
+  margin-right: 2.12766%; }
   .column--researches .archive__header {
+    width: 82.97872%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--researches .archive__title {
+    width: 17.94872%;
+    float: left;
+    margin-right: 2.5641%; }
+  .column--researches .archive__filters {
+    width: 100%;
+    float: right;
+    margin-right: 0;
+    margin-right: -43.58974%; }
+  .column--researches .archive-item {
     width: 100%;
     float: left;
     margin-left: 0;
+    margin-right: 0;
     margin-right: 0; }
-  .column--researches .archive__title {
-    width: 23.40426%;
-    float: left;
-    margin-right: 2.12766%; }
-  .column--researches .archive__filters {
-    width: 74.46809%;
-    float: right;
-    margin-right: 0; }
-  .column--researches .archive-item__figure {
-    margin-right: -19.14894%; }
-  .column--researches .archive-item {
-    width: 65.95745%;
-    float: left;
-    margin-right: 2.12766%; }
   .column--researches .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--researches .archive-item__title,
   .column--researches .archive-item__standfirst {
     font-size: 49px;
     line-height: 46.5px; }
-  .column--researches .archive-item__figure img {
-    max-width: 720px; }
   .column--researches .archive-item__caption {
     display: block; }
   .column--researches .archive__title {
-    width: 31.91489%;
+    width: 38.46154%;
     float: left;
-    margin-right: 2.12766%;
+    margin-right: 2.5641%;
     font-size: 77px;
     line-height: 78px;
     letter-spacing: -3.5px; }
   .column--researches .archive__filters {
-    width: 65.95745%; }
+    width: 100%; }
   .column--researches .archive-filter {
     top: 21px; }
   .column--researches .text {
     max-width: 960px; }
 
 .column--collaborations {
-  width: 100%;
+  width: 82.97872%;
   float: left;
-  margin-left: 0;
-  margin-right: 0; }
+  margin-right: 2.12766%; }
   .column--collaborations .archive__header {
+    width: 82.97872%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--collaborations .archive__title {
+    width: 17.94872%;
+    float: left;
+    margin-right: 2.5641%; }
+  .column--collaborations .archive__filters {
+    width: 100%;
+    float: right;
+    margin-right: 0;
+    margin-right: -43.58974%; }
+  .column--collaborations .archive-item {
     width: 100%;
     float: left;
     margin-left: 0;
+    margin-right: 0;
     margin-right: 0; }
-  .column--collaborations .archive__title {
-    width: 23.40426%;
-    float: left;
-    margin-right: 2.12766%; }
-  .column--collaborations .archive__filters {
-    width: 74.46809%;
-    float: right;
-    margin-right: 0; }
-  .column--collaborations .archive-item__figure {
-    margin-right: -19.14894%; }
-  .column--collaborations .archive-item {
-    width: 65.95745%;
-    float: left;
-    margin-right: 2.12766%; }
   .column--collaborations .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--collaborations .archive-item__title,
   .column--collaborations .archive-item__standfirst {
     font-size: 49px;
     line-height: 46.5px; }
-  .column--collaborations .archive-item__figure img {
-    max-width: 720px; }
   .column--collaborations .archive-item__caption {
     display: block; }
   .column--collaborations .archive__title {
-    width: 31.91489%;
+    width: 38.46154%;
     float: left;
-    margin-right: 2.12766%;
+    margin-right: 2.5641%;
     font-size: 77px;
     line-height: 78px;
     letter-spacing: -3.5px; }
   .column--collaborations .archive__filters {
-    width: 65.95745%; }
+    width: 100%; }
   .column--collaborations .archive-filter {
     top: 21px; }
   .column--collaborations .text {
     max-width: 960px; }
 
 .column--grants {
-  width: 100%;
+  width: 82.97872%;
   float: left;
-  margin-left: 0;
-  margin-right: 0; }
+  margin-right: 2.12766%; }
   .column--grants .archive__header {
+    width: 82.97872%;
+    float: left;
+    margin-right: 2.12766%; }
+  .column--grants .archive__title {
+    width: 17.94872%;
+    float: left;
+    margin-right: 2.5641%; }
+  .column--grants .archive__filters {
+    width: 100%;
+    float: right;
+    margin-right: 0;
+    margin-right: -43.58974%; }
+  .column--grants .archive-item {
     width: 100%;
     float: left;
     margin-left: 0;
+    margin-right: 0;
     margin-right: 0; }
-  .column--grants .archive__title {
-    width: 23.40426%;
-    float: left;
-    margin-right: 2.12766%; }
-  .column--grants .archive__filters {
-    width: 74.46809%;
-    float: right;
-    margin-right: 0; }
-  .column--grants .archive-item__figure {
-    margin-right: -19.14894%; }
-  .column--grants .archive-item {
-    width: 65.95745%;
-    float: left;
-    margin-right: 2.12766%; }
   .column--grants .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--grants .archive-item__title,
   .column--grants .archive-item__standfirst {
     font-size: 49px;
     line-height: 46.5px; }
-  .column--grants .archive-item__figure img {
-    max-width: 720px; }
   .column--grants .archive-item__caption {
     display: block; }
   .column--grants .archive__title {
-    width: 31.91489%;
+    width: 38.46154%;
     float: left;
-    margin-right: 2.12766%;
+    margin-right: 2.5641%;
     font-size: 77px;
     line-height: 78px;
     letter-spacing: -3.5px; }
   .column--grants .archive__filters {
-    width: 65.95745%; }
+    width: 100%; }
   .column--grants .archive-filter {
     top: 21px; }
   .column--grants .text {
@@ -1087,7 +1078,8 @@ strong {
 
 .post__title {
   font-size: 77px;
-  line-height: 78px; }
+  line-height: 78px;
+  margin-bottom: 24px; }
 
 .column--post {
   position: relative; }
@@ -1141,3 +1133,11 @@ strong {
     margin-top: 0; }
   .column--search .archive-item__year {
     display: none; }
+
+.post--artist .post__header {
+  width: 100%; }
+
+.post--artist .column--wide {
+  padding-right: 6.38298%;
+  border-right: 3px solid;
+  border-bottom: 3px solid; }

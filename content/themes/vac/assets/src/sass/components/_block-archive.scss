@@ -121,26 +121,24 @@
 }
 
 @mixin archive-big {
-    @include span(12);
+    @include span(10);
 
     .archive__header {
-        @include span(12);
+        @include span(10);
     }
 
     .archive__title {
-        @include span(3 of 12);
+        @include span(2 of 10);
     }
 
     .archive__filters {
-        @include span(last 9 of 12);
-    }
-
-    .archive-item__figure {
-        margin-right: span(-2);
+        @include span(last 10 of 10);
+        margin-right: span(-4 of 10);
     }
 
     .archive-item {
-        @include span(8 of 12);
+        @include span(10 of 10);
+        margin-right: 0;
     }
 
     .archive-item__standfirst {
@@ -152,10 +150,6 @@
         @include h2;
     }
 
-    .archive-item__figure img {
-        max-width: 720px;
-    }
-
     .archive-item__caption {
         display: block;
     }
@@ -163,14 +157,14 @@
 
 @mixin archive-big-title {
     .archive__title {
-        @include span(4 of 12);
+        @include span(4 of 10);
         font-size: fontsize(h1);
         line-height: baselines(13);
         letter-spacing: -3.5px;
     }
 
     .archive__filters {
-        width: span(8 of 12);
+        width: span(10 of 10);
     }
 
     .archive-filter {

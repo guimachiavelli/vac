@@ -1,5 +1,7 @@
 <?php $vac_content = VACTemplate::ACF_content($wp_query); ?>
 
+<?php if (!empty($vac_content)): ?>
+
 <div class="component">
     <div class="slider">
         <ol class="slider__list">
@@ -16,3 +18,5 @@
         </ol>
     </div>
 </div>
+
+<?php endif; ?>
