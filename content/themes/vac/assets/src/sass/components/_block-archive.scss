@@ -114,6 +114,7 @@
 
 .archive-item__caption {
     font-size: fontsize(caption);
+    display: none;
 }
 
 .archive-item__year {
@@ -155,6 +156,10 @@
 
     .archive-item__figure img {
         max-width: 720px;
+    }
+
+    .archive-item__caption {
+        display: block;
     }
 }
 
