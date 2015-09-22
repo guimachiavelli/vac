@@ -4,10 +4,9 @@
 }
 
 .archive__title {
+    @include h2;
     @include span(4 of 10);
     color: colour(main);
-    font-size: fontsize(h2);
-    line-height: baselines(8);
     vertical-align: bottom;
 }
 
@@ -150,8 +149,7 @@
 
     .archive-item__title,
     .archive-item__standfirst {
-        font-size: fontsize(h2);
-        line-height: baselines(8);
+        @include h2;
     }
 
     .archive-item__figure img {

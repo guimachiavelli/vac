@@ -4,15 +4,15 @@
 }
 
 .menu-item {
+    color: $colour-main;
     float: left;
     font-size: fontsize(h2);
     line-height: baselines(8);
     margin-right: baselines(5);
-    color: $colour-main;
 
     a {
-        text-decoration: none;
         color: $colour-main;
+        text-decoration: none;
     }
 
     &:hover {

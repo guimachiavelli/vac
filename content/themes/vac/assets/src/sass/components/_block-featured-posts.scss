@@ -1,8 +1,7 @@
 .featured-posts__title {
+    @include h2;
     @include kerning;
     color: $colour-main;
-    font-size: fontsize(h2);
-    line-height: fontsize(h2);
 }
 
 .featured-post {
@@ -50,8 +49,7 @@
     text-decoration: none;
 
     .featured-post:first-child & {
-        font-size: fontsize(h2);
-        line-height: baselines(8);
+        @include h2;
         margin-bottom: baselines(3);
     }
 }

@@ -37,4 +37,7 @@
     }
 }
 
-
+@mixin h2 {
+    font-size: fontsize(h2);
+    line-height: baselines(7.75);
+}

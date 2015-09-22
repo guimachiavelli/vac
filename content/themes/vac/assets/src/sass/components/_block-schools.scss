@@ -5,9 +5,8 @@
 }
 
 .schools__title {
+    @include h2;
     color: colour(main);
-    font-size: fontsize(h2);
-    line-height: baselines(8);
 }
 
 .schools__filters {
@@ -47,8 +46,7 @@
 }
 
 .school__title {
-    font-size: fontsize(h2);
-    line-height: baselines(8);
+    @include h2;
     margin-bottom: baselines(4);
 
     &:hover {

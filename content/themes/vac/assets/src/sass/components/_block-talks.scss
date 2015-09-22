@@ -4,10 +4,9 @@
 }
 
 .talks__title {
+    @include h2;
     color: colour(main);
     float: left;
-    font-size: fontsize(h2);
-    line-height: baselines(8);
     width: span(4 of 10);
 }
 
