@@ -27,11 +27,6 @@ class VACTinyMCE {
                 'title' => 'Blue text',
                 'selector' => 'span, p, h3',
                 'classes' => 'text__p text__p--blue'
-            ),
-            array(
-                'title' => 'Read more',
-                'inline' => 'span',
-                'classes' => 'text__p text__p--read-more',
             )
         );
 
