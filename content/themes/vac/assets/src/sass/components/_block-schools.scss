@@ -56,10 +56,6 @@
 
 .school__figure {
     margin-bottom: baselines(4);
-
-    &:hover {
-        @include figure-hover;
-    }
 }
 
 .school__caption {

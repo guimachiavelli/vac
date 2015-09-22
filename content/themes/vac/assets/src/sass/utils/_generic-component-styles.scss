@@ -1,16 +1,3 @@
-@mixin figure-hover {
-    background: saturate(lighten(colour(main), 10%), 10%);
-
-    img {
-        mix-blend-mode: multiply;
-        opacity: 0.75;
-    }
-
-    figcaption {
-        background: colour(site-bg);
-    }
-}
-
 @mixin title-hover {
     text-decoration: underline;
 }
@@ -25,10 +12,6 @@
     &:hover {
         #{$selector}__header {
             @include title-hover;
-        }
-
-        #{$selector}__figure {
-            @include figure-hover;
         }
 
         .text__p--read-more {

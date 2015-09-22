@@ -5,19 +5,11 @@
 .hero__title {
     @include h2;
     color: $colour-main;
-
-    &:hover {
-
-    }
 }
 
 .hero-post {
     .hero-post__header:hover {
         text-decoration: underline;
-    }
-
-    .hero-post__figure:hover {
-        @include figure-hover;
     }
 }
 
@@ -25,22 +17,22 @@
     margin-bottom: baselines(4);
 
     a {
-        text-decoration: none;
         color: colour(text);
+        text-decoration: none;
     }
 }
 
 .hero-post__title,
 .hero-post__standfirst {
     @include h2;
-    color: $colour-text;
+    color: colour(text);
 }
 
 .hero-post__excerpt {
-    color: $colour-text;
+    color: colour(text);
 
     a {
-        color: $colour-main;
+        color: colour(main);
         text-decoration: none;
 
         &:hover {
