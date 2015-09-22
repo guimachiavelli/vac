@@ -4,6 +4,9 @@
         public static function init() {
             add_theme_support('post-thumbnails');
 
+            // remove pages from search
+            add_filter('pre_get_posts', array(__CLASS__, 'filter_search'));
+
             // remove admin bar
             add_filter('show_admin_bar', '__return_false');
 
@@ -70,6 +73,21 @@
         public static function is_admin_user() {
             $user = wp_get_current_user();
             return in_array('administrator', $user->roles);
+        }
+
+        public static function filter_search($query) {
+            $post_types = get_post_types();
+            $post_types = array_filter($post_types, array(__CLASS__, 'filter_post_types'));
+
+            if ($query->is_search) {
+                $query->set('post_type', $post_types);
+            }
+
+            return $query;
+        }
+
+        private static function filter_post_types($post_type) {
+            return strpos($post_type, 'vac') !== false;
         }
     }
 

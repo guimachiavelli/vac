@@ -65,12 +65,17 @@ class VACTemplate {
     public static function ACF_featured_content($post_id) {
         $fields = get_fields($post_id);
         $fields = self::parsed_ACF($fields);
-        $fields = $fields['left'];
 
         $content = array(
             'image' => null,
             'standfirst' => null
         );
+
+        if (!isset($fields['left'])) {
+            return $content;
+        }
+
+        $fields = $fields['left'];
 
         if (empty($fields)) return $content;
 
