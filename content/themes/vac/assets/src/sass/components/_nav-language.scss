@@ -5,7 +5,8 @@
 }
 
 .nav-language__link {
-    font-size: fontsize(caption);
+    font-size: fontsize(language);
     color: $colour-main;
     text-decoration: none;
+    float: right;
 }

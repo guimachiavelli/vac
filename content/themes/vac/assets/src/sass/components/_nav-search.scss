@@ -20,6 +20,10 @@
     &:focus {
         border-bottom: 3px solid colour(main);
         outline: 0;
+
+        @include placeholder {
+            opacity: 0.5;
+        }
     }
 }
 
@@ -45,12 +49,20 @@
 
     .search__input {
         width: 80px;
+        display: block;
         font-size: fontsize(language);
         border: 0;
         padding: 0;
+        transition: width 150ms ease-in;
+        border-bottom: 3px solid transparent;
 
         @include placeholder {
             color: colour(main);
+        }
+
+        &:focus {
+            width: 200px;
+            border-bottom: 3px solid colour(main);
         }
     }
 }
