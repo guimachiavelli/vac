@@ -49,23 +49,29 @@
             ?>
             <li class="school" data-categories="<?php echo $item_terms; ?>">
                 <div class="school__content">
-                    <header class="school__header">
+                    <div class="element element--narrow">
+                        <header class="school__header">
+                            <a href="<?php echo get_the_permalink($link); ?>">
+                                <h3 class="school__title"><?php echo $school_title; ?></h3>
+                            </a>
+                        </header>
+                    </div>
+
+                    <div class="element element--wide element--last">
                         <a href="<?php echo get_the_permalink($link); ?>">
-                            <h3 class="school__title"><?php echo $school_title; ?></h3>
+                            <figure class="school__figure">
+                                <?php echo VACTemplate::image($image); ?>
+                                <figcaption class="school__caption">
+                                    <?php echo VACTemplate::image_caption($image); ?>
+                                </figcaption>
+                            </figure>
                         </a>
-                    </header>
+                    </div>
 
-                    <a href="<?php echo get_the_permalink($link); ?>">
-                        <figure class="school__figure">
-                            <?php echo VACTemplate::image($image); ?>
-                            <figcaption class="school__caption">
-                                <?php echo VACTemplate::image_caption($image); ?>
-                            </figcaption>
-                        </figure>
-                    </a>
-
-                    <div class="school__excerpt">
-                        <?php echo $excerpt; ?>
+                    <div class="element element-full">
+                        <div class="school__excerpt">
+                            <?php echo $excerpt; ?>
+                        </div>
                     </div>
                 </a>
                 </div>

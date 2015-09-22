@@ -11,9 +11,9 @@
 
 .schools__filters {
     float: right;
-    margin-right: span(-2);
+    margin-right: (span(2 of 10) + gutter(2 of 10)) * -1;
     text-align: right;
-    width: span(2);
+    width: span(2 of 10);
 
     .archive-filter {
         display: block;
@@ -30,6 +30,7 @@
 
 .school {
     margin-bottom: baselines(12);
+    display: table;
 
     a {
         color: colour(text);
@@ -43,6 +44,21 @@
 
 .school__content {
     margin-bottom: baselines(12);
+
+        .element {
+            @include span(full);
+            float: none;
+        }
+
+        .element--narrow {
+            display: table-header-group;
+        }
+
+        .element--wide {
+            display: table-footer-group;
+        }
+
+
 }
 
 .school__title {
@@ -56,6 +72,7 @@
 
 .school__figure {
     margin-bottom: baselines(4);
+    clear: both;
 }
 
 .school__caption {

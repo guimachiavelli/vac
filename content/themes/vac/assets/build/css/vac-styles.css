@@ -682,9 +682,9 @@ strong {
 
 .schools__filters {
   float: right;
-  margin-right: -19.14894%;
+  margin-right: -19.94872%;
   text-align: right;
-  width: 14.89362%; }
+  width: 17.94872%; }
   .schools__filters .archive-filter {
     display: block;
     float: none;
@@ -695,7 +695,8 @@ strong {
     line-height: 30px; }
 
 .school {
-  margin-bottom: 72px; }
+  margin-bottom: 72px;
+  display: table; }
   .school a {
     color: #111;
     text-decoration: none; }
@@ -704,6 +705,16 @@ strong {
 
 .school__content {
   margin-bottom: 72px; }
+  .school__content .element {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    float: none; }
+  .school__content .element--narrow {
+    display: table-header-group; }
+  .school__content .element--wide {
+    display: table-footer-group; }
 
 .school__title {
   font-size: 49px;
@@ -713,7 +724,8 @@ strong {
     text-decoration: underline; }
 
 .school__figure {
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  clear: both; }
 
 .school__caption {
   font-size: 21px; }
