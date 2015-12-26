@@ -34,7 +34,8 @@ $fontsizes: (
     p: $fontsize * 4,
     caption: $fontsize * 3,
     aside: $fontsize * 2.5,
-    language: $fontsize * 3.75
+    language: $fontsize * 3.75,
+    menu: $fontsize * 3
 );
 
 @mixin kerning {

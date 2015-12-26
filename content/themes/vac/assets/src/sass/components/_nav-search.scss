@@ -50,7 +50,7 @@
     .search__input {
         width: 80px;
         display: block;
-        font-size: fontsize(language);
+        font-size: fontsize(menu);
         border: 0;
         padding: 0;
         transition: width 150ms ease-in;
@@ -61,7 +61,7 @@
         }
 
         &:focus {
-            width: 200px;
+            width: 100%;
             border-bottom: 3px solid colour(main);
         }
     }

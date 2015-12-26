@@ -1,12 +1,10 @@
 .nav-language {
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: left;
+    width: 12%;
 }
 
 .nav-language__link {
-    font-size: fontsize(language);
+    font-size: fontsize(menu);
     color: $colour-main;
     text-decoration: none;
-    float: right;
 }

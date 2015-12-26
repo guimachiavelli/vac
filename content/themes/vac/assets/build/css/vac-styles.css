@@ -162,7 +162,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  max-width: 1280px;
+  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   font-family: "Futura", sans-serif;
@@ -184,7 +184,10 @@ strong {
 
 .logo {
   margin-bottom: 6px;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  float: left;
+  width: 20%;
+  margin-right: 5%; }
 
 .logo__link {
   text-decoration: none; }
@@ -216,14 +219,17 @@ strong {
 
 .nav-primary {
   margin-bottom: 18px;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 55%;
+  float: left;
+  margin-right: 5%; }
 
 .menu-item {
   color: #103ffb;
   float: left;
-  font-size: 49px;
-  line-height: 48px;
-  margin-right: 30px; }
+  font-size: 21px;
+  line-height: 30px;
+  margin-right: 18px; }
   .menu-item a {
     color: #103ffb;
     text-decoration: none; }
@@ -234,15 +240,13 @@ strong {
   text-decoration: underline; }
 
 .nav-language {
-  position: absolute;
-  top: 0;
-  right: 0; }
+  float: left;
+  width: 12%; }
 
 .nav-language__link {
-  font-size: 26.25px;
+  font-size: 21px;
   color: #103ffb;
-  text-decoration: none;
-  float: right; }
+  text-decoration: none; }
 
 .search {
   margin-bottom: 48px;
@@ -296,11 +300,11 @@ strong {
   .search--small .search__input {
     width: 80px;
     display: block;
-    font-size: 26.25px;
+    font-size: 21px;
     border: 0;
     padding: 0;
     -webkit-transition: width 150ms ease-in;
-            transition: width 150ms ease-in;
+    transition: width 150ms ease-in;
     border-bottom: 3px solid transparent; }
     .search--small .search__input::-webkit-input-placeholder {
       color: #103ffb; }
@@ -311,7 +315,7 @@ strong {
     .search--small .search__input:-ms-input-placeholder {
       color: #103ffb; }
     .search--small .search__input:focus {
-      width: 200px;
+      width: 100%;
       border-bottom: 3px solid #103ffb; }
 
 .footer {
@@ -361,10 +365,8 @@ strong {
   line-height: 46.5px;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: 'kern' 1;
-     -moz-font-feature-settings: 'kern' 1;
           font-feature-settings: 'kern' 1;
   -webkit-font-kerning: normal;
-     -moz-font-kerning: normal;
           font-kerning: normal;
   color: #103ffb; }
 
@@ -449,12 +451,11 @@ strong {
   left: 0;
   position: absolute;
   -webkit-transform: translateX(-80%);
-      -ms-transform: translateX(-80%);
           transform: translateX(-80%);
   width: 100vw; }
 
 .side-gallery__container {
-  max-width: 1280px;
+  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
@@ -821,7 +822,6 @@ strong {
   right: 0;
   font-size: 21px;
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%); }
 
 .text p,
@@ -1003,17 +1003,6 @@ strong {
     padding-right: 20%; }
   .column--researches .archive-item__caption {
     display: block; }
-  .column--researches .archive__title {
-    width: 38.46154%;
-    float: left;
-    margin-right: 2.5641%;
-    font-size: 77px;
-    line-height: 78px;
-    letter-spacing: -3.5px; }
-  .column--researches .archive__filters {
-    width: 100%; }
-  .column--researches .archive-filter {
-    top: 21px; }
   .column--researches .text {
     max-width: 960px; }
 
@@ -1053,17 +1042,6 @@ strong {
     padding-right: 20%; }
   .column--collaborations .archive-item__caption {
     display: block; }
-  .column--collaborations .archive__title {
-    width: 38.46154%;
-    float: left;
-    margin-right: 2.5641%;
-    font-size: 77px;
-    line-height: 78px;
-    letter-spacing: -3.5px; }
-  .column--collaborations .archive__filters {
-    width: 100%; }
-  .column--collaborations .archive-filter {
-    top: 21px; }
   .column--collaborations .text {
     max-width: 960px; }
 
@@ -1103,17 +1081,6 @@ strong {
     padding-right: 20%; }
   .column--grants .archive-item__caption {
     display: block; }
-  .column--grants .archive__title {
-    width: 38.46154%;
-    float: left;
-    margin-right: 2.5641%;
-    font-size: 77px;
-    line-height: 78px;
-    letter-spacing: -3.5px; }
-  .column--grants .archive__filters {
-    width: 100%; }
-  .column--grants .archive-filter {
-    top: 21px; }
   .column--grants .text {
     max-width: 960px; }
 

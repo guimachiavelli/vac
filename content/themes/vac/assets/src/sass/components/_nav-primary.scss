@@ -1,14 +1,17 @@
 .nav-primary {
     margin-bottom: baselines(3);
     overflow: hidden;
+    width: 55%;
+    float: left;
+    margin-right: 5%;
 }
 
 .menu-item {
     color: $colour-main;
     float: left;
-    font-size: fontsize(h2);
-    line-height: baselines(8);
-    margin-right: baselines(5);
+    font-size: fontsize(menu);
+    line-height: baselines(5);
+    margin-right: baselines(3);
 
     a {
         color: $colour-main;
