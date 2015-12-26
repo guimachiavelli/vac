@@ -1,23 +1,24 @@
 === WP Retina 2x ===
 Contributors: TigrouMeow
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H2S7S3G4XMJ6J
-Tags: retina, images, image, admin, attachment, media, files, iphone, ipad, plugin, picture, pictures
-License: GPLv2 or later
+Tags: retina, images, image, responsive, admin, attachment, media, files, iphone, ipad, high-dpi
 Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 3.4.8
+Tested up to: 4.4
+Stable tag: 4.4.0
 
-Make your website look beautiful and crisp on Retina / High DPI displays.
+Make your website look beautiful and crisp on modern displays by creating and displaying retina images. WP 4.4+ is also supported and enhanced.
 
 == Description ==
 
-This plugin creates the image files required by the Retina (High DPI) devices and displays them to your visitors accordingly. Your website will look beautiful and crisp on every device! The retina images will be generated for you automatically - though you can also do it manually - and served to the retina devices.
+This plugin creates the image files required by the High-DPI devices and displays them to your visitors accordingly. Your website will look beautiful and crisp on every device! The retina images will be generated for you automatically - though you can also do it manually - and served to the retina devices.
 
 It supports different methods to serve the images to your visitors, for instance: PictureFill (future HTML standard + its JS polyfill), Retina.js (JS only), IMG Rewrite (on-the-fly HTML rewrite) and Retina-Images (server handler). A lazy-loading option is available as well. Pick the one that works best with your hosting and WordPress environment. Multi-site are also supported.
 
+From version 4.4, WordPress has support for Responsive Images. WP Retina 2x handles this well and nicely adds the retina images in the src-set created by WordPress. The HTML for the images not handled by WP 4.4 will also be handled by the plugin. Moreover, the plugin also has two options specific to WP 4.4+. One is to disable the Responsive Image support, the second one is to disable the additional image size called Medium Large.
+
 The plugin is very fast and optimized. It doesn't create anything in the database. In most cases, it doesn't even require any configuration. More information and tutorial available one http://apps.meow.fr/wp-retina-2x/.
 
-Languages: English, French.
+PS: The plugin cannot add retina support to your CSS, and therefore your CSS background images. If your themes are using them heavily, you can contact the theme author and kindly ask him to use WP Retina 2x API to add retina support to those background images (that is possible this way). Please note that a few gallery and slider plugins are using CSS background images as well.
 
 = Quickstart =
 
@@ -27,14 +28,38 @@ Languages: English, French.
 
 == Changelog ==
 
+= 4.4.0 =
+* Info: Please read my blog post about WP 4.4 + Retina on http://apps.meow.fr/wordpress-4-4-retina/.
+* Add: New "Responsive Images" method.
+* Add: Lot more information is available in the Retina settings, to help the newbies :)
+* Update: Headers are compliant to WP 4.4.
+* Info: I have published a new book and it is available on Amazon! It is called "Abandoned Japan". Here: https://goo.gl/dQJpJW. Have a look :)
+
+= 4.0.3 =
+* Add: Display the image size name and the retina width x height when hovering the little squares.
+* Add: Option to disable the new Medium Large image size brought by WP 4.4.
+* Add: Option to disable the automatic handling of responsive image (src-set) by WP 4.4.
+* Add: Add the Retina images in the Responsive Image tag created by WP 4.4.
+* Update: Retina information has been moved to the Media Library directly.
+* Update: Dashboard has been revamped for Pro users. Standard users can still use Bulk functions.
+* Update: Support for WP 4.4.
+
+= 3.5.4 =
+* Update: PictureFill 3.0.1 (full codebase rewrite).
+
+= 3.5.2 =
+* Update: Little modification for SmushIt (https://wordpress.org/support/topic/wp-retina-2x-support-in-wp-smush?replies=1#post-7460268).
+
+= 3.5.0 =
+* Update: Towards using the new WP translation system.
+
 = 3.4.8 =
 * Update: For WordPress 4.3.
 * Update: RetinaImages to 1.7.2.
-* Info: If you like the plugin, please tell me so here: https://wordpress.org/support/view/plugin-reviews/wp-retina-2x :) Thank you, and have a nice week-end everyone!
 
 = 3.4.6 =
 * Fix: Search string not null but empty induces error.
-* Change: User Agent used for Pro authentification.
+* Change: User Agent used for Pro authentication.
 
 = 3.4.4 =
 * Fix: Issues with class containing trailing spaces. Fixed in in SimpleHTMLDOM.

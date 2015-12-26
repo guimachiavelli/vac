@@ -2,10 +2,12 @@
 /*
 Plugin Name: WP Retina 2x
 Plugin URI: http://www.meow.fr
-Description: Make your images crisp and beautiful on Retina (High-DPI) displays.
-Version: 3.4.8
+Description: Make your website look beautiful and crisp on modern displays by creating + displaying retina images. WP 4.4 is also supported and enhanced.
+Version: 4.4.0
 Author: Jordy Meow
 Author URI: http://www.meow.fr
+Text Domain: wp-retina-2x
+Domain Path: /languages
 
 Dual licensed under the MIT and GPL licenses:
 http://www.opensource.org/licenses/mit-license.php
@@ -24,9 +26,9 @@ Originally developed for two of my websites:
  *
  */
 
-$wr2x_version = '3.4.8';
+$wr2x_version = '4.4.0';
 $wr2x_retinajs = '1.3.0';
-$wr2x_picturefill = '2.3.1';
+$wr2x_picturefill = '3.0.1';
 $wr2x_lazysizes = '1.1';
 $wr2x_retina_image = '1.7.2';
 $wr2x_extra_debug = false;
@@ -60,8 +62,16 @@ if ( !wr2x_getoption( "hide_retina_dashboard", "wr2x_advanced", false ) )
 if ( !wr2x_getoption( "hide_retina_column", "wr2x_advanced", false ) )
 	require('wr2x_media-library.php');
 
+require( 'wr2x_responsive.php' );
+
 function wr2x_init() {
 	load_plugin_textdomain( 'wp-retina-2x', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+	if ( wr2x_getoption( 'disable_medium_large', 'wr2x_basics', false ) ) {
+		remove_image_size( 'medium_large' );
+		add_filter( 'image_size_names_choose', 'wr2x_unset_medium_large' );
+		add_filter( 'intermediate_image_sizes_advanced', 'wr2x_unset_medium_large' );
+	}
 
 	if ( is_admin() ) {
 		wp_register_style( 'wr2x-admin-css', plugins_url( '/wr2x_admin.css', __FILE__ ) );
@@ -71,12 +81,10 @@ function wr2x_init() {
 	}
 
 	$method = wr2x_getoption( "method", "wr2x_advanced", 'Picturefill' );
-
 	if ( $method == "Picturefill" ) {
 		add_action( 'wp_head', 'wr2x_picture_buffer_start' );
 		add_action( 'wp_footer', 'wr2x_picture_buffer_end' );
 	}
-
 	else if ( $method == 'HTML Rewrite' ) {
 		$is_retina = false;
 		if ( isset( $_COOKIE['devicePixelRatio'] ) ) {
@@ -92,6 +100,11 @@ function wr2x_init() {
 		}
 	}
 
+}
+
+function wr2x_unset_medium_large( $sizes ) {
+	unset( $sizes['medium_large'] );
+	return $sizes;
 }
 
 /**
@@ -117,7 +130,7 @@ function wr2x_picture_rewrite( $buffer ) {
 		require('inc/simple_html_dom.php');
 
 	$lazysize = wr2x_getoption( "picturefill_lazysizes", "wr2x_advanced", false ) && wr2x_is_pro();
-	$killsrc = !wr2x_is_pro() || !wr2x_getoption( "picturefill_keep_src", "wr2x_advanced", false );
+	$killsrc = !wr2x_getoption( "picturefill_keep_src", "wr2x_advanced", false );
 	$nodes_count = 0;
 	$nodes_replaced = 0;
 	$html = str_get_html( $buffer );
@@ -130,13 +143,17 @@ function wr2x_picture_rewrite( $buffer ) {
 		$nodes_count++;
 		$parent = $element->parent();
 		if ( $parent->tag == "picture" ) {
-			wr2x_log("The img tag is inside a picture tag already. Tag ignored.");
+			wr2x_log("The img tag is inside a picture tag. Tag ignored.");
 			continue;
 		}
 		else {
 			$valid = apply_filters( "wr2x_validate_src", $element->src );
 			if ( empty( $valid ) ) {
 				$nodes_count--;
+				continue;
+			}
+			if ( !empty( $element->srcset ) ) {
+				wr2x_log( "The src-set has already been created. Tag ignored." );
 				continue;
 			}
 			$retina_url = wr2x_get_retina_from_url( $element->src );
@@ -360,22 +377,39 @@ function wpr2x_html_get_basic_retina_info_full( $attachmentId, $retina_info ) {
 	return $status;
 }
 
+function wr2x_size_shortname( $name ) {
+	$name = preg_split( '[_-]', $name );
+	$short = strtoupper( substr( $name[0], 0, 1 ) );
+	if ( count( $name ) > 1 )
+		$short .= strtoupper( substr( $name[1], 0, 1 ) );
+	return $short;
+}
+
+function wr2x_format_title( $i, $size ) {
+	return $i . ' (' . ( $size['width'] * 2 ) . 'x' . ( $size['height'] * 2 ) . ')';
+}
+
 // Information for the 'Media Sizes Retina-ized' Column in the Retina Dashboard
 function wpr2x_html_get_basic_retina_info( $attachmentId, $retina_info ) {
 	$sizes = wr2x_get_active_image_sizes();
 	$result = '<ul class="retina-info">';
-	foreach ( $sizes as $i => $status ) {
+	foreach ( $sizes as $i => $size ) {
 		$status = ( isset( $retina_info ) && isset( $retina_info[$i] ) ) ? $retina_info[$i] : null;
 		if ( is_array( $status ) )
-			$result .= '<li class="retina-issue" title="' . $i . '"></li>';
+			$result .= '<li class="retina-issue" title="' . wr2x_format_title( $i, $size ) . '">'
+				. wr2x_size_shortname( $i ) . '</li>';
 		else if ( $status == 'EXISTS' )
-			$result .= '<li class="retina-exists" title="' . $i . '"></li>';
+			$result .= '<li class="retina-exists" title="' . wr2x_format_title( $i, $size ) . '">'
+				. wr2x_size_shortname( $i ) . '</li>';
 		else if ( $status == 'PENDING' )
-			$result .= '<li class="retina-pending" title="' . $i . '"></li>';
+			$result .= '<li class="retina-pending" title="' . wr2x_format_title( $i, $size ) . '">'
+				. wr2x_size_shortname( $i ) . '</li>';
 		else if ( $status == 'MISSING' )
-			$result .= '<li class="retina-missing" title="' . $i . '"></li>';
+			$result .= '<li class="retina-missing" title="' . wr2x_format_title( $i, $size ) . '">'
+				. wr2x_size_shortname( $i ) . '</li>';
 		else if ( $status == 'IGNORED' )
-			$result .= '<li class="retina-ignored" title="' . $i . '"></li>';
+			$result .= '<li class="retina-ignored" title="' . wr2x_format_title( $i, $size ) . '">'
+				. wr2x_size_shortname( $i ) . '</li>';
 		else {
 			error_log( "Retina: This status is not recognized: " . $status );
 		}
@@ -388,7 +422,7 @@ function wpr2x_html_get_basic_retina_info( $attachmentId, $retina_info ) {
 function wpr2x_html_get_details_retina_info( $post, $retina_info ) {
 
 	if ( !wr2x_is_pro() ) {
-		return __( "PRO VERSION ONLY<br /><br />You can buy a serial from here: <a target='_blank' href='http://apps.meow.fr/wp-retina-2x/'>WP Retina 2x</a>.<br />Then add this serial in the settings. That's all! :)<br />Thanks a lot for your support.", 'wp-retina-2x' );
+		return __( "PRO VERSION ONLY", 'wp-retina-2x' );
 	}
 
 	$sizes = wr2x_get_image_sizes();
@@ -609,9 +643,9 @@ function wr2x_admin_menu() {
 function wr2x_get_image_sizes() {
 	$sizes = array();
 	global $_wp_additional_image_sizes;
-	foreach (get_intermediate_image_sizes() as $s) {
+	foreach ( get_intermediate_image_sizes() as $s ) {
 		$crop = false;
-		if (isset($_wp_additional_image_sizes[$s])) {
+		if ( isset( $_wp_additional_image_sizes[$s] ) ) {
 			$width = intval($_wp_additional_image_sizes[$s]['width']);
 			$height = intval($_wp_additional_image_sizes[$s]['height']);
 			$crop = $_wp_additional_image_sizes[$s]['crop'];
@@ -622,6 +656,8 @@ function wr2x_get_image_sizes() {
 		}
 		$sizes[$s] = array( 'width' => $width, 'height' => $height, 'crop' => $crop );
 	}
+	if ( wr2x_getoption( 'disable_medium_large', 'wr2x_basics', false ) )
+		unset( $sizes['medium_large'] );
 	return $sizes;
 }
 
@@ -863,7 +899,7 @@ function wr2x_generate_images( $meta ) {
 				$issue = true;
 			}
 			else {
-				do_action( 'wr2x_retina_file_added', $id, $retina_file );
+				do_action( 'wr2x_retina_file_added', $id, $retina_file, $name );
 				wr2x_log( "Retina for {$name} created: '{$retina_file}'." );
 			}
 		} else {
