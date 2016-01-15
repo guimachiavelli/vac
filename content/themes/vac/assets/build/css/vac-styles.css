@@ -338,9 +338,6 @@ strong {
   line-height: 46.5px;
   color: #103ffb; }
 
-.hero-post .hero-post__header:hover {
-  text-decoration: underline; }
-
 .hero-post__header {
   margin-bottom: 24px; }
   .hero-post__header a {
