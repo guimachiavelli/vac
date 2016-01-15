@@ -7,4 +7,8 @@
     font-size: fontsize(menu);
     color: $colour-main;
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

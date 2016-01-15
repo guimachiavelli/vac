@@ -1,7 +1,7 @@
 <?php
-    $placeholder = pll_current_language() == 'ru' ? 'Поиск' : 'Search';
+    $search_text = pll_current_language() == 'ru' ? 'Поиск' : 'Search';
 ?>
 
-<form class="search search--small" method="get" action="<?php echo home_url( '/' ); ?>">
-    <input type="text" name="s" placeholder="<?php echo $placeholder; ?>" class="search__input">
-</form>
+<a class="search-link" href="<?php echo get_bloginfo('url');  ?>/?s=">
+    <?php echo $search_text; ?>
+</a>

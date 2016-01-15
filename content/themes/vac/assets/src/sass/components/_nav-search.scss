@@ -3,6 +3,14 @@
     position: relative;
 }
 
+.search-link {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .search__input {
     background: transparent;
     border: 0;
@@ -41,28 +49,5 @@
 
     &:focus {
         outline: 0;
-    }
-}
-
-.search--small {
-    margin-bottom: 0;
-
-    .search__input {
-        width: 80px;
-        display: block;
-        font-size: fontsize(menu);
-        border: 0;
-        padding: 0;
-        transition: width 150ms ease-in;
-        border-bottom: 3px solid transparent;
-
-        @include placeholder {
-            color: colour(main);
-        }
-
-        &:focus {
-            width: 100%;
-            border-bottom: 3px solid colour(main);
-        }
     }
 }
