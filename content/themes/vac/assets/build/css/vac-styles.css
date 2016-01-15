@@ -180,7 +180,8 @@ strong {
 
 .header {
   margin-bottom: 48px;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
 
 .logo {
   margin-bottom: 6px;
