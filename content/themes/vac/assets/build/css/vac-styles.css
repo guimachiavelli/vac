@@ -228,7 +228,7 @@ strong {
 .menu-item {
   color: #103ffb;
   float: left;
-  font-size: 21px;
+  font-size: 28px;
   line-height: 30px;
   margin-right: 18px; }
   .menu-item a {
@@ -245,7 +245,7 @@ strong {
   width: 12%; }
 
 .nav-language__link {
-  font-size: 21px;
+  font-size: 28px;
   color: #103ffb;
   text-decoration: none; }
 
@@ -301,7 +301,7 @@ strong {
   .search--small .search__input {
     width: 80px;
     display: block;
-    font-size: 21px;
+    font-size: 28px;
     border: 0;
     padding: 0;
     -webkit-transition: width 150ms ease-in;
