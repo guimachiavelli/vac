@@ -22,13 +22,13 @@
     text-indent: -9999px;
     display: inline-block;
     position: relative;
-    width: 15px;
+    width: 20px;
 
     &:after {
         content: '';
         display: block;
         position: absolute;
-        height: 4px;
+        height: 3px;
         width: 100%;
         background: $colour-main;
         top: 50%;
@@ -39,5 +39,5 @@
 
 .logo__dash--long {
     width: 10%;
-    min-width: 50px;
+    min-width: 90px;
 }
