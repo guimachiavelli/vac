@@ -4,3 +4,4 @@ node_modules
 .htaccess
 wp-config-env.php
 wp-config.php
+uploads
