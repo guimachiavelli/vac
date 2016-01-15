@@ -350,6 +350,9 @@ strong {
   line-height: 46.5px;
   color: #111; }
 
+.hero-post__figure {
+  width: 87%; }
+
 .hero-post__excerpt {
   color: #111; }
   .hero-post__excerpt a {
@@ -369,7 +372,7 @@ strong {
   color: #103ffb; }
 
 .featured-post {
-  margin-bottom: 24px; }
+  margin-bottom: 30px; }
   .featured-post:hover .featured-post__header {
     text-decoration: underline; }
   .featured-post:hover .text__p--read-more {
@@ -420,6 +423,9 @@ strong {
   font-size: 28px;
   line-height: 30px;
   margin-bottom: 0; }
+
+.column--narrow .featured-posts__title {
+  margin-bottom: 30px; }
 
 .column--narrow .featured-post__content {
   margin-bottom: 12px; }

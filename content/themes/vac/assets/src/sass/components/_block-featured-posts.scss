@@ -6,7 +6,7 @@
 
 .featured-post {
     @include block-hover;
-    margin-bottom: baselines(4);
+    margin-bottom: baselines(5);
 
     a {
         text-decoration: none;
@@ -114,6 +114,10 @@
 
 .column--narrow {
     @include featured-post-small-first-child;
+
+    .featured-posts__title {
+        margin-bottom: baselines(5);
+    }
 
     .featured-post__content {
         margin-bottom: baselines(2);
