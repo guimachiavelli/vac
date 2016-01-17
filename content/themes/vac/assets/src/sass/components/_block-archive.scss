@@ -140,6 +140,7 @@
     .archive-item {
         @include span(10 of 10);
         margin-right: 0;
+        margin-bottom: baselines(16);
     }
 
     .archive-item__standfirst {
@@ -205,6 +206,6 @@
         @include span(1 of 10);
         @include last;
         display: block;
-        font-size: fontsize(caption);
+        font-size: fontsize(p);
     }
 }

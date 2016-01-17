@@ -928,7 +928,7 @@ strong {
   float: right;
   margin-right: 0;
   display: block;
-  font-size: 21px; }
+  font-size: 28px; }
 
 .column--publications .featured-post .element {
   width: 100%;
@@ -982,7 +982,8 @@ strong {
     float: left;
     margin-left: 0;
     margin-right: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    margin-bottom: 96px; }
   .column--researches .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--researches .archive-item__title,
@@ -1021,7 +1022,8 @@ strong {
     float: left;
     margin-left: 0;
     margin-right: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    margin-bottom: 96px; }
   .column--collaborations .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--collaborations .archive-item__title,
@@ -1060,7 +1062,8 @@ strong {
     float: left;
     margin-left: 0;
     margin-right: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    margin-bottom: 96px; }
   .column--grants .archive-item__standfirst {
     margin-bottom: 12px; }
   .column--grants .archive-item__title,
@@ -1137,7 +1140,7 @@ strong {
     float: right;
     margin-right: 0;
     display: block;
-    font-size: 21px; }
+    font-size: 28px; }
   .column--search .archive-item__standfirst {
     margin-top: 0; }
   .column--search .archive-item__year {
