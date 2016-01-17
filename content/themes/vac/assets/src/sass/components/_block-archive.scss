@@ -39,6 +39,7 @@
     cursor: pointer;
     line-height: baselines(8);
     user-select: none;
+    font-size: fontsize(caption);
 
     &:hover {
         text-decoration: underline;
@@ -51,7 +52,7 @@
     color: colour(main);
     cursor: pointer;
     font-family: $font-main;
-    font-size: fontsize(p);
+    font-size: fontsize(caption);
     line-height: baselines(8);
     margin: 0;
     padding: 0;

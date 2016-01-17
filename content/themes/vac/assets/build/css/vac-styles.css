@@ -583,7 +583,8 @@ strong {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  font-size: 21px; }
   .archive-filter__label:hover {
     text-decoration: underline; }
 
@@ -593,7 +594,7 @@ strong {
   color: #103ffb;
   cursor: pointer;
   font-family: "Futura", sans-serif;
-  font-size: 28px;
+  font-size: 21px;
   line-height: 48px;
   margin: 0;
   padding: 0;
