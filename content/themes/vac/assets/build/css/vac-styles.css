@@ -514,7 +514,7 @@ strong {
 
 .accordion-item__content {
   border-top: 3px solid #103ffb;
-  padding: 12px 10vw 12px 0;
+  padding: 12px 0;
   margin-right: -10vw;
   margin-top: 12px;
   display: none; }
