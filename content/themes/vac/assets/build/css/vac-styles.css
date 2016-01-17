@@ -179,7 +179,8 @@ strong {
   font-weight: 700; }
 
 .header {
-  margin-bottom: 48px;
+  margin-bottom: 96px;
+  overflow: hidden;
   position: relative;
   z-index: 1; }
 
