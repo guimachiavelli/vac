@@ -33,7 +33,7 @@
                             </figure>
                         </a>
                     </div>
-                    <div class="element element--narrow element--last">
+                    <div class="element element--narrow">
                             <div class="hero-post__excerpt">
                                 <?php echo $excerpt; ?>
                             </div>

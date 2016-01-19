@@ -335,9 +335,6 @@ strong {
   line-height: 46.5px;
   color: #111; }
 
-.hero-post__figure {
-  width: 87%; }
-
 .hero-post__excerpt {
   color: #111; }
   .hero-post__excerpt a {
@@ -838,6 +835,10 @@ strong {
 
 .column--home.column--full {
   margin-top: 36px; }
+  .column--home.column--full .element--wide {
+    width: 57.44681%;
+    float: left;
+    margin-right: 2.12766%; }
 
 .column--home.column--wide .featured-posts__title {
   margin-bottom: 0; }

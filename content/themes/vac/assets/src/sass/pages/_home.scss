@@ -1,5 +1,9 @@
 .column--home.column--full {
     margin-top: baselines(6);
+
+    .element--wide {
+        @include span(7);
+    }
 }
 
 .column--home.column--wide {
