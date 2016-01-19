@@ -24,8 +24,8 @@ class VACCollaboration extends VACSection {
     public static $post_name = 'collaborations';
     public static $post_name_russian = 'sotrudnichestvo';
     public static $archive_page = 'collaborations';
-    public static $archive_page_title = 'Collaborations archive';
-    public static $archive_page_title_russian = 'Сотрудничество Архив';
+    public static $archive_page_title = 'Collaborations page';
+    public static $archive_page_title_russian = 'Сотрудничество страница';
     public static $archive_template = 'collaboration_archive.php';
     public static $menu_link = 'edit.php?post_type=vac-collaboration';
     public static $dashicon = 'dashicons-groups';

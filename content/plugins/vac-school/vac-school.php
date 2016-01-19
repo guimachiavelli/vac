@@ -24,7 +24,7 @@ class VACSchool extends VACSection {
     public static $post_name = 'schools';
     public static $post_name_russian = 'shkoly';
     public static $archive_page = 'schools';
-    public static $archive_page_title = 'Curatorial Summer Schools archive';
+    public static $archive_page_title = 'Curatorial Summer Schools page';
     public static $archive_page_title_russian = 'Летняя школа кураторов';
     public static $archive_template = 'school_archive.php';
     public static $menu_link = 'edit.php?post_type=vac-school';
@@ -48,6 +48,25 @@ class VACSchool extends VACSection {
 
         $main_component->register();
     }
+
+    public static function menu_order($menu) {
+        global $submenu;
+
+        $new_menu = array();
+        $old_menu = $submenu[static::$menu_link];
+
+
+        $new_menu[5] = $old_menu[5];
+        $new_menu[6] = $old_menu[16];
+        $new_menu[10] = $old_menu[10];
+        $new_menu[15] = $old_menu[15];
+
+        $submenu[static::$menu_link] = $new_menu;
+    }
+
+
 }
+
+
 
 VACSchool::init();

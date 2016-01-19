@@ -24,8 +24,8 @@ class VACExhibition extends VACSection {
     public static $post_name = 'exhibitions';
     public static $post_name_russian = 'vystavki';
     public static $archive_page = 'exhibitions';
-    public static $archive_page_title = 'Exhibitions archive';
-    public static $archive_page_title_russian = 'Архив выставок';
+    public static $archive_page_title = 'Exhibitions page';
+    public static $archive_page_title_russian = 'встраница страница';
     public static $archive_template = 'exhibition_archive.php';
     public static $menu_link = 'edit.php?post_type=vac-exhibition';
     public static $dashicon = 'dashicons-format-image';

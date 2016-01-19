@@ -24,8 +24,8 @@ class VACResearch extends VACSection {
     public static $post_name = 'researches';
     public static $post_name_russian = 'issledovaniya';
     public static $archive_page = 'researches';
-    public static $archive_page_title = 'Research archive';
-    public static $archive_page_title_russian = 'Исследования Архив';
+    public static $archive_page_title = 'Research page';
+    public static $archive_page_title_russian = 'Исследования страница';
     public static $archive_template = 'research_archive.php';
     public static $menu_link = 'edit.php?post_type=vac-research';
     public static $dashicon = 'dashicons-welcome-learn-more';

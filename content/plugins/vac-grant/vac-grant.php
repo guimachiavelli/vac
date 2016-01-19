@@ -24,8 +24,8 @@ class VACGrant extends VACSection {
     public static $post_name = 'grants';
     public static $post_name_russian = 'stipendiya';
     public static $archive_page = 'grants';
-    public static $archive_page_title = 'Grants archive';
-    public static $archive_page_title_russian = 'Стипендия Архив';
+    public static $archive_page_title = 'Grants page';
+    public static $archive_page_title_russian = 'Стипендия страница';
     public static $archive_template = 'grant_archive.php';
     public static $menu_link = 'edit.php?post_type=vac-grant';
     public static $dashicon = 'dashicons-awards';
