@@ -308,7 +308,7 @@ strong {
   clear: left;
   padding: 96px 0 120px; }
   .footer p {
-    font-size: 21px;
+    font-size: 17.5px;
     line-height: 27px; }
   .footer p:last-child {
     margin-top: 18px; }
@@ -395,7 +395,7 @@ strong {
 
 .featured-post__caption {
   color: #111;
-  font-size: 21px;
+  font-size: 17.5px;
   line-height: 24px; }
 
 .featured-post__excerpt {
@@ -585,7 +585,7 @@ strong {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: 21px; }
+  font-size: 17.5px; }
   .archive-filter__label:hover {
     text-decoration: underline; }
 
@@ -595,7 +595,7 @@ strong {
   color: #103ffb;
   cursor: pointer;
   font-family: "Futura", sans-serif;
-  font-size: 21px;
+  font-size: 17.5px;
   line-height: 48px;
   margin: 0;
   padding: 0;
@@ -647,7 +647,7 @@ strong {
   display: table-footer-group; }
 
 .archive-item__caption {
-  font-size: 21px;
+  font-size: 17.5px;
   display: none; }
 
 .archive-item__year {
@@ -725,7 +725,7 @@ strong {
   clear: both; }
 
 .school__caption {
-  font-size: 21px; }
+  font-size: 17.5px; }
 
 .school__excerpt a {
   color: #103ffb; }
@@ -808,13 +808,13 @@ strong {
   display: none; }
 
 .slider-item__caption {
-  font-size: 21px; }
+  font-size: 17.5px; }
 
 .slider__counter {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 21px;
+  font-size: 17.5px;
   -webkit-transform: translateY(100%);
           transform: translateY(100%); }
 
