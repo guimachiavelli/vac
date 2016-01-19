@@ -1109,6 +1109,8 @@ strong {
     font-size: 28px;
     line-height: 30px;
     margin-bottom: 0; }
+  .column--post .featured-posts {
+    padding-right: 12.76596%; }
   .column--post .featured-posts__title {
     margin-bottom: 24px; }
   .column--post.column--wide {

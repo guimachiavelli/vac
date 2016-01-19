@@ -16,6 +16,10 @@
     @include featured-post-small-first-child;
     position: relative;
 
+    .featured-posts {
+        padding-right: span(8 of 12) - span(7 of 12) + (gutter() * 2);
+    }
+
     .featured-posts__title {
         margin-bottom: baselines(4);
     }
