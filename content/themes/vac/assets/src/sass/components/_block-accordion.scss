@@ -1,16 +1,16 @@
 .accordion-item {
     margin-right: -10vw;
-    padding: baselines(2) 10vw baselines(2) 0;
-    border-bottom: 3px solid colour(main);
+    padding: baselines(2) 10vw (baselines(2) + 3) 0;
+    border-bottom: 3px solid colour(text);
 }
 
 .accordion-item__title {
-    color: colour(main);
+    color: colour(text);
     cursor: pointer;
 }
 
 .accordion-item__content {
-    border-top: 3px solid colour(main);
+    border-top: 3px solid colour(text);
     padding: baselines(2) 0;
     margin-right: -10vw;
     margin-top: baselines(2);
@@ -43,5 +43,20 @@
 .accordion-item[aria-expanded=true] {
     .accordion-item__content {
         display: block;
+        border-top: 0;
+    }
+}
+
+@mixin accordion-main-colour {
+    .accordion-item {
+        border-bottom-color: colour(main);
+    }
+
+    .accordion-item__title {
+        color: colour(main);
+    }
+
+    .accordion-item__content {
+        border-top-color: colour(main);
     }
 }

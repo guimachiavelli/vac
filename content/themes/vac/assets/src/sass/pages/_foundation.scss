@@ -20,4 +20,6 @@
         font-size: fontsize(p);
         line-height: baselines(5);
     }
+
+    @include accordion-main-colour;
 }

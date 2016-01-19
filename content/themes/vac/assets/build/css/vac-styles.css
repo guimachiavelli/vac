@@ -505,15 +505,15 @@ strong {
 
 .accordion-item {
   margin-right: -10vw;
-  padding: 12px 10vw 12px 0;
-  border-bottom: 3px solid #103ffb; }
+  padding: 12px 10vw 15px 0;
+  border-bottom: 3px solid #111; }
 
 .accordion-item__title {
-  color: #103ffb;
+  color: #111;
   cursor: pointer; }
 
 .accordion-item__content {
-  border-top: 3px solid #103ffb;
+  border-top: 3px solid #111;
   padding: 12px 0;
   margin-right: -10vw;
   margin-top: 12px;
@@ -535,7 +535,8 @@ strong {
     margin-right: 0; }
 
 .accordion-item[aria-expanded=true] .accordion-item__content {
-  display: block; }
+  display: block;
+  border-top: 0; }
 
 .archive__header {
   margin-bottom: 24px; }
@@ -873,6 +874,15 @@ strong {
 .column--foundation .featured-post:first-child .featured-post__header {
   font-size: 28px;
   line-height: 30px; }
+
+.column--foundation .accordion-item {
+  border-bottom-color: #103ffb; }
+
+.column--foundation .accordion-item__title {
+  color: #103ffb; }
+
+.column--foundation .accordion-item__content {
+  border-top-color: #103ffb; }
 
 .column--exhibition .featured-post .element {
   width: 100%;
