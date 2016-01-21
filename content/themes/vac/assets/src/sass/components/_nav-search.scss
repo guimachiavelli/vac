@@ -9,6 +9,10 @@
     &:hover {
         text-decoration: underline;
     }
+
+    &:visited {
+        color: colour(main);
+    }
 }
 
 .search__input {

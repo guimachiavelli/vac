@@ -260,6 +260,8 @@ strong {
   text-decoration: none; }
   .search-link:hover {
     text-decoration: underline; }
+  .search-link:visited {
+    color: #103ffb; }
 
 .search__input {
   background: transparent;
