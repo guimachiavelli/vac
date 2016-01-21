@@ -39,7 +39,7 @@
     cursor: pointer;
     line-height: baselines(8);
     user-select: none;
-    font-size: fontsize(caption);
+    font-size: fontsize(filter);
 
     &:hover {
         text-decoration: underline;
@@ -52,7 +52,7 @@
     color: colour(main);
     cursor: pointer;
     font-family: $font-main;
-    font-size: fontsize(caption);
+    font-size: fontsize(filter);
     line-height: baselines(8);
     margin: 0;
     padding: 0;

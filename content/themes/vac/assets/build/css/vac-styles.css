@@ -308,8 +308,8 @@ strong {
   clear: left;
   padding: 96px 0 120px; }
   .footer p {
-    font-size: 17.5px;
-    line-height: 27px; }
+    font-size: 21px;
+    line-height: 24px; }
   .footer p:last-child {
     margin-top: 18px; }
   .footer a {
@@ -582,7 +582,7 @@ strong {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: 17.5px; }
+  font-size: 21px; }
   .archive-filter__label:hover {
     text-decoration: underline; }
 
@@ -592,7 +592,7 @@ strong {
   color: #103ffb;
   cursor: pointer;
   font-family: "Futura", sans-serif;
-  font-size: 17.5px;
+  font-size: 21px;
   line-height: 48px;
   margin: 0;
   padding: 0;
