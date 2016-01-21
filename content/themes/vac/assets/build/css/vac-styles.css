@@ -597,8 +597,7 @@ strong {
   font-size: 21px;
   line-height: 48px;
   margin: 0;
-  padding: 0;
-  vertical-align: bottom; }
+  padding: 0; }
   .archive-filter__button:focus {
     outline: 0; }
   .archive-filter__button:hover {
