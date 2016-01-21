@@ -392,7 +392,7 @@ strong {
 
 .featured-post__caption {
   color: #111;
-  font-size: 17.5px;
+  font-size: 21px;
   line-height: 24px; }
 
 .featured-post__excerpt {
@@ -644,7 +644,7 @@ strong {
   display: table-footer-group; }
 
 .archive-item__caption {
-  font-size: 17.5px;
+  font-size: 21px;
   display: none; }
 
 .archive-item__year {
@@ -722,7 +722,7 @@ strong {
   clear: both; }
 
 .school__caption {
-  font-size: 17.5px; }
+  font-size: 21px; }
 
 .school__excerpt a {
   color: #103ffb; }
@@ -805,13 +805,13 @@ strong {
   display: none; }
 
 .slider-item__caption {
-  font-size: 17.5px; }
+  font-size: 21px; }
 
 .slider__counter {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 17.5px;
+  font-size: 21px;
   -webkit-transform: translateY(100%);
           transform: translateY(100%); }
 
