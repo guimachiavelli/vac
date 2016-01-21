@@ -361,7 +361,7 @@ strong {
     text-decoration: underline; }
   .featured-post a {
     text-decoration: none; }
-    .featured-post a:visited {
+    .featured-post a:hover, .featured-post a:visited {
       color: #111; }
 
 .featured-post[aria-hidden=true] {
