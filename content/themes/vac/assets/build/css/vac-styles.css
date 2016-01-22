@@ -649,7 +649,11 @@ strong {
   float: left;
   margin-right: 2.5641%;
   margin-right: -23.07692%;
-  text-align: right; }
+  text-align: right;
+  display: none; }
+  @media (min-width: 768px) {
+    .archive__filters {
+      display: block; } }
 
 .archive-filter {
   display: inline-block;
@@ -705,18 +709,21 @@ strong {
   visibility: hidden; }
 
 .archive-item {
-  width: 38.46154%;
-  float: left;
-  margin-right: 2.5641%;
-  margin-right: 10.25641%;
   display: table;
   margin-bottom: 48px; }
   .archive-item:hover .archive-item__header {
     text-decoration: underline; }
   .archive-item:hover .text__p--read-more {
     text-decoration: underline; }
-  .archive-item:nth-child(2n+1) {
-    clear: both; }
+  @media (min-width: 768px) {
+    .archive-item {
+      width: 38.46154%;
+      float: left;
+      margin-right: 2.5641%;
+      margin-right: 10.25641%; } }
+  @media (min-width: 768px) {
+    .archive-item:nth-child(2n+1) {
+      clear: both; } }
   .archive-item a {
     color: #111;
     text-decoration: none; }
@@ -976,25 +983,30 @@ strong {
   .column--home.column--wide .featured-post:first-child .element--wide {
     display: table-header-group; } }
 
-.column--foundation.column--wide {
-  margin-top: 168px; }
+@media (min-width: 768px) {
+  .column--foundation.column--wide {
+    margin-top: 168px; } }
 
-.column--foundation.column--narrow {
-  padding-left: 0%;
-  width: 40.42553%;
-  float: left;
-  margin-right: 2.12766%; }
+@media (min-width: 768px) {
+  .column--foundation.column--narrow {
+    padding-left: 0%;
+    width: 40.42553%;
+    float: left;
+    margin-right: 2.12766%; } }
 
-.column--foundation.column--last {
-  float: right;
-  margin-right: 0; }
+@media (min-width: 768px) {
+  .column--foundation.column--last {
+    float: right;
+    margin-right: 0; } }
 
-.column--foundation .featured-posts__title {
-  margin-bottom: 24px; }
+@media (min-width: 768px) {
+  .column--foundation .featured-posts__title {
+    margin-bottom: 24px; } }
 
-.column--foundation .featured-post:first-child .featured-post__header {
-  font-size: 28px;
-  line-height: 30px; }
+@media (min-width: 768px) {
+  .column--foundation .featured-post:first-child .featured-post__header {
+    font-size: 28px;
+    line-height: 30px; } }
 
 .column--foundation .accordion-item {
   border-bottom-color: #103ffb; }

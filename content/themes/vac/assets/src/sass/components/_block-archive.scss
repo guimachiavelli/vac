@@ -14,6 +14,12 @@
     @include span(8 of 10);
     margin-right: span(-2 of 10);
     text-align: right;
+    display: none;
+
+    @media(min-width: breakpoints(tablet)) {
+        display: block;
+    }
+
 }
 
 .archive-filter {
@@ -80,13 +86,20 @@
 
 .archive-item {
     @include block-hover;
-    @include span(4 of 10);
-    @include post(1 of 10);
     display: table;
     margin-bottom: baselines(8);
 
+
+    @media(min-width: breakpoints(tablet)) {
+        @include span(4 of 10);
+        @include post(1 of 10);
+    }
+
+
     &:nth-child(2n+1) {
-        @include break;
+        @media(min-width: breakpoints(tablet)) {
+            @include break;
+        }
     }
 
     a {

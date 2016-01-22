@@ -1,24 +1,34 @@
 .column--foundation {
     &.column--wide {
-        margin-top: baselines(28);
+        @media(min-width: breakpoints(tablet)) {
+            margin-top: baselines(28);
+        }
     }
 
     &.column--narrow {
-        @include prefix(0);
-        @include span(5);
+        @media(min-width: breakpoints(tablet)) {
+            @include prefix(0);
+            @include span(5);
+        }
     }
 
     &.column--last {
-        @include last;
+        @media(min-width: breakpoints(tablet)) {
+            @include last;
+        }
     }
 
     .featured-posts__title {
-        margin-bottom: baselines(4);
+        @media(min-width: breakpoints(tablet)) {
+            margin-bottom: baselines(4);
+        }
     }
 
     .featured-post:first-child .featured-post__header {
-        font-size: fontsize(p);
-        line-height: baselines(5);
+        @media(min-width: breakpoints(tablet)) {
+            font-size: fontsize(p);
+            line-height: baselines(5);
+        }
     }
 
     @include accordion-main-colour;
