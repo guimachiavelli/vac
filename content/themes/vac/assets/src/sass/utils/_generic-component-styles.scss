@@ -21,12 +21,17 @@
 }
 
 @mixin h2 {
-    font-size: fontsize(h2);
+    font-size: fontsize(h2-mobile);
     line-height: baselines(7.75);
 
-    @media(min-width:breakpoints(tablet))
-           and (max-width: breakpoints(desktop)) {
+    @media(min-width:breakpoints(tablet)) {
         font-size: fontsize(p);
         line-height: baselines(4);
+    }
+
+
+    @media(min-width:breakpoints(desktop))
+        font-size: fontsize(h2);
+        line-height: baselines(7.75);
     }
 }

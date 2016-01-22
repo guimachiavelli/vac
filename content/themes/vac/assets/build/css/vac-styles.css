@@ -367,13 +367,13 @@ strong {
   overflow: hidden; }
 
 .hero__title {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   color: #103ffb; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .hero__title {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .hero-post__header {
   margin-bottom: 24px; }
@@ -383,14 +383,14 @@ strong {
 
 .hero-post__title,
 .hero-post__standfirst {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   color: #111; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .hero-post__title,
     .hero-post__standfirst {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .hero-post__excerpt {
   color: #111; }
@@ -407,18 +407,18 @@ strong {
       margin-bottom: 0; } }
 
 .featured-posts__title {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: 'kern' 1;
           font-feature-settings: 'kern' 1;
   -webkit-font-kerning: normal;
           font-kerning: normal;
   color: #103ffb; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .featured-posts__title {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .featured-post {
   margin-bottom: 48px; }
@@ -457,13 +457,13 @@ strong {
   text-decoration: none; }
   @media (min-width: 768px) {
     .featured-post:first-child .featured-post__header {
-      font-size: 49px;
-      line-height: 46.5px;
-      margin-bottom: 12px; } }
-  @media (min-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-    .featured-post:first-child .featured-post__header {
       font-size: 28px;
-      line-height: 24px; } }
+      line-height: 24px;
+      margin-bottom: 12px; } }
+  @media (min-width: 768px) and (min-width: 1024px) {
+    .featured-post:first-child .featured-post__header {
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 @media (max-width: 768px) {
   .featured-post__content {
@@ -632,17 +632,17 @@ strong {
     visibility: hidden; }
 
 .archive__title {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   width: 38.46154%;
   float: left;
   margin-right: 2.5641%;
   color: #103ffb;
   vertical-align: bottom; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .archive__title {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .archive__filters {
   width: 79.48718%;
@@ -771,13 +771,13 @@ strong {
   display: none !important; }
 
 .schools__title {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   color: #103ffb; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .schools__title {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .schools__filters {
   float: right;
@@ -819,13 +819,13 @@ strong {
     padding-right: 20%; }
 
 .school__title {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   margin-bottom: 24px; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .school__title {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
   .school__title:hover {
     text-decoration: underline; }
 
@@ -873,15 +873,15 @@ strong {
     visibility: hidden; }
 
 .talks__title {
-  font-size: 49px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 24px;
   color: #103ffb;
   float: left;
   width: 38.46154%; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1024px) {
     .talks__title {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .talks__filters {
   float: right;
@@ -943,13 +943,13 @@ strong {
 
 .text__heading,
 .text__p--big {
-  font-size: 49px;
-  line-height: 46.5px; }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  font-size: 28px;
+  line-height: 24px; }
+  @media (min-width: 1024px) {
     .text__heading,
     .text__p--big {
-      font-size: 28px;
-      line-height: 24px; } }
+      font-size: 49px;
+      line-height: 46.5px; } }
 
 .text__p--read-more {
   color: #103ffb; }
@@ -1143,13 +1143,13 @@ strong {
     margin-bottom: 12px; }
   .column--researches .archive-item__title,
   .column--researches .archive-item__standfirst {
-    font-size: 49px;
-    line-height: 46.5px; }
-    @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 28px;
+    line-height: 24px; }
+    @media (min-width: 1024px) {
       .column--researches .archive-item__title,
       .column--researches .archive-item__standfirst {
-        font-size: 28px;
-        line-height: 24px; } }
+        font-size: 49px;
+        line-height: 46.5px; } }
   .column--researches .archive-item__link {
     display: table;
     min-width: 100%; }
@@ -1188,13 +1188,13 @@ strong {
     margin-bottom: 12px; }
   .column--collaborations .archive-item__title,
   .column--collaborations .archive-item__standfirst {
-    font-size: 49px;
-    line-height: 46.5px; }
-    @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 28px;
+    line-height: 24px; }
+    @media (min-width: 1024px) {
       .column--collaborations .archive-item__title,
       .column--collaborations .archive-item__standfirst {
-        font-size: 28px;
-        line-height: 24px; } }
+        font-size: 49px;
+        line-height: 46.5px; } }
   .column--collaborations .archive-item__link {
     display: table;
     min-width: 100%; }
@@ -1233,13 +1233,13 @@ strong {
     margin-bottom: 12px; }
   .column--grants .archive-item__title,
   .column--grants .archive-item__standfirst {
-    font-size: 49px;
-    line-height: 46.5px; }
-    @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 28px;
+    line-height: 24px; }
+    @media (min-width: 1024px) {
       .column--grants .archive-item__title,
       .column--grants .archive-item__standfirst {
-        font-size: 28px;
-        line-height: 24px; } }
+        font-size: 49px;
+        line-height: 46.5px; } }
   .column--grants .archive-item__link {
     display: table;
     min-width: 100%; }
