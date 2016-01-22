@@ -1,5 +1,7 @@
 .post__header {
-    @include span(10 of 12);
+    @media(min-width: breakpoints(tablet)) {
+        @include span(10 of 12);
+    }
 }
 
 .post__date {

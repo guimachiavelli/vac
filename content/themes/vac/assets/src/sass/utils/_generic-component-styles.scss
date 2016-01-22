@@ -30,7 +30,7 @@
     }
 
 
-    @media(min-width:breakpoints(desktop))
+    @media(min-width:breakpoints(desktop)) {
         font-size: fontsize(h2);
         line-height: baselines(7.75);
     }
