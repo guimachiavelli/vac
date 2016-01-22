@@ -1,7 +1,11 @@
 .accordion-item {
-    margin-right: -10vw;
-    padding: baselines(2) 10vw (baselines(2) + 3) 0;
+    padding: baselines(2) 0 (baselines(2) + 3) 0;
     border-bottom: 3px solid colour(text);
+
+    @media(min-width: breakpoints(tablet)) {
+        margin-right: -10vw;
+        padding-right: 10vw;
+    }
 }
 
 .accordion-item__title {
@@ -12,9 +16,13 @@
 .accordion-item__content {
     border-top: 3px solid colour(text);
     padding: baselines(2) 0;
-    margin-right: -10vw;
     margin-top: baselines(2);
     display: none;
+
+    @media(min-width: breakpoints(tablet)) {
+        margin-right: -10vw;
+    }
+
 
     p {
         margin-top: baselines(4);

@@ -1,9 +1,18 @@
 .aside {
+    display: none;
     position: relative;
+
+    @media(min-width: breakpoints(tablet)) {
+        display: block;
+    }
 }
 
 .aside-item {
     margin-bottom: baselines(4);
+    display: none;
+    @media(min-width: breakpoints(tablet)) {
+        display: block;
+    }
 }
 
 .aside-item__figure {

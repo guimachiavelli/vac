@@ -2,13 +2,19 @@
     margin-top: baselines(6);
 
     .element--wide {
-        @include span(7);
+        @media(min-width: breakpoints(tablet)) {
+            @include span(7);
+        }
     }
 }
 
 .column--home.column--wide {
     .featured-posts__title {
-        margin-bottom: 0;
+        margin-bottom: baselines(4);
+
+        @media(min-width: breakpoints(tablet)) {
+            margin-bottom: 0;
+        }
     }
 
     .featured-post:first-child {
@@ -18,11 +24,15 @@
         }
 
         .element--narrow {
-            display: table-footer-group;
+            @media(min-width: breakpoints(tablet)) {
+                display: table-footer-group;
+            }
         }
 
         .element--wide {
-            display: table-header-group;
+            @media(min-width: breakpoints(tablet)) {
+                display: table-header-group;
+            }
         }
     }
 }

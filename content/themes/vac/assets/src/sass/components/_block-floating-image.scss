@@ -1,5 +1,6 @@
 .floating-image {
     cursor: pointer;
+    display: none;
     position: absolute;
     right: 25%;
     top: 0;
@@ -11,10 +12,6 @@
     img {
         width: 100%;
     }
-
-    @media(min-width: breakpoints(tablet)) {
-        display: none;
-    }
 }
 
 .floating-image[aria-hidden=true] {
@@ -22,5 +19,7 @@
 }
 
 .floating-image[aria-hidden=false] {
-    display: block;
+    @media(min-width: breakpoints(tablet)) {
+        display: block;
+    }
 }

@@ -34,3 +34,11 @@
         }
     }
 }
+
+.hero-post__figure {
+    margin-bottom: baselines(4);
+
+    @media(min-width: breakpoints(tablet)) {
+        margin-bottom: 0;
+    }
+}

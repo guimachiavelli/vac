@@ -25,11 +25,15 @@
     }
 
     &.column--wide {
-        @include span(8 of 12);
+        @media(min-width: breakpoints(tablet)) {
+            @include span(8 of 12);
+        }
     }
 
     &.column--narrow {
-        @include span(3 of 12);
-        @include last;
+        @media(min-width: breakpoints(tablet)) {
+            @include span(3 of 12);
+            @include last;
+        }
     }
 }
