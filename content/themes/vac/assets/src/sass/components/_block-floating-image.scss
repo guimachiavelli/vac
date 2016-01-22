@@ -11,6 +11,10 @@
     img {
         width: 100%;
     }
+
+    @media(min-width: breakpoints(tablet)) {
+        display: none;
+    }
 }
 
 .floating-image[aria-hidden=true] {

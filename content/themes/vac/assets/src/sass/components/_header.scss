@@ -1,6 +1,12 @@
 .header {
-    margin-bottom: baselines(16);
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
+    margin-top: baselines(4);
+    margin-bottom: baselines(10);
+
+    @media(min-width: breakpoints(tablet)) {
+        margin-top: 0;
+        margin-bottom: baselines(16);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
 }

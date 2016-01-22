@@ -1,9 +1,13 @@
 .logo {
     margin-bottom: baselines(1);
     text-transform: lowercase;
-    float: left;
-    width: 20%;
+    width: 100%;
     margin-right: 5%;
+
+    @media(min-width:breakpoints(tablet)) {
+        float: left;
+        width: 20%;
+    }
 }
 
 .logo__link {

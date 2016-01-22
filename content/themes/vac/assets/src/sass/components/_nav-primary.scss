@@ -1,17 +1,21 @@
 .nav-primary {
     margin-bottom: baselines(3);
     overflow: hidden;
-    width: 55%;
-    float: left;
-    margin-right: 5%;
+    width: 100%;
+
+    @media(min-width:breakpoints(tablet)) {
+        float: left;
+        margin-right: 5%;
+        width: 55%;
+    }
 }
 
 .menu-item {
-    color: $colour-main;
+    color: colours(main);
     float: left;
     font-size: fontsize(menu);
-    line-height: baselines(5);
-    margin-right: baselines(3);
+    line-height: baselines(6);
+    margin-right: baselines(4);
 
     a {
         color: $colour-main;
@@ -20,6 +24,11 @@
 
     &:hover {
         text-decoration: underline;
+    }
+
+    @media(min-width: breakpoints(tablet)) {
+        margin-right: baselines(3);
+        line-height: baselines(5);
     }
 }
 

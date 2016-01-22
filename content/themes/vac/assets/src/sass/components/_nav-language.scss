@@ -1,14 +1,25 @@
 .nav-language {
-    float: left;
     width: 12%;
+    position: absolute;
+    top: 0;
+    right: $grid-outer-padding;
+
+    @media(min-width:breakpoints(tablet)) {
+        float: left;
+    }
 }
 
 .nav-language__link {
-    font-size: fontsize(menu);
+    font-size: fontsize(aside);
     color: $colour-main;
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
     }
+
+    @media(min-width:breakpoints(tablet)) {
+        font-size: fontsize(menu);
+    }
+
 }

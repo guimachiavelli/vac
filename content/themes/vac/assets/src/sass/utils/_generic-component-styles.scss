@@ -23,4 +23,10 @@
 @mixin h2 {
     font-size: fontsize(h2);
     line-height: baselines(7.75);
+
+    @media(min-width:breakpoints(tablet))
+           and (max-width: breakpoints(desktop)) {
+        font-size: fontsize(p);
+        line-height: baselines(4);
+    }
 }
