@@ -436,7 +436,7 @@ strong {
 .featured-post {
   margin-bottom: 48px; }
   .featured-post:hover .featured-post__header {
-    text-decoration: underline; }
+    /*@include title-hover;*/ }
   .featured-post:hover .text__p--read-more {
     text-decoration: underline; }
   @media (min-width: 768px) {
@@ -733,7 +733,7 @@ strong {
   display: table;
   margin-bottom: 48px; }
   .archive-item:hover .archive-item__header {
-    text-decoration: underline; }
+    /*@include title-hover;*/ }
   .archive-item:hover .text__p--read-more {
     text-decoration: underline; }
   @media (min-width: 768px) {
