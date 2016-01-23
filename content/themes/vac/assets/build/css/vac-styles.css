@@ -355,6 +355,9 @@ strong {
 .footer {
   clear: left;
   padding: 96px 0 120px; }
+  @media (min-width: 768px) {
+    .footer {
+      max-width: 60%; } }
   .footer p {
     font-size: 21px;
     line-height: 24px; }
