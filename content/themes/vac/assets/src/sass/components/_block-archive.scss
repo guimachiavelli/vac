@@ -87,7 +87,7 @@
 .archive-item {
     @include block-hover;
     display: table;
-    margin-bottom: baselines(8);
+    margin-bottom: baselines(13);
 
 
     @media(min-width: breakpoints(tablet)) {

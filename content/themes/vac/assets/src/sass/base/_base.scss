@@ -9,10 +9,16 @@ html {
 body {
     @include container($grid-max-width);
     font-family: $font-main;
-    font-size: fontsize(p);
-    line-height: baselines(5);
+    font-size: fontsize(p-mobile);
+    line-height: baselines(4.25);
     margin: 0 auto;
+    min-width: $grid-min-width;
     padding: baselines(1) $grid-outer-padding;
+
+    @media(min-width: breakpoints(tablet)) {
+        font-size: fontsize(p);
+        line-height: baselines(5);
+    }
 }
 
 strong {

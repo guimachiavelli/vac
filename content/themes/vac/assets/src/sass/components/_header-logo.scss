@@ -19,7 +19,11 @@
 }
 
 .logo__letter {
-    font-size: fontsize(h2);
+    font-size: fontsize(p);
+
+    @media(min-width:breakpoints(tablet)) {
+        font-size: fontsize(h2);
+    }
 }
 
 .logo__dash {
@@ -34,10 +38,16 @@
         position: absolute;
         height: 3px;
         width: 100%;
-        background: $colour-main;
+        background: colour(main);
         top: 50%;
         left: 0;
-        margin-top: -4px;
+        margin-top: -1px;
+    }
+
+    @media(min-width:breakpoints(tablet)) {
+        &:after {
+            margin-top: -4px;
+        }
     }
 }
 

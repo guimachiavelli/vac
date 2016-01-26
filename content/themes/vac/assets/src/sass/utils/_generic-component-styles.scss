@@ -22,7 +22,7 @@
 
 @mixin h2 {
     font-size: fontsize(h2-mobile);
-    line-height: baselines(7.75);
+    line-height: baselines(5);
 
     @media(min-width:breakpoints(tablet)) {
         font-size: fontsize(p);

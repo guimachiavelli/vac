@@ -11,15 +11,18 @@
 }
 
 .menu-item {
-    color: colours(main);
     float: left;
     font-size: fontsize(menu);
     line-height: baselines(6);
     margin-right: baselines(4);
 
     a {
-        color: $colour-main;
+        color: colour(main);
         text-decoration: none;
+
+        &:visited {
+            color: colour(main);
+        }
     }
 
     &:hover {

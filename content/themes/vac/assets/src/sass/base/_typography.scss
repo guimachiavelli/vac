@@ -30,9 +30,10 @@ $fontsize: 7px;
 $fontsizes: (
     h1: $fontsize * 11,
     h2: $fontsize * 7,
-    h2-mobile: $fontsize * 6,
+    h2-mobile: $fontsize * 4,
     h3: $fontsize * 3,
     p: $fontsize * 4,
+    p-mobile: $fontsize * 3.25,
     caption: $fontsize * 3,
     aside: $fontsize * 2.5,
     language: $fontsize * 3.75,

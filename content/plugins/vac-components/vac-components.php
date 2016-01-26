@@ -285,7 +285,7 @@ class VACComponent {
                 ),
                 'tabs' => 'visual',
                 'toolbar' => 'full',
-                'media_upload' => 0,
+                'media_upload' => 1,
             ),
             array (
                 'key' => 'field_55cb7570e1d4b',

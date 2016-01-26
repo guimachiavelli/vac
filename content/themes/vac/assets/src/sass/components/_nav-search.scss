@@ -5,7 +5,7 @@
 
 .search-link {
     text-decoration: none;
-    display: none;
+    font-size: fontsize(aside);
 
     &:hover {
         text-decoration: underline;
@@ -13,10 +13,6 @@
 
     &:visited {
         color: colour(main);
-    }
-
-    @media(min-width:breakpoints(tablet)) {
-        display: block;
     }
 }
 

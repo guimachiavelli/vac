@@ -9,9 +9,15 @@
 }
 
 .post__title {
-    font-size: fontsize(h1);
-    line-height: baselines(13);
+    font-size: fontsize(h2-mobile);
+    line-height: baselines(5);
     margin-bottom: baselines(4);
+
+    @media(min-width: breakpoints(tablet)) {
+        font-size: fontsize(h1);
+        line-height: baselines(13);
+        margin-bottom: baselines(4);
+    }
 }
 
 .column--post {

@@ -185,20 +185,24 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-family: "Futura", sans-serif;
-  font-size: 28px;
-  line-height: 30px;
+  font-size: 22.75px;
+  line-height: 25.5px;
   margin: 0 auto;
+  min-width: 320px;
   padding: 6px 24px; }
   body:after {
     content: " ";
     display: block;
     clear: both; }
+  @media (min-width: 768px) {
+    body {
+      font-size: 28px;
+      line-height: 30px; } }
 
 strong {
   font-weight: 700; }
 
 .header {
-  margin-top: 24px;
   margin-bottom: 60px; }
   @media (min-width: 768px) {
     .header {
@@ -224,7 +228,10 @@ strong {
     color: #103ffb; }
 
 .logo__letter {
-  font-size: 49px; }
+  font-size: 28px; }
+  @media (min-width: 768px) {
+    .logo__letter {
+      font-size: 49px; } }
 
 .logo__dash {
   text-indent: -9999px;
@@ -240,7 +247,10 @@ strong {
     background: #103ffb;
     top: 50%;
     left: 0;
-    margin-top: -4px; }
+    margin-top: -1px; }
+  @media (min-width: 768px) {
+    .logo__dash:after {
+      margin-top: -4px; } }
 
 .logo__dash--long {
   width: 10%;
@@ -257,7 +267,6 @@ strong {
       width: 55%; } }
 
 .menu-item {
-  color: colours(main);
   float: left;
   font-size: 28px;
   line-height: 36px;
@@ -265,6 +274,8 @@ strong {
   .menu-item a {
     color: #103ffb;
     text-decoration: none; }
+    .menu-item a:visited {
+      color: #103ffb; }
   .menu-item:hover {
     text-decoration: underline; }
   @media (min-width: 768px) {
@@ -276,12 +287,13 @@ strong {
   text-decoration: underline; }
 
 .nav-language {
-  width: 12%;
   position: absolute;
   top: 0;
-  right: 24px; }
+  right: 24px;
+  line-height: 0.75; }
   @media (min-width: 768px) {
     .nav-language {
+      width: 12%;
       float: left; } }
 
 .nav-language__link {
@@ -300,14 +312,11 @@ strong {
 
 .search-link {
   text-decoration: none;
-  display: none; }
+  font-size: 17.5px; }
   .search-link:hover {
     text-decoration: underline; }
   .search-link:visited {
     color: #103ffb; }
-  @media (min-width: 768px) {
-    .search-link {
-      display: block; } }
 
 .search__input {
   background: transparent;
@@ -370,8 +379,8 @@ strong {
   overflow: hidden; }
 
 .hero__title {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   color: #103ffb; }
   @media (min-width: 768px) {
     .hero__title {
@@ -390,8 +399,8 @@ strong {
 
 .hero-post__title,
 .hero-post__standfirst {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   color: #111; }
   @media (min-width: 768px) {
     .hero-post__title,
@@ -419,8 +428,8 @@ strong {
       margin-bottom: 0; } }
 
 .featured-posts__title {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: 'kern' 1;
           font-feature-settings: 'kern' 1;
@@ -473,8 +482,8 @@ strong {
   text-decoration: none; }
   @media (min-width: 768px) {
     .featured-post:first-child .featured-post__header {
-      font-size: 42px;
-      line-height: 46.5px;
+      font-size: 28px;
+      line-height: 30px;
       margin-bottom: 12px; } }
   @media (min-width: 768px) and (min-width: 768px) {
     .featured-post:first-child .featured-post__header {
@@ -652,8 +661,8 @@ strong {
     visibility: hidden; }
 
 .archive__title {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   width: 38.46154%;
   float: left;
   margin-right: 2.5641%;
@@ -734,7 +743,7 @@ strong {
 
 .archive-item {
   display: table;
-  margin-bottom: 48px; }
+  margin-bottom: 78px; }
   .archive-item:hover .archive-item__header {
     /*@include title-hover;*/ }
   .archive-item:hover .text__p--read-more {
@@ -795,8 +804,8 @@ strong {
   display: none !important; }
 
 .schools__title {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   color: #103ffb; }
   @media (min-width: 768px) {
     .schools__title {
@@ -813,8 +822,6 @@ strong {
   text-align: right;
   width: 17.94872%; }
   .schools__filters .archive-filter {
-    display: block;
-    float: none;
     height: auto;
     line-height: 1;
     margin: 0; }
@@ -847,8 +854,8 @@ strong {
     padding-right: 20%; }
 
 .school__title {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   margin-bottom: 24px; }
   @media (min-width: 768px) {
     .school__title {
@@ -905,8 +912,8 @@ strong {
     visibility: hidden; }
 
 .talks__title {
-  font-size: 42px;
-  line-height: 46.5px;
+  font-size: 28px;
+  line-height: 30px;
   color: #103ffb;
   float: left;
   width: 38.46154%; }
@@ -979,8 +986,8 @@ strong {
 
 .text__heading,
 .text__p--big {
-  font-size: 42px;
-  line-height: 46.5px; }
+  font-size: 28px;
+  line-height: 30px; }
   @media (min-width: 768px) {
     .text__heading,
     .text__p--big {
@@ -1184,8 +1191,8 @@ strong {
     margin-bottom: 12px; }
   .column--researches .archive-item__title,
   .column--researches .archive-item__standfirst {
-    font-size: 42px;
-    line-height: 46.5px; }
+    font-size: 28px;
+    line-height: 30px; }
     @media (min-width: 768px) {
       .column--researches .archive-item__title,
       .column--researches .archive-item__standfirst {
@@ -1234,8 +1241,8 @@ strong {
     margin-bottom: 12px; }
   .column--collaborations .archive-item__title,
   .column--collaborations .archive-item__standfirst {
-    font-size: 42px;
-    line-height: 46.5px; }
+    font-size: 28px;
+    line-height: 30px; }
     @media (min-width: 768px) {
       .column--collaborations .archive-item__title,
       .column--collaborations .archive-item__standfirst {
@@ -1284,8 +1291,8 @@ strong {
     margin-bottom: 12px; }
   .column--grants .archive-item__title,
   .column--grants .archive-item__standfirst {
-    font-size: 42px;
-    line-height: 46.5px; }
+    font-size: 28px;
+    line-height: 30px; }
     @media (min-width: 768px) {
       .column--grants .archive-item__title,
       .column--grants .archive-item__standfirst {
@@ -1316,9 +1323,14 @@ strong {
   color: #103ffb; }
 
 .post__title {
-  font-size: 77px;
-  line-height: 78px;
+  font-size: 28px;
+  line-height: 30px;
   margin-bottom: 24px; }
+  @media (min-width: 768px) {
+    .post__title {
+      font-size: 77px;
+      line-height: 78px;
+      margin-bottom: 24px; } }
 
 .column--post {
   position: relative; }

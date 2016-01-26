@@ -1,10 +1,11 @@
 .nav-language {
-    width: 12%;
     position: absolute;
     top: 0;
     right: $grid-outer-padding;
+    line-height: 0.75;
 
     @media(min-width:breakpoints(tablet)) {
+        width: 12%;
         float: left;
     }
 }
