@@ -5,9 +5,12 @@
 
 .archive__title {
     @include h2;
-    @include span(4 of 10);
     color: colour(main);
     vertical-align: bottom;
+
+    @media(min-width: breakpoints(title)) {
+        @include span(4 of 10);
+    }
 }
 
 .archive__filters {

@@ -2,6 +2,11 @@
     @include h2;
     @include kerning;
     color: $colour-main;
+    margin-bottom: baselines(4);
+
+    @media(min-width: breakpoints(tablet)) {
+        margin-bottom: 0;
+    }
 }
 
 .featured-post {

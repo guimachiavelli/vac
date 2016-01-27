@@ -6,15 +6,23 @@
 .talks__title {
     @include h2;
     color: colour(main);
-    float: left;
-    width: span(4 of 10);
+
+    @media (min-width: breakpoints(tablet)){
+        float: left;
+        width: span(4 of 10);
+    }
 }
 
 .talks__filters {
-    float: right;
-    margin-right: span(-2);
     overflow: hidden;
-    width: span(8 of 10);
+    display: none;
+
+    @media (min-width: breakpoints(tablet)){
+        display: block;
+        float: right;
+        margin-right: span(-2);
+        width: span(8 of 10);
+    }
 }
 
 .talks__list {
