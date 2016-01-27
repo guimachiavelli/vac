@@ -19,7 +19,7 @@ if (!class_exists('VACSection')) {
 
 class VACSchool extends VACSection {
     public static $post_type = 'vac-school';
-    public static $post_label = 'Curatorial Summer Schools';
+    public static $post_label = 'Education';
     public static $post_slug = 'school';
     public static $post_name = 'schools';
     public static $post_name_russian = 'shkoly';
@@ -64,6 +64,20 @@ class VACSchool extends VACSection {
         $submenu[static::$menu_link] = $new_menu;
     }
 
+    public static function add_archive_menu() {
+        $page = get_page_by_title(static::$archive_page_title);
+        if (!$page) {
+            return;
+        }
+
+        add_submenu_page(
+            static::$menu_link,
+            static::$archive_page_title,
+            'Education page',
+            'edit_pages',
+            "post.php?post={$page->ID}&action=edit"
+        );
+    }
 
 }
 

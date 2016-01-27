@@ -6,6 +6,7 @@
 .search-link {
     text-decoration: none;
     font-size: fontsize(aside);
+    color: colour(main);
 
     &:hover {
         text-decoration: underline;

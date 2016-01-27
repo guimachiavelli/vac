@@ -8,7 +8,7 @@
     color: colour(main);
     vertical-align: bottom;
 
-    @media(min-width: breakpoints(title)) {
+    @media(min-width: breakpoints(tablet)) {
         @include span(4 of 10);
     }
 }
@@ -221,6 +221,10 @@
         @include span(1 of 10);
         @include last;
         display: block;
-        font-size: fontsize(p);
+        font-size: fontsize(p-mobile);
+
+        @media (min-width: breakpoints(tablet)) {
+            font-size: fontsize(p);
+        }
     }
 }
