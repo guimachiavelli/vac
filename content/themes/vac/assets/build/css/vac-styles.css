@@ -294,7 +294,8 @@ strong {
   @media (min-width: 768px) {
     .nav-language {
       width: 12%;
-      float: left; } }
+      float: left;
+      line-height: inherit; } }
 
 .nav-language__link {
   font-size: 17.5px;
@@ -317,6 +318,9 @@ strong {
     text-decoration: underline; }
   .search-link:visited {
     color: #103ffb; }
+  @media (min-width: 768px) {
+    .search-link {
+      font-size: inherit; } }
 
 .search__input {
   background: transparent;

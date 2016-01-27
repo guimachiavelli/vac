@@ -19,7 +19,7 @@
                     <?php foreach($taxonomies as $tax => $terms): ?>
                     <?php foreach($terms as $term): ?>
                         <?php $filter_id =  rand(0, 100) . "_{$tax}:{$term[1]}"; ?>
-                        <?php if ($filter_id < 2012) { continue; } ?>
+                        <?php if ($term[0] < 2012) { continue; } ?>
                         <li class="archive-filter">
                             <input class="archive-filter__input"
                                    type="radio"
