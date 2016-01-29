@@ -5,7 +5,8 @@
 
 .search-link {
     text-decoration: none;
-    font-size: fontsize(aside);
+    font-size: fontsize(menu);
+    line-height: baselines(5);
     color: colour(main);
 
     &:hover {

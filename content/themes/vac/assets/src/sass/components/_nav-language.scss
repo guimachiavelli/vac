@@ -1,18 +1,13 @@
 .nav-language {
-    position: absolute;
-    top: 0;
-    right: $grid-outer-padding;
-    line-height: 0.75;
+    width: 12%;
 
     @media(min-width:breakpoints(tablet)) {
-        width: 12%;
         float: left;
-        line-height: inherit;
     }
 }
 
 .nav-language__link {
-    font-size: fontsize(aside);
+    font-size: fontsize(menu);
     color: $colour-main;
     text-decoration: none;
 
