@@ -228,7 +228,7 @@ strong {
 .logo__link {
   text-decoration: none; }
   .logo__link, .logo__link:visited {
-    color: #103ffb; }
+    color: blue; }
 
 .logo__letter {
   font-size: 28px; }
@@ -247,7 +247,7 @@ strong {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #103ffb;
+    background: blue;
     top: 50%;
     left: 0;
     margin-top: -1px; }
@@ -278,10 +278,10 @@ strong {
   line-height: 30px;
   margin-right: 24px; }
   .menu-item a {
-    color: #103ffb;
+    color: blue;
     text-decoration: none; }
     .menu-item a:visited {
-      color: #103ffb; }
+      color: blue; }
   .menu-item:hover {
     text-decoration: underline; }
   @media (min-width: 768px) {
@@ -300,7 +300,7 @@ strong {
 
 .nav-language__link {
   font-size: 28px;
-  color: #103ffb;
+  color: blue;
   text-decoration: none; }
   .nav-language__link:hover {
     text-decoration: underline; }
@@ -316,11 +316,11 @@ strong {
   text-decoration: none;
   font-size: 28px;
   line-height: 30px;
-  color: #103ffb; }
+  color: blue; }
   .search-link:hover {
     text-decoration: underline; }
   .search-link:visited {
-    color: #103ffb; }
+    color: blue; }
   @media (min-width: 768px) {
     .search-link {
       font-size: inherit; } }
@@ -343,7 +343,7 @@ strong {
   .search__input:-ms-input-placeholder {
     color: #111; }
   .search__input:focus {
-    border-bottom: 3px solid #103ffb;
+    border-bottom: 3px solid blue;
     outline: 0; }
     .search__input:focus::-webkit-input-placeholder {
       opacity: 0.5; }
@@ -358,7 +358,7 @@ strong {
   border: 0;
   margin: 0;
   padding: 0;
-  color: #103ffb;
+  color: blue;
   background: transparent;
   font-size: 49px;
   position: absolute;
@@ -388,7 +388,7 @@ strong {
 .hero__title {
   font-size: 28px;
   line-height: 30px;
-  color: #103ffb; }
+  color: blue; }
   @media (min-width: 768px) {
     .hero__title {
       font-size: 28px;
@@ -423,7 +423,7 @@ strong {
 .hero-post__excerpt {
   color: #111; }
   .hero-post__excerpt a {
-    color: #103ffb;
+    color: blue;
     text-decoration: none; }
     .hero-post__excerpt a:hover {
       text-decoration: underline; }
@@ -442,7 +442,7 @@ strong {
           font-feature-settings: 'kern' 1;
   -webkit-font-kerning: normal;
           font-kerning: normal;
-  color: #103ffb;
+  color: blue;
   margin-bottom: 24px; }
   @media (min-width: 768px) {
     .featured-posts__title {
@@ -479,7 +479,7 @@ strong {
   cursor: pointer;
   font-size: 28px;
   font-family: "Futura", sans-serif;
-  color: #103ffb;
+  color: blue;
   clear: both; }
   .featured-posts__load:hover {
     text-decoration: underline; }
@@ -594,7 +594,7 @@ strong {
   display: none;
   background: 0;
   border: 0;
-  color: #103ffb;
+  color: blue;
   cursor: pointer;
   font-size: 17.5px;
   position: absolute;
@@ -674,7 +674,7 @@ strong {
 .archive__title {
   font-size: 28px;
   line-height: 30px;
-  color: #103ffb;
+  color: blue;
   vertical-align: bottom; }
   @media (min-width: 768px) {
     .archive__title {
@@ -715,7 +715,7 @@ strong {
   display: none; }
 
 .archive-filter__label {
-  color: #103ffb;
+  color: blue;
   cursor: pointer;
   line-height: 48px;
   -webkit-user-select: none;
@@ -729,7 +729,7 @@ strong {
 .archive-filter__button {
   background: transparent;
   border: 0;
-  color: #103ffb;
+  color: blue;
   cursor: pointer;
   font-family: "Futura", sans-serif;
   font-size: 21px;
@@ -819,7 +819,7 @@ strong {
 .schools__title {
   font-size: 28px;
   line-height: 30px;
-  color: #103ffb; }
+  color: blue; }
   @media (min-width: 768px) {
     .schools__title {
       font-size: 28px;
@@ -889,7 +889,7 @@ strong {
   font-size: 21px; }
 
 .school__excerpt a {
-  color: #103ffb; }
+  color: blue; }
   .school__excerpt a:hover {
     text-decoration: underline; }
 
@@ -927,7 +927,7 @@ strong {
 .talks__title {
   font-size: 28px;
   line-height: 30px;
-  color: #103ffb; }
+  color: blue; }
   @media (min-width: 768px) {
     .talks__title {
       font-size: 28px;
@@ -1001,7 +1001,7 @@ strong {
   margin-bottom: 48px; }
 
 .text__p--blue {
-  color: #103ffb; }
+  color: blue; }
 
 .text__heading,
 .text__p--big {
@@ -1019,7 +1019,7 @@ strong {
       line-height: 46.5px; } }
 
 .text__p--read-more {
-  color: #103ffb; }
+  color: blue; }
 
 .column--home.column--full {
   margin-top: 36px; }
@@ -1076,13 +1076,13 @@ strong {
     line-height: 30px; } }
 
 .column--foundation .accordion-item {
-  border-bottom-color: #103ffb; }
+  border-bottom-color: blue; }
 
 .column--foundation .accordion-item__title {
-  color: #103ffb; }
+  color: blue; }
 
 .column--foundation .accordion-item__content {
-  border-top-color: #103ffb; }
+  border-top-color: blue; }
 
 .column--exhibition .featured-post .element {
   width: 100%;
@@ -1342,7 +1342,7 @@ strong {
     margin-right: 2.12766%; } }
 
 .post__date {
-  color: #103ffb; }
+  color: blue; }
 
 .post__title {
   font-size: 28px;
