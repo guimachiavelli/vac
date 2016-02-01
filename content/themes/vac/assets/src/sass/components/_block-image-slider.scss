@@ -12,6 +12,8 @@
 
 .slider-item__caption {
     font-size: fontsize(caption);
+    position: absolute;
+    padding-right: baselines(8);
 }
 
 .slider__counter {

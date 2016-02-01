@@ -983,7 +983,9 @@ strong {
   display: none; }
 
 .slider-item__caption {
-  font-size: 21px; }
+  font-size: 21px;
+  position: absolute;
+  padding-right: 48px; }
 
 .slider__counter {
   position: absolute;
@@ -1194,7 +1196,7 @@ strong {
     float: left;
     margin-right: 2.12766%; }
   .column--researches .archive__title {
-    width: 17.94872%;
+    width: 38.46154%;
     float: left;
     margin-right: 2.5641%; }
   .column--researches .archive__filters {
@@ -1244,7 +1246,7 @@ strong {
     float: left;
     margin-right: 2.12766%; }
   .column--collaborations .archive__title {
-    width: 17.94872%;
+    width: 38.46154%;
     float: left;
     margin-right: 2.5641%; }
   .column--collaborations .archive__filters {
@@ -1294,7 +1296,7 @@ strong {
     float: left;
     margin-right: 2.12766%; }
   .column--grants .archive__title {
-    width: 17.94872%;
+    width: 38.46154%;
     float: left;
     margin-right: 2.5641%; }
   .column--grants .archive__filters {
