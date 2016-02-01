@@ -12,6 +12,9 @@
         <ol class="hero__posts">
             <?php foreach ($vac_content['vac_block_hero_posts'] as $post): ?>
             <?php
+                if (empty($post['vac_hero_post_link'])) {
+                    continue;
+                }
                 $title = $post['vac_hero_post_title'];
                 $link = $post['vac_hero_post_link'][0];
                 $image = $post['vac_hero_post_image'];
