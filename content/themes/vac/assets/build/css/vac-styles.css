@@ -624,10 +624,6 @@ strong {
 .accordion-item {
   padding: 12px 0 15px 0;
   border-bottom: 3px solid #111; }
-  @media (min-width: 768px) {
-    .accordion-item {
-      margin-right: -10vw;
-      padding-right: 10vw; } }
 
 .accordion-item__title {
   color: #111;
@@ -638,9 +634,6 @@ strong {
   padding: 12px 0;
   margin-top: 12px;
   display: none; }
-  @media (min-width: 768px) {
-    .accordion-item__content {
-      margin-right: -10vw; } }
   .accordion-item__content p {
     margin-top: 24px; }
   .accordion-item__content p:first-child {
@@ -1052,39 +1045,28 @@ strong {
   .column--home.column--wide .featured-post:first-child .element--wide {
     display: table-header-group; } }
 
-@media (min-width: 768px) {
-  .column--foundation.column--wide {
-    margin-top: 168px; } }
-
-@media (min-width: 768px) {
-  .column--foundation.column--narrow {
-    padding-left: 0%;
-    width: 40.42553%;
-    float: left;
-    margin-right: 2.12766%; } }
-
-@media (min-width: 768px) {
-  .column--foundation.column--last {
-    float: right;
-    margin-right: 0; } }
-
-@media (min-width: 768px) {
-  .column--foundation .featured-posts__title {
-    margin-bottom: 24px; } }
-
-@media (min-width: 768px) {
-  .column--foundation .featured-post:first-child .featured-post__header {
-    font-size: 28px;
-    line-height: 30px; } }
-
-.column--foundation .accordion-item {
-  border-bottom-color: blue; }
-
-.column--foundation .accordion-item__title {
-  color: blue; }
-
-.column--foundation .accordion-item__content {
-  border-top-color: blue; }
+.column--foundation {
+  /*@include accordion-main-colour;*/ }
+  @media (min-width: 768px) {
+    .column--foundation.column--wide {
+      margin-top: 168px; } }
+  @media (min-width: 768px) {
+    .column--foundation.column--narrow {
+      padding-left: 0%;
+      width: 40.42553%;
+      float: left;
+      margin-right: 2.12766%; } }
+  @media (min-width: 768px) {
+    .column--foundation.column--last {
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 768px) {
+    .column--foundation .featured-posts__title {
+      margin-bottom: 24px; } }
+  @media (min-width: 768px) {
+    .column--foundation .featured-post:first-child .featured-post__header {
+      font-size: 28px;
+      line-height: 30px; } }
 
 .column--exhibition .featured-post .element {
   width: 100%;
