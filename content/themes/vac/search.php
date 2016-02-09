@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-    <form class="search" method="get" action="<?php echo home_url( '/' ); ?>">
-    <?php $placeholder = pll_current_language() == 'ru' ? 'Поиск' : 'Search'; ?>
-<input type="text" name="s" placeholder="<?php echo $placeholder; ?>" class="search__input" value="<?php echo get_search_query(); ?>">
+    <form class="search" method="get" action="<?php echo home_url('/'); ?>">
+        <?php $placeholder = pll_current_language() == 'ru' ? 'Поиск' : 'Search'; ?>
+        <input type="text" name="s" placeholder="<?php echo $placeholder; ?>" class="search__input" value="<?php echo get_search_query(); ?>">
         <button class="search__button" type="submit">Ok</button>
     </form>
 

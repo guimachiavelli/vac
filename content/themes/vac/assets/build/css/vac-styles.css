@@ -346,13 +346,13 @@ strong {
     border-bottom: 3px solid blue;
     outline: 0; }
     .search__input:focus::-webkit-input-placeholder {
-      opacity: 0.5; }
+      opacity: 0.0; }
     .search__input:focus:-moz-placeholder {
-      opacity: 0.5; }
+      opacity: 0.0; }
     .search__input:focus::-moz-placeholder {
-      opacity: 0.5; }
+      opacity: 0.0; }
     .search__input:focus:-ms-input-placeholder {
-      opacity: 0.5; }
+      opacity: 0.0; }
 
 .search__button {
   border: 0;
@@ -364,7 +364,8 @@ strong {
   position: absolute;
   top: 0;
   right: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  display: none; }
   .search__button:focus {
     outline: 0; }
 
