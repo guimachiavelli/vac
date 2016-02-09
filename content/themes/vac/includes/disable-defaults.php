@@ -21,6 +21,10 @@
             add_action('admin_menu', array(__CLASS__, 'remove_menus'));
             add_action('admin_head', array(__CLASS__, 'remove_collapse'));
 
+            //prevent polylang plugin from copying custom fields
+            add_filter('pll_copy_post_metas', array(__CLASS__,
+                                                    'disable_pll_copy_fields'));
+
             // remove wp emoji stuff
             remove_action('wp_head', 'print_emoji_detection_script', 7);
             remove_action('wp_print_styles', 'print_emoji_styles');
@@ -31,6 +35,10 @@
             remove_action('wp_head', 'rel_canonical');
             remove_action('wp_head', 'wp_shortlink_wp_head');
             remove_action('wp_head', 'rsd_link');
+        }
+
+        public static function disable_pll_copy_fields($keys) {
+            return array();
         }
 
         public static function post_image_defaults() {
