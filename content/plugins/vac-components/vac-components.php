@@ -218,7 +218,7 @@ class VACComponent {
         'type' => 'gallery',
         'instructions' => 'Click on picture to add caption',
         'preview_size' => 'thumbnail',
-        'library' => 'all',
+        'library' => 'uploadedTo',
     );
 
     private $standfirst = array(
@@ -303,7 +303,7 @@ class VACComponent {
                     ),
                 ),
                 'preview_size' => 'thumbnail',
-                'library' => 'all',
+                'library' => 'uploadedTo',
             ),
             array (
                 'key' => 'field_55cb7840f1807',
@@ -342,7 +342,7 @@ class VACComponent {
                 'type' => 'image',
                 'return_format' => 'id',
                 'preview_size' => 'thumbnail',
-                'library' => 'all',
+                'library' => 'uploadedTo',
             ),
             array (
                 'key' => 'field_55cb7deb7440b',
@@ -395,7 +395,7 @@ class VACComponent {
                     'type' => 'image',
                     'return_format' => 'id',
                     'preview_size' => 'thumbnail',
-                    'library' => 'all',
+                    'library' => 'uploadedTo',
                 ),
                 array(
                     'key' => 'field_key_vac_block_home_hero_post',
@@ -421,7 +421,7 @@ class VACComponent {
         'type' => 'image',
         'return_format' => 'id',
         'preview_size' => 'thumbnail',
-        'library' => 'all',
+        'library' => 'uploadedTo',
     );
 
     private $side_gallery = array(
@@ -438,7 +438,7 @@ class VACComponent {
             'type' => 'gallery',
             'instructions' => 'Click on picture to add caption',
             'preview_size' => 'thumbnail',
-            'library' => 'all',
+            'library' => 'uploadedTo',
         )
     );
 
@@ -495,7 +495,7 @@ class VACComponent {
                     'type' => 'image',
                     'return_format' => 'id',
                     'preview_size' => 'thumbnail',
-                    'library' => 'all',
+                    'library' => 'uploadedTo',
                 ),
             )
         )
@@ -519,7 +519,7 @@ class VACComponent {
         'type' => 'image',
         'return_format' => 'id',
         'preview_size' => 'thumbnail',
-        'library' => 'all',
+        'library' => 'uploadedTo',
     );
 
     private $schools = array(
@@ -575,7 +575,7 @@ class VACComponent {
                     'type' => 'image',
                     'return_format' => 'id',
                     'preview_size' => 'thumbnail',
-                    'library' => 'all',
+                    'library' => 'uploadedTo',
                 ),
                 array(
                     'key' => 'field_featured_school_post_title',
@@ -621,7 +621,7 @@ class VACComponent {
                             'type' => 'image',
                             'return_format' => 'id',
                             'preview_size' => 'thumbnail',
-                            'library' => 'all',
+                            'library' => 'uploadedTo',
                         ),
                     )
                 )
@@ -674,7 +674,7 @@ class VACComponent {
                     'type' => 'image',
                     'return_format' => 'id',
                     'preview_size' => 'thumbnail',
-                    'library' => 'all',
+                    'library' => 'uploadedTo',
                 ),
             )
         )
