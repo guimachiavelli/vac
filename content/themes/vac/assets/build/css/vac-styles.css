@@ -1046,6 +1046,9 @@ strong {
   .column--home.column--wide .featured-post:first-child .element--wide {
     display: table-header-group; } }
 
+.column--home.column--narrow .featured-post__figure {
+  width: 85%; }
+
 .column--foundation {
   /*@include accordion-main-colour;*/ }
   @media (min-width: 768px) {
