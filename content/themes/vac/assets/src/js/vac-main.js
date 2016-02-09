@@ -34,7 +34,7 @@
                             {
                                 mainSelector: '.archive',
                                 childSelector: '.archive-item',
-                                posts: 4
+                                posts: 10
                             });
 
             this.initFeaturedPosts(
