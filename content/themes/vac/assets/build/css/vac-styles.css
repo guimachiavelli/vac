@@ -943,7 +943,8 @@ strong {
       display: block;
       float: right;
       margin-right: -19.14894%;
-      width: 79.48718%; } }
+      width: 79.48718%;
+      text-align: right; } }
 
 .talks__list {
   clear: both; }
