@@ -9,7 +9,8 @@
 
     <div class="column column--single column--search">
         <div class="component">
-        <?php if (have_posts()): ?>
+        <?php if (empty($wp_query->query_vars['s'])): ?>
+        <?php elseif (have_posts()): ?>
             <div class="archive">
                 <ol class="archive__list">
                 <?php while (have_posts()): the_post(); ?>
