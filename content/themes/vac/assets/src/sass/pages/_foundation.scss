@@ -1,7 +1,7 @@
 .column--foundation {
     &.column--wide {
         @media(min-width: breakpoints(tablet)) {
-            margin-top: baselines(28);
+            /*margin-top: baselines(28);*/
         }
     }
 
@@ -31,5 +31,5 @@
         }
     }
 
-    /*@include accordion-main-colour;*/
+    @include accordion-main-colour;
 }
