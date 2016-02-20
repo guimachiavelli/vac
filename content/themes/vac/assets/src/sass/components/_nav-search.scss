@@ -37,7 +37,6 @@
     }
 
     &:focus {
-        border-bottom: 3px solid colour(main);
         outline: 0;
 
         @include placeholder {

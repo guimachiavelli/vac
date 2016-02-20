@@ -343,7 +343,6 @@ strong {
   .search__input:-ms-input-placeholder {
     color: #111; }
   .search__input:focus {
-    border-bottom: 3px solid blue;
     outline: 0; }
     .search__input:focus::-webkit-input-placeholder {
       opacity: 0.0; }
