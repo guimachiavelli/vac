@@ -56,10 +56,24 @@ class VACTemplate {
         $fields = self::parsed_ACF($fields);
 
         if (!isset($fields['hero'])) return null;
-
         $field = $fields['hero'];
 
+        if (!isset($field['vac_block_image_slider'][0])) return null;
+
         return $field['vac_block_image_slider'][0]['id'];
+    }
+
+    public static function featured_title($post_id) {
+        return get_the_title($post_id);
+    }
+
+    public static function featured_excerpt($post_id) {
+        $fields = get_fields($post_id);
+        $fields = self::parsed_ACF($fields);
+
+        if (!isset($fields['vac_block_standfirst'])) return '';
+
+        return $field['vac_block_standfirst'];
     }
 
     public static function ACF_featured_content($post_id) {

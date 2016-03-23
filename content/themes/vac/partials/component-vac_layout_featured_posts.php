@@ -15,10 +15,9 @@
             <?php foreach ($posts as $post): ?>
             <?php
                 $link = $post['vac_featured_post_link'][0];
-                $image = $post['vac_featured_post_image'];
-                $text = $post['vac_featured_post_text'];
-                $excerpt = isset($post['vac_featured_post_excerpt']) ? $post['vac_featured_post_excerpt'] : '';
-            ?>
+                $image = VACTemplate::featured_image($link);
+                $text = VACTemplate::featured_title($link);
+                $excerpt = VACTemplate::featured_excerpt($link); ?>
             <li class="featured-post">
             <a class="featured-post__link" href="<?php echo get_the_permalink($link); ?>">
                 <div class="element element--narrow">

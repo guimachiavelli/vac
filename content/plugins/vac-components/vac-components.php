@@ -478,25 +478,7 @@ class VACComponent {
                         1 => 'post_type'
                     ),
                     'return_format' => 'id',
-                ),
-                array (
-                    'key' => 'field_55cb73ebe1d48_vac_featured_text',
-                    'label' => 'Text',
-                    'name' => 'vac_featured_post_text',
-                    'type' => 'wysiwyg',
-                    'toolbar' => 'full',
-                    'tabs' => 'visual',
-                    'media_upload' => 0,
-                ),
-                array(
-                    'key' => 'field_key_vac_featured_image',
-                    'label' => 'Image',
-                    'name' => 'vac_featured_post_image',
-                    'type' => 'image',
-                    'return_format' => 'id',
-                    'preview_size' => 'thumbnail',
-                    'library' => 'uploadedTo',
-                ),
+                )
             )
         )
     );
